@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "techstay",
+      "name": "techstay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7893448?v=4",
+      "profile": "http://techstay.life",
+      "contributions": [
+        "example"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "myNote",
+  "projectOwner": "techstay",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
