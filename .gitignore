@@ -3,6 +3,10 @@
 .vscode/
 bin/
 obj/
+*.exe
+*.pdb
+*.user
+*.suo
 
 # Jetbrains
 .idea/

@@ -1,0 +1,23 @@
+# Reference: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+---
+BasedOnStyle: Microsoft
+---
+Language: Cpp
+AlignArrayOfStructures: Left
+AllowShortLambdasOnASingleLine: Empty
+AlwaysBreakTemplateDeclarations: Yes
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignEscapedNewlines: Left
+AlignTrailingComments: true
+FixNamespaceComments: true
+IntegerLiteralSeparator:
+  Binary: 4
+  Decimal: 3
+  Hex: 0
+ReflowComments: true
+SeparateDefinitionBlocks: Always
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: 1
