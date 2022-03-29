@@ -8,6 +8,7 @@
 
 ## 目录
 
+- [日语笔记](japanese/README.md)
 - [linux 笔记](linux/README.md)
   - [openssh](linux/openssh.md)
 - [杂项 misc 笔记](misc/README.md)
