@@ -10,6 +10,8 @@
 
 - [linux 笔记](linux/README.md)
   - [openssh](linux/openssh.md)
+- [windows 笔记](windows/README.md)
+  - [scoop 包管理器](windows/scoop.md)
 
 ## 写在后面
 
