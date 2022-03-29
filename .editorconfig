@@ -13,3 +13,7 @@ insert_final_newline = true
 [*.go]
 indent_size = 4
 indent_style = tab
+
+[*.rb]
+indent_size = 2
+end_of_line = lf

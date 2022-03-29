@@ -12,3 +12,6 @@ node_modules
 .temp
 .cache
 dist
+
+# ruby
+*.path_progress
