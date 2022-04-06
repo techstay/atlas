@@ -10,6 +10,7 @@
 
 - [linux 笔记](linux/README.md)
   - [archlinux 的安装和配置](linux/archlinux.md)
+  - [asciinema linux 终端录屏工具](linux/asciinema.md)
   - [gpg 隐私工具](linux/gpg.md)
   - [openssh](linux/openssh.md)
   - [zsh](linux/zsh/README.md)
