@@ -12,6 +12,7 @@
   - [gpg 隐私工具](linux/gpg.md)
   - [openssh](linux/openssh.md)
 - [杂项 misc 笔记](misc/README.md)
+  - [git 版本控制工具](misc/git.md)
   - [ventoy 启动盘制作工具](misc/ventoy.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
