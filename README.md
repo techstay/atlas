@@ -17,6 +17,7 @@
   - [keepassxc](misc/keepassxc.md)，跨平台的本地密码管理器
   - [git 版本控制工具](misc/git.md)
   - [ventoy 启动盘制作工具](misc/ventoy.md)
+  - [vscode](misc/vscode.md)，强大的免费开源编辑器
 - [软件资源](software-resources/README.md)
   - [Adobe 系列软件的安装](software-resources/adobe.md)
   - [Mathematica 科学计算软件](software-resources/mathematica.md)
