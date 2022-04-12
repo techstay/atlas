@@ -12,6 +12,7 @@
   - [archlinux 的安装和配置](linux/archlinux.md)
   - [gpg 隐私工具](linux/gpg.md)
   - [openssh](linux/openssh.md)
+  - [zsh](linux/zsh/README.md)
 - [杂项 misc 笔记](misc/README.md)
   - [keepassxc](misc/keepassxc.md)，跨平台的本地密码管理器
   - [git 版本控制工具](misc/git.md)

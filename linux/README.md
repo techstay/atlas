@@ -5,3 +5,4 @@
 - [archlinux](archlinux.md)的安装和配置
 - [gpg](gpg.md)，开源的隐私保护工具
 - [openssh](openssh.md)
+- [zsh](zsh/README.md)
