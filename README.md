@@ -12,6 +12,7 @@
   - [gpg 隐私工具](linux/gpg.md)
   - [openssh](linux/openssh.md)
 - [杂项 misc 笔记](misc/README.md)
+  - [keepassxc](misc/keepassxc.md)，跨平台的本地密码管理器
   - [git 版本控制工具](misc/git.md)
   - [ventoy 启动盘制作工具](misc/ventoy.md)
 - [软件资源](software-resources/README.md)
