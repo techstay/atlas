@@ -9,6 +9,7 @@
 ## 目录
 
 - [linux 笔记](linux/README.md)
+  - [archlinux 的安装和配置](linux/archlinux.md)
   - [gpg 隐私工具](linux/gpg.md)
   - [openssh](linux/openssh.md)
 - [杂项 misc 笔记](misc/README.md)
