@@ -12,6 +12,7 @@
   - [archlinux 的安装和配置](linux/archlinux.md)
   - [asciinema linux 终端录屏工具](linux/asciinema.md)
   - [gpg 隐私工具](linux/gpg.md)
+  - [nala](linux/nala.md)，高颜值的 apt 替代
   - [openssh](linux/openssh.md)
   - [zsh](linux/zsh/README.md)
 - [杂项 misc 笔记](misc/README.md)
