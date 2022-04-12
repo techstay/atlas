@@ -14,6 +14,11 @@
 - [杂项 misc 笔记](misc/README.md)
   - [git 版本控制工具](misc/git.md)
   - [ventoy 启动盘制作工具](misc/ventoy.md)
+- [软件资源](software-resources/README.md)
+  - [Adobe 系列软件的安装](software-resources/adobe.md)
+  - [Mathematica 科学计算软件](software-resources/mathematica.md)
+  - [微软 Office](software-resources/msoffice.md)
+  - [Visual Studio IDE](software-resources/visual-studio.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
