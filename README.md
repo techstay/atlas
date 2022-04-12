@@ -8,6 +8,9 @@
 
 ## 目录
 
+- [linux 笔记](linux/README.md)
+  - [openssh](linux/openssh.md)
+
 ## 写在后面
 
 ### 动机
