@@ -17,7 +17,7 @@
   - [开启移动热点](windows/hotspot.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
-  - [wsl](windows/wsl.md)，windows 下的 linux 子系统
+  - [wsl](windows/wsl.md)
 - [日语笔记](japanese/README.md)
 
 ## 写在后面
