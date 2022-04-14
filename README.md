@@ -8,13 +8,16 @@
 
 ## 目录
 
-- [日语笔记](japanese/README.md)
 - [linux 笔记](linux/README.md)
   - [openssh](linux/openssh.md)
 - [杂项 misc 笔记](misc/README.md)
   - [ventoy 启动盘制作工具](misc/ventoy.md)
 - [windows 笔记](windows/README.md)
-  - [scoop 包管理器](windows/scoop.md)
+  - [开启移动热点](windows/hotspot.md)
+  - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
+  - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
+  - [wsl](windows/wsl.md)，windows 下的 linux 子系统
+- [日语笔记](japanese/README.md)
 
 ## 写在后面
 
@@ -43,3 +46,30 @@
 gitmoji 是一个提交规范，借由 emoji 表情让 git 提交变得轻松活泼，同时也规定了可以使用的表情防止滥用，不过个人项目嘛，emoji 会使用的更加自由一些。如果你使用 vscode 的话，也可以安装 [gitmoji 扩展](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode)，在 git 提交的时候查找和插入表情。
 
 - [😏gitmoji 规范](https://gitmoji.dev)
+
+#### 项目备份
+
+项目除了在 [github](https://github.com/techstay/myNote) 上以外，还设置了另外两个推送地址以备份。
+
+- 极狐 gitlab <https://jihulab.com/techstay/myNote>
+- gitlab <https://gitlab.com/techstay/myNote>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://techstay.life"><img src="https://avatars.githubusercontent.com/u/7893448?v=4?s=100" width="100px;" alt=""/><br /><sub><b>techstay</b></sub></a><br /><a href="#example-techstay" title="Examples">💡</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
