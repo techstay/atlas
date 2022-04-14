@@ -13,7 +13,6 @@
   - [asciinema linux 终端录屏工具](linux/asciinema.md)
   - [gpg 隐私工具](linux/gpg.md)
   - [nala](linux/nala.md)，高颜值的 apt 替代
-  - [openssh](linux/openssh.md)
   - [zsh](linux/zsh/README.md)
 - [杂项 misc 笔记](misc/README.md)
   - [keepassxc](misc/keepassxc.md)，跨平台的本地密码管理器
@@ -30,6 +29,7 @@
   - [vmware workstation](software-resources/vmware-workstation.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
+  - [openssh](windows/openssh.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
   - [wsl](windows/wsl.md)

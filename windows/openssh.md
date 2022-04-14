@@ -2,7 +2,7 @@
 
 ## 安装
 
-windows 系统下，在管理员权限的 powershell 终端中运行以下命令来安装。linux 系统一般自带，无需额外安装。
+windows 系统下，在管理员权限的 powershell 终端中运行以下命令来安装。
 
 ```powershell
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
@@ -11,20 +11,21 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 ### 启动服务端
 
-linux 系统需要使用 systemd 启动 ssh 服务。
-
-```sh
-# 服务端的名字可能根据发行部不同而变化，不一定是sshd
-sudo systemctl enable sshd
-sudo systemctl start sshd
-```
-
-windows 系统下直接启动服务。
+使用上面方法安装的 openssh，可以直接通过服务启动服务端。
 
 ```powershell
 # 需要管理员权限
 Set-Service -Name sshd -StartupType 'Automatic'
 Start-Service sshd
+```
+
+### 启动 ssh-agent
+
+ssh 代理也使用类似的方法启动。
+
+```powershell
+Set-Service -Name ssh-agent -StartupType 'Automatic'
+Start-Service ssh-agent
 ```
 
 ## 开始使用
@@ -62,7 +63,7 @@ Host arch
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-然后将公钥复制到服务器对应用户的`~/.ssh/authorized_keys`配置文件中即可。这可以通过 openssh 附带的`ssh-copy-id`命令来完成。
+然后将公钥复制到服务器对应用户的`~/.ssh/authorized_keys`配置文件中即可。这可以通过 openssh 附带的`ssh-copy-id`命令来完成。没有`ssh-copy-id`的话，可以通过 scoop 安装带 ssh 的 git 来实现`scoop install git-with-openssh`。
 
 ```sh
 ssh-copy-id arch
