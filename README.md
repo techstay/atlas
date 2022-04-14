@@ -27,6 +27,7 @@
   - [微软 Office](software-resources/msoffice.md)
   - [sublime merge](software-resources/sublime-merge.md)
   - [Visual Studio IDE](software-resources/visual-studio.md)
+  - [vmware workstation](software-resources/vmware-workstation.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器

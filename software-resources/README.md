@@ -7,3 +7,4 @@
 - [微软 Office](msoffice.md)
 - [sublime merge](sublime-merge.md)
 - [Visual Studio IDE](visual-studio.md)
+- [vmware workstation](vmware-workstation.md)
