@@ -1,0 +1,27 @@
+# Sublime Merge 安装
+
+## 安装
+
+linux 参考 <https://gist.github.com/rufoa/78e45d70f560f53678853c92dae2598a>
+
+windows 下载文件，解压，然后使用破解版文件覆盖原程序即可。
+
+- 下载地址 <https://downloaddevtools.com/en/product/2276/free-download-sublime-merge>
+- 解压密码`DownloadDevTools.ir`
+- 使用随便一个许可证(例如下面的)即可激活。
+
+```txt
+----- BEGIN LICENSE -----
+TEAM RUFIO
+Unlimited User License
+E52D-666666
+487EE6F0309908F702DDD52AFCD99A6A
+6EE14CF8A2D42271B4FC0991BBF93ADC
+FAA9075C436B3796669194A2F36CAAEF
+B251155329EC2E434FD28B4A21BE68CC
+955D306EE9ED843C5E98B1577D02DEAA
+1F4E872AE6495CD5E3B1DA55D5ACD2B2
+2EA4110FB800F21AA3EC2E3902589BCF
+7281A19C2DFF0CEE4AEA5DDD1E6DF893
+----- END LICENSE -----
+```

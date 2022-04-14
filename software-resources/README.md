@@ -5,4 +5,5 @@
 - [Adobe 系列软件](adobe.md)
 - [Mathematica 科学计算软件](Mathematica.md)
 - [微软 Office](msoffice.md)
+- [sublime merge](sublime-merge.md)
 - [Visual Studio IDE](visual-studio.md)

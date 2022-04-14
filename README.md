@@ -25,6 +25,7 @@
   - [Adobe 系列软件的安装](software-resources/adobe.md)
   - [Mathematica 科学计算软件](software-resources/mathematica.md)
   - [微软 Office](software-resources/msoffice.md)
+  - [sublime merge](software-resources/sublime-merge.md)
   - [Visual Studio IDE](software-resources/visual-studio.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
