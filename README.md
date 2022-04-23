@@ -71,6 +71,12 @@ gitmoji 是一个提交规范，借由 emoji 表情让 git 提交变得轻松活
 - 极狐 gitlab <https://jihulab.com/techstay/myNote>
 - gitlab <https://gitlab.com/techstay/myNote>
 
+```sh
+git remote set-url --add origin --push git@jihulab.com:techstay/myNote.git
+git remote set-url --add origin --push git@gitlab.com:techstay/myNote.git
+git remote set-url --add origin --push git@github.com:techstay/myNote.git
+```
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
