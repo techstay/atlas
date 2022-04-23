@@ -77,7 +77,7 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 ```powershell
 scoop install Source-Han-Mono-SC Source-Han-Mono-TC Source-Han-Sans-SC Source-Han-Sans-TC Source-Han-Sans-J
 scoop install LiberationMono-NF
-scoop install Meslo-NF-Mono
+scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 ```
 
 ### 其他软件安装
