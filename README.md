@@ -30,6 +30,7 @@
   - [vmware workstation](software-resources/vmware-workstation.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
+  - [windows 系统引导修复](windows/BootRepair.md)
   - [openssh](windows/openssh.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
