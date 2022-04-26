@@ -7,4 +7,5 @@
 - [garuda](garuda.md)，一个界面炫酷的 arch 衍生版
 - [gpg](gpg.md)，开源的隐私保护工具
 - [nala](nala.md)，高颜值的 apt 替代
+- [ubuntu 22.04 安装笔记](ubuntu22.04.md)
 - [zsh](zsh/README.md)
