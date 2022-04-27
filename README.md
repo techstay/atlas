@@ -33,6 +33,7 @@
   - [开启移动热点](windows/hotspot.md)
   - [windows 系统引导修复](windows/BootRepair.md)
   - [windows 高级终端体验](windows/WindowsTerminalExperience.md)
+  - [VHD 双系统安装](windows/VHD-DualBoot.md)
   - [openssh](windows/openssh.md)
   - [scoop](windows/sccop.md)，一个 windows 下的软件包管理器
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
