@@ -11,6 +11,7 @@
 - [linux 笔记](linux/README.md)
   - [archlinux 的安装和配置](linux/archlinux.md)
   - [asciinema linux 终端录屏工具](linux/asciinema.md)
+  - [fish](linux/fish.md)
   - [garuda](linux/garuda.md)，一个界面炫酷的 arch 衍生版
   - [gpg 隐私工具](linux/gpg.md)
   - [nala](linux/nala.md)，高颜值的 apt 替代
