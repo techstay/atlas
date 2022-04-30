@@ -6,6 +6,7 @@
 - [windows 系统引导修复](BootRepair.md)
 - [windows 高级终端体验](WindowsTerminalExperience.md)
 - [VHD 双系统安装](VHD-DualBoot.md)
+- [msys2](msys2.md)
 - [openssh](openssh.md)
 - [scoop](sccop.md)，一个 windows 下的软件包管理器
 - [vim](vim.md)，vim 安装笔记
