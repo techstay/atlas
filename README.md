@@ -42,6 +42,8 @@
   - [Windows 安装笔记](windows/WindowsInstall.md)
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
   - [wsl](windows/wsl.md)
+- [疑难杂症](troubles/README.md)
+  - [tightvnc](troubles/tightvnc.md)
 - [日语笔记](japanese/README.md)
 
 ## 写在后面
