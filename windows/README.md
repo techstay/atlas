@@ -10,5 +10,6 @@
 - [openssh](openssh.md)
 - [scoop](sccop.md)，一个 windows 下的软件包管理器
 - [vim](vim.md)，vim 安装笔记
+- [Windows 安装笔记](WindowsInstall.md)
 - [Windows Terminal](WindowsTerminal.md)，Windows 的官方终端
 - [wsl](wsl.md)，windows 下的 linux 子系统
