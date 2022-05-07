@@ -1,6 +1,8 @@
 # windows 安装笔记
 
-记录了我的 windows 安装笔记。由于不小心安装了流氓软件，导致我系统动不动就死机，以至于我才重装系统没几个月就又不得不重装系统，真的是烦透了。而且上次重装系统的笔记记录因为放到了另一个待整理的仓库中，已经被我干掉了。所以不得不从头记一遍笔记。
+> 我的 windows 安装笔记。由于不小心安装了流氓软件，导致我系统动不动就死机，以至于我才重装系统没几个月就又不得不重装系统，真的是烦透了。而且上次重装系统的笔记记录因为放到了另一个待整理的仓库中，已经被我干掉了。所以不得不从头记一遍笔记。
+
+之前安装的 Win10 还是蛮好用的，除了系统的 emoji 表情没有 Win11 的好看。不过前两天看到别人新安装的 Win11 看起来还是很好用的，于是又手痒了起来，费了点功夫又重装了一遍系统。所以这次的 Windows 安装笔记又可以更新了。
 
 [TOC]
 
@@ -11,6 +13,7 @@
 安装代理软件，加速后续的下载。
 
 - github 加速 <https://shrill-pond-3e81.hunsh.workers.dev/>
+- github 加速 <https://toolwa.com/github/>
 - clash-for-windows <https://github.com/Fndroid/clash_for_windows_pkg/releases>
 
 ### 包管理器
@@ -36,7 +39,7 @@ scoop bucket add nerd-fonts
 scoop bucket add java
 ```
 
-安装 winget，如果是 win11 系统的话已经内置，无需额外安装。
+安装 winget，如果是 win11 系统的话已经内置，无需额外安装，不过仍然需要在应用商店完整更新过才可以使用。
 
 win10 系统则需要手动下载安装 <https://github.com/microsoft/winget-cli/releases>。
 
@@ -51,9 +54,17 @@ slmgr /skms kms.03k.org
 slmgr /ato
 ```
 
+### 卸载小组件
+
+win11 新增了小组件功能，但是说白了就是一个信息聚合组件，没有什么用处，直接卸载即可。卸载完成之后小组件按钮可能仍然在任务栏驻留，这时候重启资源管理器应该就不会再见到它了。
+
+```powershell
+winget uninstall MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy
+```
+
 ### 禁用 Ctrl+空格
 
-默认情况下`Ctrl+空格`是输入法中英文切换的快捷键，而这个快捷键常常作为代码补全的快捷键，经常敲代码的同学建议禁用这个快捷键，为代码补全让路。使用管理员权限执行`禁用控制空格中英文切换`注册表文件，重启电脑即可。
+默认情况下`Ctrl+空格`是输入法中英文切换的快捷键，而这个快捷键常常作为代码补全的快捷键，经常敲代码的同学建议禁用这个快捷键，为代码补全让路。使用管理员权限执行`disable-ctrl-space-toggle.reg`注册表文件，重启电脑即可。
 
 ### 系统时间
 
@@ -80,7 +91,20 @@ scoop install LiberationMono-NF
 scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 ```
 
-### 其他软件安装
+### 软件安装
+
+可通过命令行安装的软件:
+
+```powershell
+winget install GnuPG.Gpg4win
+winget install Microsoft.PowerToys
+winget install Telegram.TelegramDesktop
+winget install OBSProject.OBSStudio
+winget install Audacity.Audacity
+scoop install snipaste
+```
+
+其他软件安装:
 
 - [火绒杀毒软件](https://www.huorong.cn/person5.html)
 - [搜狗输入法](https://pinyin.sogou.com/)
@@ -93,3 +117,8 @@ scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 - [其他软件资源](../software-resources/README.md)
 - [potplayer](https://potplayer.daum.net)
 - [视频解码器](https://codecguide.com/klcp_beta.htm)
+- [AMD Ryzen Master](https://www.amd.com/zh-hans/technologies/ryzen-master)
+- [yamaha usb driver](https://usa.yamaha.com/support/updates/yamaha_steinberg_usb_driver_for_win.html)
+- [夜神模拟器](https://www.yeshen.com)
+- [英伟达 Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
+- [有道词典](http://cidian.youdao.com/index.html)

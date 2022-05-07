@@ -27,7 +27,10 @@ Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 bucket 是 scoop 的软件类别仓库，可以由`scoop bucket known`查看。一般不需要全部添加，只添加几个常用的即可。
 
 ```sh
-scoop bucket add extra
+# bucket依赖git，所以需要先安装git
+scoop install git
+
+scoop bucket add extras
 scoop bucket add nerd-fonts
 scoop bucket add java
 ```
@@ -52,7 +55,7 @@ scop config rm proxy
 scoop install aria2
 ```
 
-如果要关闭 aria2 的话，执行以下命令。要恢复的话，将`false`改为`true`即可。
+如果下载遇到问题，可以关闭 aria2 下载。
 
 ```sh
 scoop config aria2-enabled false

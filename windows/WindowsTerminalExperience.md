@@ -71,7 +71,7 @@ winget install Microsoft.PowerShell
 ```powershell
 Install-Module posh-git
 Install-Module Terminal-Icons
-Install-Module PSReadLine -AllowPrerelease
+Install-Module PSReadLine -AllowPrerelease -Force
 Install-Script pwshfetch-test-1
 # z.lua，目录跳转插件
 scoop install lua

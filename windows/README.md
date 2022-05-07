@@ -9,7 +9,7 @@
 - [msys2](msys2.md)
 - [openssh](openssh.md)
 - [scoop](scoop.md)，一个 windows 下的软件包管理器
-- [vim](vim.md)，vim 安装笔记
+- [vim 安装笔记](vim.md)
 - [Windows 安装笔记](WindowsInstall.md)
 - [Windows Terminal](WindowsTerminal.md)，Windows 的官方终端
 - [wsl](wsl.md)，windows 下的 linux 子系统
