@@ -40,22 +40,6 @@ scoop install starship
 scoop install git-with-openssh
 ```
 
-## cmd
-
-先安装 clink。
-
-```powershell
-winget install chrisant996.Clink
-```
-
-然后编辑 clink 的配置文件，添加 starship 的配置。
-
-```powershell
-Set-Content $env:LocalAppData\clink\starship.lua @'
-load(io.popen('starship init cmd'):read("*a"))()
-‘@
-```
-
 之后打开命令提示符窗口，应该就可以看到效果了。
 
 ## PowerShell
@@ -69,10 +53,10 @@ winget install Microsoft.PowerShell
 然后要安装一些模块。
 
 ```powershell
-Install-Module posh-git
-Install-Module Terminal-Icons
+Install-Module posh-git -Force
+Install-Module Terminal-Icons -Force
 Install-Module PSReadLine -AllowPrerelease -Force
-Install-Script pwshfetch-test-1
+Install-Script pwshfetch-test-1 -Force
 # z.lua，目录跳转插件
 scoop install lua
 git clone https://github.com/skywind3000/z.lua.git $HOME/z.lua
@@ -100,6 +84,22 @@ Invoke-Expression (& { (lua $HOME/z.lua/z.lua --init powershell once enhanced fz
 
 # Alias
 Set-Alias winfetch pwshfetch-test-1
+```
+
+## cmd
+
+先安装 clink。
+
+```powershell
+winget install chrisant996.Clink
+```
+
+然后编辑 clink 的配置文件，添加 starship 的配置。
+
+```powershell
+Set-Content $env:LocalAppData\clink\starship.lua @'
+load(io.popen('starship init cmd'):read("*a"))()
+‘@
 ```
 
 ## Windows Terminal

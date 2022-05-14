@@ -1,4 +1,4 @@
-# Vmware Workstation 安装
+# Vmware Workstation 16 安装
 
 先下载安装包 <https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html>
 

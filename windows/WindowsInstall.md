@@ -1,10 +1,12 @@
 # windows 安装笔记
 
-> 我的 windows 安装笔记。由于不小心安装了流氓软件，导致我系统动不动就死机，以至于我才重装系统没几个月就又不得不重装系统，真的是烦透了。而且上次重装系统的笔记记录因为放到了另一个待整理的仓库中，已经被我干掉了。所以不得不从头记一遍笔记。
-
-之前安装的 Win10 还是蛮好用的，除了系统的 emoji 表情没有 Win11 的好看。不过前两天看到别人新安装的 Win11 看起来还是很好用的，于是又手痒了起来，费了点功夫又重装了一遍系统。所以这次的 Windows 安装笔记又可以更新了。
-
 [TOC]
+
+## 写在前面
+
+- UPDATE1: 我的 windows 安装笔记。由于不小心安装了流氓软件，导致我系统动不动就死机，以至于我才重装系统没几个月就又不得不重装系统，真的是烦透了。而且上次重装系统的笔记记录因为放到了另一个待整理的仓库中，已经被我干掉了。所以不得不从头记一遍笔记。
+- UPDATE2: 之前安装的 Win10 还是蛮好用的，除了系统的 emoji 表情没有 Win11 的好看。不过前两天看到别人新安装的 Win11 看起来还是很好用的，于是又手痒了起来，费了点功夫又重装了一遍系统。所以这次的 Windows 安装笔记又可以更新了。
+- UPDATE3: win11 的卡顿老毛病又犯了，每次动不动卡个一分钟，勉强可以忍，然而这次竟然连着卡顿十分钟，实在忍不了了，所以又装回了 win10，不得不承认，虽然我很喜欢 win11 的新 emoji，但是还是 win10 比较流畅。
 
 ## 必备工作
 
@@ -16,6 +18,30 @@
 - github 加速 <https://toolwa.com/github/>
 - clash-for-windows <https://github.com/Fndroid/clash_for_windows_pkg/releases>
 
+### 恢复配置
+
+如果是重新安装的系统，可以直接使用原版镜像安装，在安装的时候不格式化 C 盘，这样旧系统会存放到`Windows.old`文件夹中，方便以后从旧系统中恢复文件和配置，如
+
+- 桌面文件
+- ssh 和 gpg 密钥
+- 我的文档里面的配置文件
+- git 仓库等
+
+如果是 git 仓库，那么可能会遇到用户权限的问题，有两种方法可以解决这个问题。第一种就是直接在 git 配置中指定安全文件夹。
+
+```powershell
+git config --global --add safe.directory C:/Users/techstay/Desktop/dotfiles
+```
+
+第二种就是将用户权限重新指定为当前用户所有。方法如下：
+
+1. 右键点击属性，切换到安全选项卡
+1. 点击高级按钮，打开高级安全配置对话框
+1. 将所有者改为当前用户，并勾选`替换子容器和对象的所有者`
+1. 然后一路点击确定即可
+
+这时候使用 git 命令应该就不会出现问题了。
+
 ### 包管理器
 
 安装 scoop。
@@ -24,8 +50,14 @@
 # 首先设置允许运行远程脚本
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
+# 安装scoop
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+
 # 设置代理
 scoop config proxy 'localhost:7890'
+
+# 安装aria2加速
+scoop install aria2
 
 # 安装git，添加bucket时必需
 scoop install git-with-openssh
@@ -39,9 +71,7 @@ scoop bucket add nerd-fonts
 scoop bucket add java
 ```
 
-安装 winget，如果是 win11 系统的话已经内置，无需额外安装，不过仍然需要在应用商店完整更新过才可以使用。
-
-win10 系统则需要手动下载安装 <https://github.com/microsoft/winget-cli/releases>。
+安装 winget，可以在应用商店里搜索`应用安装程序`，也可以手动下载安装包来安装 <https://github.com/microsoft/winget-cli/releases>。
 
 ## 系统配置
 
@@ -54,9 +84,9 @@ slmgr /skms kms.03k.org
 slmgr /ato
 ```
 
-### 卸载小组件
+### 卸载 win11 小组件
 
-win11 新增了小组件功能，但是说白了就是一个信息聚合组件，没有什么用处，直接卸载即可。卸载完成之后小组件按钮可能仍然在任务栏驻留，这时候重启资源管理器应该就不会再见到它了。
+win11 新增了小组件功能，但是说白了就是一个信息聚合组件，没有什么用处，直接卸载即可。卸载完成之后小组件按钮可能仍然在任务栏驻留，这时候重启资源管理器应该就不会再见到它了(需要管理员权限)。
 
 ```powershell
 winget uninstall MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy
@@ -68,10 +98,10 @@ winget uninstall MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy
 
 ### 系统时间
 
-通过下面的命令使用国家授时中心的对时服务，需要管理员权限。
+通过下面的命令使用阿里云的对时服务，需要管理员权限。
 
 ```powershell
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name "0" -Value "ntp.ntsc.ac.cn" -Type "String"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name "0" -Value "ntp.aliyun.com" -Type "String"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DateTime\Servers" -Name "(default)" -Value 0
 ```
 
@@ -101,7 +131,7 @@ winget install Microsoft.PowerToys
 winget install Telegram.TelegramDesktop
 winget install OBSProject.OBSStudio
 winget install Audacity.Audacity
-scoop install snipaste
+scoop install snipaste screentogif ffmpeg busybox vim yt-dlp imageglass exiftool
 ```
 
 其他软件安装:
@@ -122,3 +152,8 @@ scoop install snipaste
 - [夜神模拟器](https://www.yeshen.com)
 - [英伟达 Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
 - [有道词典](http://cidian.youdao.com/index.html)
+- [vscode](https://code.visualstudio.com)
+- [tightvnc](https://www.tightvnc.com/download.php)
+- [全民 K 歌](https://kg.qq.com/index-pc.html)
+- [qq 音乐](https://y.qq.com)
+- [网易云音乐](https://music.163.com/#/download)
