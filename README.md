@@ -19,6 +19,7 @@
   - [zsh](linux/zsh/README.md)
 - [杂项 misc 笔记](misc/README.md)
   - [keepassxc](misc/keepassxc.md)，跨平台的本地密码管理器
+  - [gh-cli](misc/gh-cli.md)，github 官方命令行
   - [git 版本控制工具](misc/git.md)
   - [markdown](misc/markdown.md)，一种专注内容的文本格式
   - [ventoy 启动盘制作工具](misc/ventoy.md)
