@@ -78,15 +78,15 @@ gitmoji 是一个提交规范，借由 emoji 表情让 git 提交变得轻松活
 
 #### 项目备份
 
-项目除了在 [github](https://github.com/techstay/myNote) 上以外，还设置了另外两个推送地址以备份。
+项目除了在 [github](https://github.com/techstay/studyNotes) 上以外，还设置了另外两个推送地址以备份。
 
-- 极狐 gitlab <https://jihulab.com/techstay/myNote>
-- gitlab <https://gitlab.com/techstay/myNote>
+- 极狐 gitlab <https://jihulab.com/techstay/studyNotes>
+- gitlab <https://gitlab.com/techstay/studyNotes>
 
 ```sh
-git remote set-url --add origin --push git@jihulab.com:techstay/myNote.git
-git remote set-url --add origin --push git@gitlab.com:techstay/myNote.git
-git remote set-url --add origin --push git@github.com:techstay/myNote.git
+git remote set-url --add origin --push git@jihulab.com:techstay/studyNotes.git
+git remote set-url --add origin --push git@gitlab.com:techstay/studyNotes.git
+git remote set-url --add origin --push git@github.com:techstay/studyNotes.git
 ```
 
 ## Contributors ✨
