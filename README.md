@@ -22,6 +22,7 @@
   - [gh-cli](misc/gh-cli.md)，github 官方命令行
   - [git 版本控制工具](misc/git.md)
   - [markdown](misc/markdown.md)，一种专注内容的文本格式
+  - [Mailspring](misc/Mailspring.md)，一个跨平台的邮件客户端
   - [ventoy 启动盘制作工具](misc/ventoy.md)
   - [vscode](misc/vscode.md)，强大的免费开源编辑器
 - [软件资源](software-resources/README.md)
