@@ -6,6 +6,8 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+在线访问 <https://studynote.techstay.life>。
+
 ## 目录
 
 - [linux 笔记](linux/README.md)
