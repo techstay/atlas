@@ -48,7 +48,7 @@
   - [wsl](windows/wsl.md)
 - [疑难杂症](troubleshooting/README.md)
   - [tightvnc](troubleshooting/tightvnc.md)
-  - [win11](troubleshooting/win11.md)
+  - [windows](troubleshooting/windows.md)
 - [日语笔记](japanese/README.md)
 
 ## 写在后面

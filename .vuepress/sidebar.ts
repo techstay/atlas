@@ -37,7 +37,7 @@ export const sidebar: SidebarConfig = {
   '/troubles': [
     '/troubleshooting/README.md',
     '/troubleshooting/tightvnc.md',
-    '/troubleshooting/win11.md',
+    '/troubleshooting/windows.md',
   ],
   '/windows': [
     '/windows/README.md',
