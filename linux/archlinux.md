@@ -1,126 +1,213 @@
 # archlinux
 
-ArchLinux 的安装和配置。
+ArchLinux 系发行版的安装和配置。
 
-## 快速开始
+## 最小化安装
 
-### 下载
+个人使用 archlinux 的方式是在虚拟机里使用官方镜像执行最小化安装，然后将虚拟机设置为开机自启。这样可以得到类似 WSL 的效果，占用的系统资源比较低，同时也没有 WSL 的问题，最重要的是可以和一些常见的模拟器共存，而不是只能使用 HyperV。
 
-第一步自然是要下载镜像。
+### 下载镜像
 
 - [阿里云镜像](http://mirrors.aliyun.com/archlinux/iso/latest/)
 - [清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/)
 
 下载的时候最好同时下载校验文件，方便确认文件的完整性。
 
-可以使用 md5sum 校验。
-
 ```sh
+# 几种校验方式选择一种
 md5sum -c md5sums.txt
-```
-
-也可以用 gpg 校验。
-
-```sh
 gpg --keyserver-options auto-key-retrieve --verify archlinux.iso.sig
 ```
 
 ### 安装
 
-archwiki 有官方安装指导，可以一步一步跟着安装，实际操作起来也不难。不过现在有了更简单的安装方式，那就是使用 archinstall 安装脚本，这是 Python 写成的库，专门用来管理 archlinux 的安装。
+archwiki 有官方安装指导，可以一步一步跟着安装，实际操作起来也不难。不过现在有了更简单的安装方式，那就是使用 archinstall 安装脚本，这是 Python 写成的库，专门用来管理 archlinux 的安装。启动安装镜像，直接执行`archinstall`，然后按照提示选择即可。现在 archinstall 采用菜单式操作，更加容易安装了。
 
-启动安装镜像，直接执行`archinstall`，然后按照提示选择。该安装脚本会提供包括键盘布局到文件系统等系统配置所必须的各种选项，按照自己的需求选择即可。因为我这里是虚拟机安装，所以在选择安装位置的时候可以放心的清除磁盘重新安装。然而在真机上安装的时候，就要格外小心了，这也是命令行安装系统最容易失误的地方。
-
-如果对自己不太有信心的话，也可以使用 ArchLinuxGUI，这个项目提供了易用的图形化安装界面，同时可以安装原汁原味的 ArchLinux，也是那些想用 ArchLinux 的一个很好的选择。
+## Arch 衍生版
 
 ### ArchLinuxGUI
 
-这个项目简称[ALG](https://archlinuxgui.in)，向那些不喜欢命令行界面安装的用户提供的图形化界面安装方式，拥有 Plasma、Gnome、Xfce、窗口管理器等多种风味，可以满足不同用户的需求。
+这个项目简称[ALG](https://archlinuxgui.in)，是向那些不喜欢命令行界面安装的用户提供的图形化界面安装方式，拥有 Plasma、Gnome、Xfce、窗口管理器等多种风味，可以满足不同用户的需求。
 
 安装这个版本和其他那些拥有图形界面的版本类似，按照提示进行就可以，这里不再做更多介绍。
 
-## 系统配置
+### archcraft
 
-ArchLinux 是一个定制性极强的系统，很多地方都可以配置。对于最小化安装和图形界面安装的 ArchLinux 来说，需要配置的地方也各有不同，可以根据实际情况来进行配置。
+archcraft 是一个基于 arch 的衍生版，它对 arch 的修改较小，主要进行了一些主题方面的定制，适合像我这样想要酷一点界面但是又不喜欢自己折腾的人。官网还提供了大量截图可以查看 <https://archcraft.io/gallery.html>
 
-### 一些必需软件
+缺点就是社区力量比较小，支持较慢，XFCE 桌面版每半年更新一次，这对于一个滚动发行版来说有点慢了。下载地址： <https://github.com/archcraft-os/archcraft-xfce/releases>。
 
-最小化安装之后的系统只是一个空壳子，什么都没有，所以还需要安装和配置很多东西。
-
-先安装一些必需软件。
+安装的时候需要注意一下，安装镜像默认不包含中文字体，如果在安装界面选择中文的话，只能显示成方块。所以需要在安装之前，现在终端里执行下面两条命令把中文字体先安装好，然后就可以正常显示中文了。
 
 ```sh
-pacman -S --needed openssh zsh git curl wget vi nano ntp iptables-nft base-devel
+sudo pacman -Sy
+sudo pacman -S noto-fonts-cjk
 ```
 
-### 启用 SSH 登录
+### Manjaro
 
-开启 sshd 服务。
+Manjaro 是比较流行的 arch 衍生版，可以作为想要体验 arch 系又不想通过命令行安装的用户的首选。在虚拟机里面使用的话推荐 xfce 桌面环境，更加节省资源。下载地址： <https://manjaro.org/downloads/official/xfce/>。
+
+### garuda
+
+garuda 是我目前在真机上安装的 arch 衍生版，优点是默认的桌面很好看，同时内置了一套功能丰富的配置工具。下载地址： <https://garudalinux.org/downloads.html>。
+
+### endeavouros
+
+endeavouros 是另外一个很流行的 arch 衍生版，在安装的时候几乎可以选择所有的桌面环境。下载地址：<https://endeavouros.com> 。
+
+## 系统配置
+
+ArchLinux 作为一个定制性极强的系统，系统的大部分配置都可以根据自身情况修改。但是 arch 系发行版的配置并不完全一样，所以这里的配置可能并不适用于所有 arch 系发行版，这一点需要注意。
+
+### 无界面 arch 配置
+
+这里假设从 archinstall 安装的系统还没有创建自定义用户，直接通过 root 用户登录操作。
+
+创建用户。
+
+```sh
+newuser=techstay
+useradd $newuser -m -G wheel -s /bin/zsh
+passwd $newuser
+```
+
+然后启用用户的免密码 sudo 权限，方便后面执行命令。
+
+```sh
+newuser=techstay
+echo "$newuser ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/$newuser"
+```
+
+后面的配置比较通用，不同的 arch 衍生版也可以作为参考。
+
+### 代理配置
+
+有代理的话，推荐自己设置一个代理脚本，方便在网络不通的时候使用。
+
+#### zsh
+
+创建`~/.proxy.sh`文件，内容如下。
+
+```sh
+proxy_host="THISPC"
+proxy_port="7890"
+
+function setproxy() {
+  export all_proxy="http://$proxy_host:$proxy_port"
+  export http_proxy="http://$proxy_host:$proxy_port"
+  export https_proxy="http://$proxy_host:$proxy_port"
+  export NO_PROXY=localhost,::1,.example.com
+}
+
+function unsetproxy() {
+  export all_proxy=""
+  export http_proxy=""
+  export https_proxy=""
+}
+```
+
+然后在`.zprofile`中 source 该文件。
+
+```sh
+tee -a .zprofile <<'EOF'
+source ~/.proxy.sh
+EOF
+```
+
+重新登录以后就可以用这两个函数开关代理了。
+
+#### fish
+
+fish 有自己的自动加载目录，需要将两个函数创建到对应的目录中，文件名也要匹配。
+
+```sh
+# ~/.config/fish/functions/setproxy.fish
+function setproxy
+    set proxy_host THISPC
+    set proxy_port 7890
+    set -gx all_proxy "http://$proxy_host:$proxy_port"
+    set -gx http_proxy "http://$proxy_host:$proxy_port"
+    set -gx https_proxy "http://$proxy_host:$proxy_port"
+    set -gx NO_PROXY 'localhost,::1,.example.com'
+end
+
+# ~/.config/fish/functions/unsetproxy.fish
+function unsetproxy
+    set -gx all_proxy ''
+    set -gx http_proxy ''
+    set -gx https_proxy ''
+end
+```
+
+设置好代理之后，下面的克隆工作就会比较方便的运行了。
+
+### 必备包
+
+先安装一些必备的包。
+
+```sh
+sudo pacman -S --needed openssh zsh git yadm fish starship reflector \
+  inetutils \
+  exa base-devel ntp iptables-nft wget curl nano vim grml-zsh-config
+```
+
+这时候就可以进入 zsh 或者 fish 来执行命令，比默认的 bash 方便不少。
+
+### 远程登录
 
 ```sh
 systemctl enable sshd
 systemctl start sshd
 ```
 
-接下来就可以用 SSH 远程登录，复制粘贴命令会方便很多。
+### pacman 配置
 
-### 创建用户
-
-创建一个用户。
+我这里清华镜像源的速度最快，所以直接将清华镜像源添加到`/etc/pacman.d/mirrorlist`最前面。
 
 ```sh
-useradd techstay -m -G wheel -s /bin/zsh
-passwd techstay
-```
-
-然后启用用户的免密码 sudo 权限，方便后面执行命令。
-
-```sh
-echo 'techstay ALL=(ALL:ALL) NOPASSWD: ALL'|sudo tee /etc/sudoers.d/techstay
-```
-
-如果你使用了 ALG 等其他办法用图形界面安装了系统，那么应该已经配置好了用户。如果你想要让当前用户免密码的话，使用下面的命令。
-
-```sh
-echo "$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL"|sudo tee /etc/sudoers.d/"$(whoami)"
-```
-
-### 配置 pacman
-
-将阿里云镜像源添加到`/etc/pacman.d/mirrorlist`最前面。
-
-```sh
-sudo sed -i '1i Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+sudo sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
 sudo pacman -Syy
 ```
 
-或者通过`reflector`来测速并设置镜像源。
+也可以通过`reflector`来测速并设置镜像源。注意并不是所有的 arch 衍生版都带有`reflector`这个包，manjaro 就没有，不过 manjaro 有自己的`pacman-mirrors`命令。
 
 ```sh
 sudo pacman -S reflector
-sudo reflector -c China -n 5 --save /etc/pacman.d/mirrorlist
+sudo reflector -c China -n 5 --sort rate --save /etc/pacman.d/mirrorlist
+# manjaro
+sudo pacman-mirrors -c China
 ```
 
-配置 pacman 彩色输出。
+启用 pacman 彩色输出。
 
 ```sh
 sudo sed -i 's/^#Color/Color/g' /etc/pacman.conf
 ```
 
-### paru
+一些衍生版使用自己的镜像文件来安装，当衍生版镜像过期的时候，用户自己更新系统可能会出现问题。如果打包软件包的密钥过期，就会导致安装失败，这时候可以编辑`/etc/pacman.conf`文件，临时在配置文件前面添加一行全局配置，信任所有包，让更新过程顺利进行。在系统成功更新之后，应当及时删除这行配置。
 
-paru 是一个较新的 AUR 助手，使用 rust 编写。
+```ini
+SigLevel = TrustAll
+```
+
+有时候个别软件源无法访问，可以刷新一下 DNS 缓存。
 
 ```sh
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
+sudo systemd-resolve --flush-caches
+
+sudo resolvectl flush-caches
+```
+
+### sudo 免密码
+
+```sh
+echo "$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL"|sudo tee /etc/sudoers.d/"$(whoami)"
 ```
 
 ### 第三方仓库
 
-除了直接使用 AUR 的软件之外，还可以添加一些知名的第三方仓库，里面的软件通常经过更多的测试，比 AUR 更稳定。
+除了直接使用 AUR 的软件之外，还可以添加一些第三方仓库。
 
 ```sh
 # 添加chaotic-aur的软件源
@@ -143,25 +230,17 @@ sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
 
 之后就可以安装这些仓库里面的软件了。
 
-如果想要更快的速度，还可以安装 powerpill，它会将软件包分片，通过不同的镜像来下载，以实现更快的速度。powerpill 的使用方法和 pacman 类似。
+### paru
+
+paru 是一个使用 rust 编写的 AUR 安装程序，在启用了 chaotic-aur 后可以直接从仓库中安装。
 
 ```sh
-# 安装
-paru powerpill
-# 更新
-sudo pacman -Sy && sudo powerpill -Su && paru -Su
-```
-
-如果遇到了问题，还需要在`/etc/pacman.conf`中配置。
-
-```ini
-[options]
-SigLevel = PackageRequired
+sudo pacman -S paru
 ```
 
 ### 配置区域和语言
 
-因为我主要使用 SSH 连接，所以将系统全局语言设置为中文是没有问题的。但是这样做会导致 tty 界面乱码。遇到此类问题是可以将全局语言设为英文，然后将用户语言设为中文。
+因为我主要使用 SSH 连接，所以将系统全局语言设置为中文是没有问题的。但是这样做会导致 tty 界面乱码。遇到此类问题时可以将全局语言设为英文，然后将用户语言设为中文。
 
 ```sh
 sudo sed -i 's/^# \?zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
@@ -185,38 +264,110 @@ sudo pacman -S intel-ucode
 sudo pacman -S amd-ucode
 ```
 
-### 终端美化
+### grub 配置
 
-参考[zsh 配置](zsh/README.md)。
-
-### 系统美化
-
-如果是图形界面 ArchLinux 的话，默认界面应该很难看，要做的工作也不少。
-
-首先要安装几个常用的字体。
+将 grub 超时时间设置为 1 秒。
 
 ```sh
-sudo pacman -S --needed wqy-bitmapfont wqy-microhei wqy-zenhei \
-  adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts \
-  adobe-source-han-sans-tw-fonts
+sudo nano /etc/default/grub
+
+# 修改这一行
+GRUB_TIMEOUT=1
+```
+
+然后生成新的 grub 配置。
+
+```sh
+sudo update-grub
+# 一些发行版没有这个命令，只能使用原始命令
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ### 安装其他软件
 
-现在安装的还只是一个最小化系统，什么都还没有呢。如果还有其他需求，可以自己写个脚本来安装和配置。这里是个简单的例子。
+如果有其他要安装的软件，别忘了安装。
 
 ```sh
 #! /bin/bash
 
 # 一些语言和类库
-sudo pacman -S --noconfirm --needed jdk-openjdk openjdk-doc openjdk-src gradle groovy scala kotlin maven \
-    python ruby nodejs ghc typescript autopep8 npm python-pip ruby-bundler \
-    dotnet-sdk lua go
+sudo pacman -S --noconfirm --needed jdk-openjdk openjdk-doc \
+  openjdk-src gradle groovy scala kotlin maven \
+  python ruby nodejs ghc typescript autopep8 npm python-pip ruby-bundler \
+  dotnet-sdk lua go
 
 # zsh相关
-sudo pacman -S --noconfirm --needed zsh zsh-doc zshdb grml-zsh-config
+sudo pacman -S --noconfirm --needed zsh \
+  zsh-doc zshdb grml-zsh-config
 
 # 杂项
-sudo pacman -S --noconfirm --needed neofetch cowsay sl man-db shellcheck curl wget vim nano \
-    powerline-vim yadm shfmt thefuck ufw nmap iptables-nft fd fzf ntp exa subversion man bat bottom asciiquarium
+sudo pacman -S --noconfirm --needed neofetch \
+  cowsay sl man-db shellcheck curl wget vim nano \
+  powerline-vim yadm shfmt thefuck ufw nmap \
+  iptables-nft fd fzf ntp exa subversion man bat bottom asciiquarium
+```
+
+## 系统美化
+
+### 启用虚拟机功能
+
+如果在 vmware 虚拟机中安装 arch，那么需要需要安装对应的虚拟机工具才能启用剪贴板复制等高级功能。
+
+```sh
+sudo pacman -S open-vm-tools
+sudo systemctl enable vmtoolsd.service vmware-vmblock-fuse.service
+sudo systemctl start vmtoolsd.service vmware-vmblock-fuse.service
+```
+
+一些衍生版增强了对虚拟机的支持，直接安装即可启用，无需额外配置。
+
+```sh
+# 软件包名可能是open-vm-tools-desktop
+sudo pacman -S open-vm-tools
+```
+
+### 字体美化
+
+首先要安装几个常用的字体。
+
+```sh
+sudo pacman -S --needed adobe-source-han-sans-cn-fonts \
+  adobe-source-han-sans-jp-fonts adobe-source-han-sans-tw-fonts \
+  noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-sarasa-gothic
+```
+
+默认情况下的字体显示一般般，参考 <https://szclsya.me/zh-cn/posts/fonts/linux-config-guide/> 进行字体配置。
+
+```sh
+mkdir -p ~/.config/fontconfig && cd ~/.config/fontconfig
+wget https://raw.githubusercontent.com/szclsya/dotfiles/master/fontconfig/fonts.conf
+```
+
+### shell 美化
+
+推荐使用 dotfiles 方式管理配置文件，以后就可以随时随地同步配置了。
+
+```sh
+yadm clone https://github.com/techstay/dotfiles-public.git
+```
+
+然后选择 zsh 或者 fish 作为默认 shell。
+
+```sh
+chsh -s /usr/bin/fish
+chsh -s /bin/zsh
+```
+
+powerline 主题的一些字符可能不会正常显示，这时候需要安装支持 powerline 的字体。
+
+```sh
+paru -S nerd-fonts-fantasque-sans-mono ttf-meslo-nerd-font-powerlevel10k
+```
+
+默认的终端程序也可能无法正常显示 powerline 字体，可以安装 kitty，能完美显示 powerline 字符。
+
+在配置 kitty 的时候，可以通过以下命令查看 kitty 找到的字体。
+
+```sh
+kitty +list-fonts --psnames
 ```

@@ -12,11 +12,9 @@
 
 - [linux 笔记](linux/README.md)
   - [archlinux 的安装和配置](linux/archlinux.md)
-  - [archlinuxgui](linux/archlinuxgui.md)，面向新手的图形化 archlinux 安装和配置
   - [asciinema linux 终端录屏工具](linux/asciinema.md)
   - [fedora](linux/fedora.md)
   - [fish](linux/fish.md)
-  - [garuda](linux/garuda.md)，一个界面炫酷的 arch 衍生版
   - [gpg 隐私工具](linux/gpg.md)
   - [nala](linux/nala.md)，高颜值的 apt 替代
   - [ubuntu 22.04 安装笔记](linux/ubuntu.md)
