@@ -3,6 +3,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
