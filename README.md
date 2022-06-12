@@ -48,6 +48,7 @@
   - [Windows Terminal](windows/WindowsTerminal.md)，Windows 的官方终端
   - [wsl](windows/wsl.md)
 - [疑难杂症](troubleshooting/README.md)
+  - [github](troubleshooting/github.md)
   - [tightvnc](troubleshooting/tightvnc.md)
   - [windows](troubleshooting/windows.md)
 - [日语笔记](japanese/README.md)
