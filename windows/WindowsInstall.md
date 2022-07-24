@@ -134,26 +134,31 @@ winget install Audacity.Audacity
 scoop install snipaste screentogif ffmpeg busybox vim yt-dlp imageglass exiftool
 ```
 
-其他软件安装:
+应用类软件安装：
 
 - [火绒杀毒软件](https://www.huorong.cn/person5.html)
 - [搜狗输入法](https://pinyin.sogou.com/)
 - [360 压缩国际版](https://www.360totalsecurity.com/zh-cn/360zip/)
 - [qq](https://im.qq.com/pcqq)
 - [微信](https://pc.weixin.qq.com)
-- [gitkraken](https://www.gitkraken.com/download/windows64)
-- [jetbrains tool app](https://www.jetbrains.com/toolbox-app/)
-- [sandboxie plus](https://github.com/sandboxie-plus/Sandboxie/releases)
-- [其他软件资源](../software-resources/README.md)
 - [potplayer](https://potplayer.daum.net)
-- [视频解码器](https://codecguide.com/klcp_beta.htm)
-- [AMD Ryzen Master](https://www.amd.com/zh-hans/technologies/ryzen-master)
-- [yamaha usb driver](https://usa.yamaha.com/support/updates/yamaha_steinberg_usb_driver_for_win.html)
 - [夜神模拟器](https://www.yeshen.com)
-- [英伟达 Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
 - [有道词典](http://cidian.youdao.com/index.html)
-- [vscode](https://code.visualstudio.com)
-- [tightvnc](https://www.tightvnc.com/download.php)
 - [全民 K 歌](https://kg.qq.com/index-pc.html)
 - [qq 音乐](https://y.qq.com)
 - [网易云音乐](https://music.163.com/#/download)
+
+工具类软件安装：
+
+- [TrafficMonitor](https://gitee.com/zhongyang219/TrafficMonitor/releases)
+- [gitkraken](https://www.gitkraken.com/download/windows64)
+- [tightvnc](https://www.tightvnc.com/download.php)
+- [vscode](https://code.visualstudio.com)
+- [英伟达 Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
+- [yamaha usb driver](https://usa.yamaha.com/support/updates/yamaha_steinberg_usb_driver_for_win.html)
+- [视频解码器](https://codecguide.com/klcp_beta.htm)
+- [AMD Ryzen Master](https://www.amd.com/zh-hans/technologies/ryzen-master)
+- [sandboxie plus](https://github.com/sandboxie-plus/Sandboxie/releases)
+- [jetbrains tool app](https://www.jetbrains.com/toolbox-app/)
+
+[其他软件资源](../software-resources/README.md)
