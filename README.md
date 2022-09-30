@@ -35,6 +35,7 @@
   - [sublime merge](software-resources/sublime-merge.md)
   - [Visual Studio IDE](software-resources/visual-studio.md)
   - [vmware workstation](software-resources/vmware-workstation.md)
+- [视频制作](videomaking/README.md)
 - [windows 笔记](windows/README.md)
   - [开启移动热点](windows/hotspot.md)
   - [windows 系统引导修复](windows/BootRepair.md)

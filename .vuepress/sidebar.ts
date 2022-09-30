@@ -53,5 +53,8 @@ export const sidebar: SidebarConfig = {
     '/windows/WindowsTerminal.md',
     '/windows/WindowsTerminalExperience.md',
     '/windows/wsl.md',
+  ],
+  '/videomaking': [
+    '/videomaking/README.md',
   ]
 }
