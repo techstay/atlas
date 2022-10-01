@@ -4,4 +4,5 @@
 
 - [github](github.md)
 - [tightvnc](tightvnc.md)
+- [steam](steam.md)
 - [windows](windows.md)

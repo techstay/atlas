@@ -51,6 +51,7 @@
 - [疑难杂症](troubleshooting/README.md)
   - [github](troubleshooting/github.md)
   - [tightvnc](troubleshooting/tightvnc.md)
+  - [steam](troubleshooting/steam.md)
   - [windows](troubleshooting/windows.md)
 - [日语笔记](japanese/README.md)
 
