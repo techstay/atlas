@@ -7,7 +7,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-在线访问 <https://studynote.techstay.life>。
+在线访问 <https://studynotes.techstay.life>。
 
 ## 介绍
 
