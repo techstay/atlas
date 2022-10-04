@@ -21,19 +21,6 @@
 - [疑难杂症](troubleshooting/README.md)
 - [日语笔记](japanese/README.md)
 
-### 项目备份
-
-项目除了在 [github](https://github.com/techstay/studyNotes) 上以外，还设置了另外两个推送地址以备份。
-
-- 极狐 gitlab <https://jihulab.com/techstay/studyNotes>
-- gitlab <https://gitlab.com/techstay/studyNotes>
-
-```sh
-git remote set-url --add origin --push git@jihulab.com:techstay/studyNotes.git
-git remote set-url --add origin --push git@gitlab.com:techstay/studyNotes.git
-git remote set-url --add origin --push git@github.com:techstay/studyNotes.git
-```
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
