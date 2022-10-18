@@ -5,8 +5,8 @@ import { plugins } from './plugins'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: '我的学习笔记仓库',
-  description: '我的代码和笔记',
+  title: '碎碎念的学习笔记',
+  description: '我的代码和笔记仓库',
   theme: defaultTheme({
     navbar: navbar,
     sidebar: sidebar,

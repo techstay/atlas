@@ -1,4 +1,4 @@
-# 我的学习笔记仓库
+# 碎碎念的学习笔记
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 

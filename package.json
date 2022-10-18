@@ -1,7 +1,7 @@
 {
   "name": "study-notes",
   "version": "1.0.0",
-  "description": "我的学习笔记仓库",
+  "description": "碎碎念的学习笔记",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev",
