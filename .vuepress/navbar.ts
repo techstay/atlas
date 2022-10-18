@@ -5,6 +5,7 @@ export const navbar: NavbarConfig = [
   '/misc/README.md',
   '/software-resources/README.md',
   '/windows/README.md',
+  '/network/README.md',
   '/videomaking/README.md',
   '/troubleshooting/README.md',
   '/japanese/README.md',

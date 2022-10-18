@@ -1,0 +1,42 @@
+# adguardhome
+
+一个开源免费、功能强大的 DNS 服务器。
+
+## 安装
+
+我在树莓派上试着安装了一下，顺便做个记录。
+
+使用 docker 方式安装最简单，首先需要安装好 docker，然后在拉取最新 adguardhome 镜像。
+
+```sh
+sudo apt install docker.io
+docker pull adguard/adguardhome
+```
+
+然后启动 adgardhome，因为 docker 是容器，所以要用`--network host`参数直接使用宿主的网络，而不是容器的网络。
+
+```sh
+docker run --name adguardhome \
+  --restart unless-stopped \
+  -v /my/own/workdir:/opt/adguardhome/work \
+  -v /my/own/confdir:/opt/adguardhome/conf \
+  --network host -d adguard/adguardhome
+```
+
+启动后查看一下 adguardhome 的状态。
+
+```sh
+docker ps
+```
+
+这时候还没完，如果查看日志的话，会发现提示需要通过 3000 端口号配置。所以通过浏览器访问<http://raspberrypi:3000>，进行初步的配置。配置完毕后，80 端口号就会开放，这时候就能通过 web 界面访问 adguardhome 的各项功能了。
+
+## 配置
+
+需要什么的话，直接在 web 界面里配置就行了。因为我是局域网使用，所以不需要启用加密，只需要指定上游的 DNS 服务器即可。这里 <https://dnsprivacy.org/public_resolvers/> 有常用的一些公共 DNS 服务器地址，可供使用。
+
+然后我还在 V 站上看到了一个老哥分享的私人 DNS 服务，对国内地址做了分流。出于对互联网精神的朴素信任态度，我准备在这里使用一波。因为是私人服务，所以可能不太稳定，不过到时候在注意一下吧。地址在这里 <https://www.dnsovertor.tk>，可以全部添加，提高稳定性。
+
+## 使用
+
+配置好了就可以开始使用，用起来很简单，在你的设备上指定 adguardhome 服务作为 DNS 服务器即可。这里我在小米路由器里面设置，需要静态 IP，所以要提前在 DHCP 设置中绑定 MAC 地址。过一段时间再看，应该就可以在 adguardhome 中看到统计数据了。
