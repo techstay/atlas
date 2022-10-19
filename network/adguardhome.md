@@ -33,10 +33,17 @@ docker ps
 
 ## 配置
 
-需要什么的话，直接在 web 界面里配置就行了。因为我是局域网使用，所以不需要启用加密，只需要指定上游的 DNS 服务器即可。这里 <https://dnsprivacy.org/public_resolvers/> 有常用的一些公共 DNS 服务器地址，可供使用。
+需要什么的话，直接在 web 界面里配置就行了。因为我是局域网使用，所以不需要启用加密，只需要指定上游的 DNS 服务器即可。这里列出一些常用的 DNS 公共服务器。
 
-然后我还在 V 站上看到了一个老哥分享的私人 DNS 服务，对国内地址做了分流。出于对互联网精神的朴素信任态度，我准备在这里使用一波。因为是私人服务，所以可能不太稳定，不过到时候在注意一下吧。地址在这里 <https://www.dnsovertor.tk>，可以全部添加，提高稳定性。
+- <https://dnsprivacy.org/public_resolvers/> 几个常用的 DNS 加密服务器
+- <https://www.dnsovertor.tk> V 站老哥分享的一个基于 Tor 网络的隐私保护 DNS 服务器
+- <https://github.com/dnscrypt/dnscrypt-resolvers> 另一些常用的 DNS 服务器
+- <https://iqdns.xyz/all.html> iqdns
+
+然后我还在 V 站上看到了一个老哥分享的私人 DNS 服务，对国内地址做了分流。出于对互联网精神的朴素信任态度，我准备在这里使用一波。因为是私人服务，所以可能不太稳定，不过到时候在注意一下吧。地址在这里 ，可以全部添加，提高稳定性。
 
 ## 使用
 
 配置好了就可以开始使用，用起来很简单，在你的设备上指定 adguardhome 服务作为 DNS 服务器即可。这里我在小米路由器里面设置，需要静态 IP，所以要提前在 DHCP 设置中绑定 MAC 地址。过一段时间再看，应该就可以在 adguardhome 中看到统计数据了。
+
+如果只是想在本地电脑上使用的话，可以改用<https://github.com/mili-tan/AuroraDNS.GUI>这个项目。
