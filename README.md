@@ -7,8 +7,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-在线访问 <https://studynotes.techstay.life>。
-
 ## 介绍
 
 我的学习笔记仓库，记录了学习各种知识和技能的笔记和代码。这是一个 vuepress 项目，可以直接在线访问，具体内容可以按类别查看。代码类内容需要把仓库克隆到本地，然后配置好环境来运行。
