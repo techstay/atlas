@@ -45,3 +45,13 @@ OBS 是一个开源免费的视频推流软件，同时也支持录像功能。�
 - [Arctime Pro](https://arctime.org/download.html)，字幕打轴软件
 
 如果经常需要给视频配音，使用语音识别还是最方便的一种。利用 pyTranscriber 可以比较轻松的创建字幕文件，并添加到已有的视频工程中去。
+
+## 素材
+
+视频素材。
+
+- <https://www.vidsplay.com>
+- <https://coverr.co>
+- <https://mixkit.co/free-stock-video>
+- <https://www.videvo.net>
+- <https://www.pexels.com>

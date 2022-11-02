@@ -61,5 +61,6 @@ export const sidebar: SidebarConfig = {
   ],
   '/videomaking': [
     '/videomaking/README.md',
+    '/videomaking/DaVinci.md',
   ]
 }
