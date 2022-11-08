@@ -78,7 +78,11 @@ gpg -a --export lovery521@gmail.com|Set-Clipboard
 
 git bash 输入命令时可能会出现终端屏幕闪烁的问题，可以通过编辑`~/.inputrc`文件，并添加`set bell-style none`的方式来解决。
 
-## cheatsheet
+### 删除子模块
+
+使用 hugo 的时候经常要精挑细选主题，这样需要频繁创建和删除子模块。删除子模块的方法参考这条[gist](https://gist.github.com/myusuf3/7f645819ded92bda6677)。需要经常删除的话，还可以创建一个[脚本文件](https://github.com/panozzaj/conf/blob/master/common/bin/git-submodule-remove)来自动化这一过程，将其放到 PATH 中，下次执行 git 命令的时候即可使用`git submodule-remove path/to/submodule`删除子模块。
+
+## 速查表
 
 git 操作比较复杂，这里将一些常用的命令列举出来，方便查阅。
 
