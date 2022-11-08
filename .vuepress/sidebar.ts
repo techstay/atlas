@@ -25,6 +25,7 @@ export const sidebar: SidebarConfig = {
     '/misc/ventoy.md',
     '/misc/vscode',
     '/misc/mi5-flash-rom.md',
+    '/misc/choose-license.md',
   ],
   '/software-resources': [
     '/software-resources/README.md',
