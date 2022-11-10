@@ -1,12 +1,12 @@
-import type { NavbarConfig } from '@vuepress/theme-default'
+import type { HopeThemeNavbarConfig } from "vuepress-theme-hope";
 
-export const navbar: NavbarConfig = [
-  '/linux/README.md',
-  '/misc/README.md',
-  '/software-resources/README.md',
-  '/windows/README.md',
-  '/network/README.md',
-  '/videomaking/README.md',
-  '/troubleshooting/README.md',
-  '/japanese/README.md',
+export const navbar: HopeThemeNavbarConfig = [
+  '/windows/',
+  '/linux/',
+  '/network/',
+  '/misc/',
+  '/software-resources/',
+  '/videomaking/',
+  '/troubleshooting/',
+  '/japanese/',
 ]

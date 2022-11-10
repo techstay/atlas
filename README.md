@@ -3,21 +3,14 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-[![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
 ## 介绍
 
 我的学习笔记仓库，记录了学习各种知识和技能的笔记和代码。这是一个 vuepress 项目，可以直接在线访问，具体内容可以按类别查看。代码类内容需要把仓库克隆到本地，然后配置好环境来运行。
-
-- [linux 笔记](linux/README.md)
-- [杂项 misc 笔记](misc/README.md)
-- [软件资源](software-resources/README.md)
-- [视频制作](videomaking/README.md)
-- [windows 笔记](windows/README.md)
-- [疑难杂症](troubleshooting/README.md)
-- [日语笔记](japanese/README.md)
 
 ## Contributors ✨
 
