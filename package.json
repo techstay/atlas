@@ -4,6 +4,7 @@
   "description": "落了一地碎碎念的学习笔记",
   "main": "index.js",
   "scripts": {
+    "clean-dev": "vuepress dev --clean-cache",
     "dev": "vuepress dev",
     "build": "vuepress build"
   },
