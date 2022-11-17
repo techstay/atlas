@@ -13,7 +13,7 @@
 - github.global.ssl.fastly.net
 - raw.githubusercontent.com
 
-然后打开 hosts 文件(windows 系统下为`C:\Windows\System32\drivers\etc\hosts`)，添加以下几行 hosts。
+然后打开 hosts 文件 (windows 系统下为`C:\Windows\System32\drivers\etc\hosts`)，添加以下几行 hosts。
 
 ```txt
 140.82.114.3    github.com
