@@ -2,6 +2,8 @@
 
 markdown 是一种方便编写和阅读的格式，关注内容而不是排版格式。
 
+- <https://markdown.com.cn>
+- <https://keatonlao.gitee.io/a-study-note-for-markdown/>
 - [markdown 练习](https://www.markdowntutorial.com/zh-cn/)
 - [公众号排版工具](https://markdown.com.cn/editor/)
 
@@ -55,7 +57,7 @@ markdown 是一种方便编写和阅读的格式，关注内容而不是排版�
 
 使用一个星号或者下划线*倾斜字体*。
 
-使用三个星号或者下划线同时**_加粗和倾斜字体_**。
+使用三个星号或者下划线同时***加粗和倾斜字体***。
 
 使用两个波浪号`~`充当删除线，~~当我没说~~。
 
