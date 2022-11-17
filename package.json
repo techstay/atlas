@@ -1,7 +1,7 @@
 {
   "name": "study-notes",
   "version": "1.0.0",
-  "description": "落了一地碎碎念的学习笔记",
+  "description": "落落的学习笔记",
   "main": "index.js",
   "scripts": {
     "clean-dev": "vuepress dev --clean-cache",

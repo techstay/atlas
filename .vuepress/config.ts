@@ -10,7 +10,7 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "落了一地碎碎念的学习笔记",
+      title: "落落的学习笔记",
       description: "我的代码和笔记仓库",
     },
   },

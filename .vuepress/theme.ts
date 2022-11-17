@@ -28,7 +28,7 @@ export default hopeTheme({
       // sidebar
       sidebar: sidebar,
 
-      footer: "落了一地碎碎念的学习笔记",
+      footer: "落落的学习笔记",
       displayFooter: true,
 
       metaLocales: {

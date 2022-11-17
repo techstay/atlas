@@ -1,4 +1,4 @@
-# 碎碎念的学习笔记
+# 落落的学习笔记
 
 [![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
