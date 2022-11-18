@@ -5,7 +5,7 @@ export const navbar: HopeThemeNavbarConfig = [
   '/linux/',
   '/network/',
   '/misc/',
-  '/software-resources/',
+  '/software/',
   '/videomaking/',
   '/troubleshooting/',
   '/japanese/',

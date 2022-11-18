@@ -8,7 +8,7 @@ windows 下载文件，解压，然后使用破解版文件覆盖原程序即可
 
 - 下载地址 <https://downloaddevtools.com/en/product/2276/free-download-sublime-merge>
 - 解压密码`DownloadDevTools.ir`
-- 使用随便一个许可证(例如下面的)即可激活。
+- 使用随便一个许可证 (例如下面的) 即可激活。
 
 ```txt
 ----- BEGIN LICENSE -----

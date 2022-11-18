@@ -41,6 +41,6 @@ keepassxc 相较于原版 keepass 的一大优点就是自带了 TOTP、浏览�
 
 ### TOTP
 
-TOTP 全称是基于时间的一次性密码(Time-based One Time Passwords)，常用来作为双重验证使用。在你的账户上启用双重验证之后，一般会要求你扫描二维码或者复制密钥，记住这个密钥。
+TOTP 全称是基于时间的一次性密码 (Time-based One Time Passwords)，常用来作为双重验证使用。在你的账户上启用双重验证之后，一般会要求你扫描二维码或者复制密钥，记住这个密钥。
 
 然后在 keepassxc 的账号设置中右击选择 TOTP 并添加密钥，如此一来，就完成了 TOTP 的设置。需要使用时可以从 keepass 直接复制 TOTP 密码，也可以将其应用在自动填充功能里面，代码是`{TOTP}`。

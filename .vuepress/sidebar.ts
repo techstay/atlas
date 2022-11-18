@@ -5,7 +5,7 @@ export const sidebar: HopeThemeSidebarConfig = {
   "/linux/": "structure",
   "/network/": "structure",
   "/misc/": "structure",
-  "/software-resources/": "structure",
+  "/software/": "structure",
   "/videomaking/": "structure",
   "/troubleshooting/": "structure",
   "/japanese/": "structure",

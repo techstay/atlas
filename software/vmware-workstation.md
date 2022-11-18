@@ -8,7 +8,7 @@
 
 重装系统之后为了用安卓模拟器我只好禁用了 WSL 功能，但是后台运行一个虚拟机 linux 还是很有用的，所以这里让 vmware 开机自动启动虚拟机，达成类似的目的。
 
-办法很简单，先创建一个批处理文件(后缀名`.bat`)，然后通过 vmware 安装目录里面的`vmrun`工具来后台启动虚拟机。命令格式如下：
+办法很简单，先创建一个批处理文件 (后缀名`.bat`)，然后通过 vmware 安装目录里面的`vmrun`工具来后台启动虚拟机。命令格式如下：
 
 ```cmd
 "C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe" -T ws start "C:\Users\techstay\Documents\Virtual Machines\Arch\Arch.vmx" nogui
