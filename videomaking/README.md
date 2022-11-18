@@ -19,7 +19,7 @@ icon: actions
 
 这是 Windows 系统自带的游戏捕获工具，可以用来录制游戏视频。使用 Windows 徽标键+G 打开 Xbox 游戏栏，点击录制按钮即可开始录制，或者也可以直接使用 Win+Alt+R 开始录制。
 
-默认录制的视频是 30 帧，如果需要录制 60 帧视频，在[设置](ms-settings:gaming-gamedvr)(Windows 设置->游戏->摄像)中将录制帧数调整为 60 帧。
+默认录制的视频是 30 帧，如果需要录制 60 帧视频，在[设置](ms-settings:gaming-gamedvr)(Windows 设置->游戏->摄像) 中将录制帧数调整为 60 帧。
 
 ### OBS
 
@@ -29,9 +29,9 @@ OBS 是一个开源免费的视频推流软件，同时也支持录像功能。�
 
 编码器设置这里就得看机器的配置和要录制的内容了。如果希望画质更高一些的话，那么就要调高一些参数，但是过高的参数不仅视频文件会很大，而且也会影响性能，特别是录制游戏的时候。
 
-作为参考，如果要录制的视频不需要太高质量，可以选择 CBR，并设置 6000-30000Kbps 范围的比特率。如果想要更好的质量，可以选用 CQP，并设置合适的 CQ 级别(数值越小视频质量越好)，但是这样的话，视频的比特率就比较大，在录制游戏的时候可能达到 70000Kbps 左右的比特率。显卡不好的话也会影响到录制效果，这就需要根据自己的配置灵活选择了。
+作为参考，如果要录制的视频不需要太高质量，可以选择 CBR，并设置 6000-30000Kbps 范围的比特率。如果想要更好的质量，可以选用 CQP，并设置合适的 CQ 级别 (数值越小视频质量越好)，但是这样的话，视频的比特率就比较大，在录制游戏的时候可能达到 70000Kbps 左右的比特率。显卡不好的话也会影响到录制效果，这就需要根据自己的配置灵活选择了。
 
-![OBS录屏设置](./img/OBS录像设置.png)
+![OBS 录屏设置](./img/OBS录像设置.png)
 
 ### Nvidia GeForce Experience
 
@@ -52,10 +52,23 @@ OBS 是一个开源免费的视频推流软件，同时也支持录像功能。�
 
 ## 素材
 
-视频素材。
+### 视频素材
 
 - <https://www.vidsplay.com>
 - <https://coverr.co>
 - <https://mixkit.co/free-stock-video>
 - <https://www.videvo.net>
 - <https://www.pexels.com>
+
+### 音频素材
+
+- <https://www.tosound.com>
+- <https://www.freesound.cn>
+- <https://open.sampld.app>
+- <http://tools.liumingye.cn>
+- <https://musopen.org>
+- <https://freepd.com>
+
+### 图片素材
+
+- <https://unsplash.com/>
