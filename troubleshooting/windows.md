@@ -43,3 +43,8 @@ Disable-MMAgent -MemoryCompression
 ```
 
 当然，由于 win11 卡顿方面反馈的确实比较多，或许只是系统优化问题，只能等待微软慢慢修复解决了。
+
+参考链接：
+
+- <https://www.v2ex.com/t/818084>
+- <https://www.xitongtang.com/class/win11/32546.html>
