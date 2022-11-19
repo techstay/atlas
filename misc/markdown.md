@@ -2,6 +2,8 @@
 
 markdown 是一种方便编写和阅读的格式，关注内容而不是排版格式。
 
+## 文档和教程
+
 - <https://markdown.com.cn>
 - <https://keatonlao.gitee.io/a-study-note-for-markdown/>
 - [markdown 练习](https://www.markdowntutorial.com/zh-cn/)
@@ -9,7 +11,7 @@ markdown 是一种方便编写和阅读的格式，关注内容而不是排版�
 
 ## vscode 配置
 
-安装 prettier 和[markdown preview enhance](https://markdown.com.cn/editor/)扩展。然后添加下面的 vscode 配置。
+安装 prettier 和[markdown preview enhance](https://shd101wyy.github.io/markdown-preview-enhanced/)扩展。然后将 prettier 设置为 markdown 文件的默认格式化工具，足以应对大多数情况。
 
 ```json
 {
@@ -20,6 +22,8 @@ markdown 是一种方便编写和阅读的格式，关注内容而不是排版�
   "markdown-preview-enhanced.enableTypographer": true
 }
 ```
+
+如果有强迫症，还可以安装`AutoCorrect`和`Markdown All in One`和`markdownlint`扩展，并将`markdownlint`设置为默认 markdown 格式化程序，然后按保存快捷键，这样应该会触发`AutoCorrect`格式化中文段落，然后格式化文件，效果会更好一些。
 
 ---
 
