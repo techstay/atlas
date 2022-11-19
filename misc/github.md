@@ -1,6 +1,28 @@
-# github 官方命令行
+# github
 
-## 开始使用
+记录 Github 相关的笔记。
+
+## SSH 登录
+
+新建 SSH 密钥。
+
+```sh
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+查看公钥内容。
+
+```sh
+cat ~\.ssh\id_ed25519.pub
+```
+
+将其复制到 Github 网站上的公钥处。然后应该就可以通过 SSH 来访问 GitHub 了。
+
+```sh
+ssh -T git@github.com
+```
+
+## 命令行
 
 ### 安装
 
@@ -27,6 +49,14 @@ gh completion -s fish > ~/.config/fish/completions/gh.fish
 gh auth login
 ```
 
-## 查阅命令
+### 查阅命令
 
 直接在官方文档上查阅即可 <https://cli.github.com/manual/>。
+
+## 徽章
+
+- Snyk
+- CodeCov
+- LGTM
+- Codeclimate
+- Foresight
