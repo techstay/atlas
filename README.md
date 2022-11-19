@@ -1,5 +1,6 @@
 # 落落的学习笔记
 
+![last commit](https://img.shields.io/github/last-commit/techstay/studyNotes)
 [![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
 ## 介绍
