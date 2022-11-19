@@ -28,7 +28,7 @@ bucket 是 scoop 的软件类别仓库，可以由`scoop bucket known`查看。�
 
 ```sh
 # bucket依赖git，所以需要先安装git
-scoop install git
+scoop install git-with-openssh
 
 scoop bucket add extras
 scoop bucket add nerd-fonts

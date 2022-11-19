@@ -2,8 +2,8 @@
 
 ## 安装
 
-- 可以通过[应用商店](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)安装
-- 也可以通过 winget 包管理器安装`winget install Microsoft.WindowsTerminal`
+- [应用商店](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)安装
+- winget 包管理器安装`winget install Microsoft.WindowsTerminal`
 
 ## 配置
 
