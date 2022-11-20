@@ -24,6 +24,22 @@ netsh int ipv4 set dynamic tcp start=40000 num=10000
 Set-NetTCPSetting -DynamicPortRangeStartPort 40000 -DynamicPortRangeNumberOfPorts 10000
 ```
 
+### 自带图片查看器颜色发黄
+
+这个问题网络上也有很多方案，不过大多已经过期，无法参考。这里记录一下我的解决方案，win11 可用。
+
+这是颜色配置文件的问题。点击*设置->系统->屏幕*，这里默认情况下使用的应该是显示器的颜色配置文件。
+
+[![zMSFG4.md.png](https://s1.ax1x.com/2022/11/20/zMSFG4.md.png)](https://imgse.com/i/zMSFG4)
+
+这时候可以修改为系统默认的颜色配置文件。方法很简单，在设置左边的搜索框内搜索*校准显示器*，然后打开校准显示器窗口，一路下一步，最后点击完成。
+
+[![zMSao8.png](https://s1.ax1x.com/2022/11/20/zMSao8.png)](https://imgse.com/i/zMSao8)
+
+这时候返回刚才的界面，应该已经多了一个颜色配置文件，选择它。这时候 windows 自带的照片查看器应该就没有显示发黄的问题了。
+
+[![zMSyyn.png](https://s1.ax1x.com/2022/11/20/zMSyyn.png)](https://imgse.com/i/zMSyyn)
+
 ### win11 卡顿问题
 
 这个问题比较复杂，也是很多人都遇到过的一个问题，目前我也在寻找解决方案。
