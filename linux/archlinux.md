@@ -23,13 +23,57 @@ gpg --keyserver-options auto-key-retrieve --verify archlinux.iso.sig
 
 archwiki 有官方安装指导，可以一步一步跟着安装，实际操作起来也不难。不过现在有了更简单的安装方式，那就是使用 archinstall 安装脚本，这是 Python 写成的库，专门用来管理 archlinux 的安装。启动安装镜像，直接执行`archinstall`，然后按照提示选择即可。现在 archinstall 采用菜单式操作，更加容易安装了。
 
+使用`archinstall`安装之前，最好先优化一下镜像源，加快下载速度。
+
+```sh
+sudo reflector -c China -n 5 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+第一次创建虚拟磁盘的话，还需要先初始化磁盘，建立分区表，不然会导致脚本运行失败。
+
+```sh
+parted
+mklabel gpt
+quit
+```
+
+安装完毕之后，需要进入`chroot`环境继续配置一下 SSH，方便后续登录。
+
+```sh
+pacman -S openssh avahi nss-mdns --needed --confirm
+systemctl enable sshd
+```
+
+这样以后就可以使用 IP 地址 SSH 客户机了，想要用主机名来连接客户机的话，还需要安装 avahi。
+
+```sh
+pacman -S avahi nss-mdns --needed --confirm
+systemctl enable avahi-daemon.service
+```
+
+编辑`/etc/hosts`文件，添加以下几行。
+
+```sh
+127.0.0.1   localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
+127.0.1.1   archlinux.localdomain archlinux
+```
+
+然后编辑`/etc/nsswitch.conf`文件，找到*hosts*一行，修改为类似下图的样子。以后就可以用`ssh techstay@archlinux.local`命令来连接虚拟机了
+
+```conf
+hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+```
+
 ## Arch 衍生版
+
+这些衍生版大多有图形化界面，安装方便。
 
 ### ArchLinuxGUI
 
 这个项目简称[ALG](https://archlinuxgui.in)，是向那些不喜欢命令行界面安装的用户提供的图形化界面安装方式，拥有 Plasma、Gnome、Xfce、窗口管理器等多种风味，可以满足不同用户的需求。
-
-安装这个版本和其他那些拥有图形界面的版本类似，按照提示进行就可以，这里不再做更多介绍。
 
 ### archcraft
 
@@ -62,7 +106,7 @@ ArchLinux 作为一个定制性极强的系统，系统的大部分配置都可�
 
 ### 无界面 arch 配置
 
-这里假设从 archinstall 安装的系统还没有创建自定义用户，直接通过 root 用户登录操作。
+这里假设从 archinstall 最小化安装的系统还没有创建自定义用户，直接通过 root 用户登录操作。
 
 创建用户。
 
@@ -70,13 +114,6 @@ ArchLinux 作为一个定制性极强的系统，系统的大部分配置都可�
 newuser=techstay
 useradd $newuser -m -G wheel -s /bin/zsh
 passwd $newuser
-```
-
-然后启用用户的免密码 sudo 权限，方便后面执行命令。
-
-```sh
-newuser=techstay
-echo "$newuser ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee "/etc/sudoers.d/$newuser"
 ```
 
 后面的配置比较通用，不同的 arch 衍生版也可以作为参考。
@@ -117,30 +154,11 @@ EOF
 
 重新登录以后就可以用这两个函数开关代理了。
 
-#### fish
-
-fish 有自己的自动加载目录，需要将两个函数创建到对应的目录中，文件名也要匹配。
+### sudo 免密码
 
 ```sh
-# ~/.config/fish/functions/setproxy.fish
-function setproxy
-    set proxy_host THISPC
-    set proxy_port 7890
-    set -gx all_proxy "http://$proxy_host:$proxy_port"
-    set -gx http_proxy "http://$proxy_host:$proxy_port"
-    set -gx https_proxy "http://$proxy_host:$proxy_port"
-    set -gx NO_PROXY 'localhost,::1,.example.com'
-end
-
-# ~/.config/fish/functions/unsetproxy.fish
-function unsetproxy
-    set -gx all_proxy ''
-    set -gx http_proxy ''
-    set -gx https_proxy ''
-end
+echo "$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL"|sudo tee /etc/sudoers.d/"$(whoami)"
 ```
-
-设置好代理之后，下面的克隆工作就会比较方便的运行了。
 
 ### 必备包
 
@@ -148,7 +166,7 @@ end
 
 ```sh
 sudo pacman -S --needed openssh zsh git yadm fish starship reflector \
-  inetutils \
+  inetutils bind-tools\
   exa base-devel ntp iptables-nft wget curl nano vim grml-zsh-config
 ```
 
@@ -185,24 +203,25 @@ sudo pacman-mirrors -c China
 sudo sed -i 's/^#Color/Color/g' /etc/pacman.conf
 ```
 
-一些衍生版使用自己的镜像文件来安装，当衍生版镜像过期的时候，用户自己更新系统可能会出现问题。如果打包软件包的密钥过期，就会导致安装失败，这时候可以编辑`/etc/pacman.conf`文件，临时在配置文件前面添加一行全局配置，信任所有包，让更新过程顺利进行。在系统成功更新之后，应当及时删除这行配置。
+一些衍生版使用自己的镜像文件来安装，当衍生版镜像过期的时候，用户自己更新系统可能会出现问题。如果打包软件包的密钥过期，就会导致安装失败，这时候需要刷新密钥状态，这个过程根据网络状况可能很漫长。
 
-```ini
-SigLevel = TrustAll
+```sh
+sudo pacman-key --refresh-keys
 ```
 
-有时候个别软件源无法访问，可以刷新一下 DNS 缓存。
+刷新完后，重新加载密钥。
+
+```sh
+sudo pacman-key --init
+sudo pacman-key --populate
+```
+
+有时候个别软件源无法访问，可以刷新一下 DNS 缓存(两条命令选一执行)。
 
 ```sh
 sudo systemd-resolve --flush-caches
 
 sudo resolvectl flush-caches
-```
-
-### sudo 免密码
-
-```sh
-echo "$(whoami) ALL=(ALL:ALL) NOPASSWD: ALL"|sudo tee /etc/sudoers.d/"$(whoami)"
 ```
 
 ### 第三方仓库
@@ -228,11 +247,11 @@ EOL
 sudo pacman -Sy && sudo pacman -S archlinuxcn-keyring
 ```
 
-之后就可以安装这些仓库里面的软件了。
+之后就可以安装这些仓库里面的软件了。chaotic 源在国外，网速比较慢，可以考虑只添加 archlinuxcn 源。
 
 ### paru
 
-paru 是一个使用 rust 编写的 AUR 安装程序，在启用了 chaotic-aur 后可以直接从仓库中安装。
+paru 是一个使用 rust 编写的 AUR 安装程序，在启用了第三方源后可以直接从仓库中安装。
 
 ```sh
 sudo pacman -S paru
@@ -247,8 +266,8 @@ sudo sed -i 's/^# \?zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
 sudo locale-gen
 
 sudo localectl set-locale LANG=zh_CN.UTF-8
-echo 'LANG=zh_CN.UTF-8' | sudo tee /etc/locale.conf
-echo 'LANG=zh_CN.UTF-8' | tee ~/.config/locale.conf
+echo 'LANG=zh_CN.UTF-8' | sudo tee /etc/locale.conf # 系统配置
+echo 'LANG=zh_CN.UTF-8' | tee ~/.config/locale.conf # 用户配置
 
 sudo timedatectl set-timezone Asia/Shanghai
 sudo timedatectl set-ntp 1
@@ -264,7 +283,7 @@ sudo pacman -S intel-ucode
 sudo pacman -S amd-ucode
 ```
 
-### grub 配置
+### bootloader 配置
 
 将 grub 超时时间设置为 1 秒。
 
@@ -281,6 +300,12 @@ GRUB_TIMEOUT=1
 sudo update-grub
 # 一些发行版没有这个命令，只能使用原始命令
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+使用 systemd-boot 的话，编辑`/boot/loader/loader.conf`。
+
+```sh
+timeout 1
 ```
 
 ### 安装其他软件
@@ -354,8 +379,7 @@ yadm clone https://github.com/techstay/dotfiles-public.git
 然后选择 zsh 或者 fish 作为默认 shell。
 
 ```sh
-chsh -s /usr/bin/fish
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 ```
 
 powerline 主题的一些字符可能不会正常显示，这时候需要安装支持 powerline 的字体。
