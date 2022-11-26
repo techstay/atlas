@@ -44,13 +44,6 @@ pacman -S openssh avahi nss-mdns --needed --confirm
 systemctl enable sshd
 ```
 
-这样以后就可以使用 IP 地址 SSH 客户机了，想要用主机名来连接客户机的话，还需要安装 avahi。
-
-```sh
-pacman -S avahi nss-mdns --needed --confirm
-systemctl enable avahi-daemon.service
-```
-
 编辑`/etc/hosts`文件，添加以下几行。
 
 ```sh
@@ -61,11 +54,7 @@ ff02::2         ip6-allrouters
 127.0.1.1   archlinux.localdomain archlinux
 ```
 
-然后编辑`/etc/nsswitch.conf`文件，找到*hosts*一行，修改为类似下图的样子。以后就可以用`ssh techstay@archlinux.local`命令来连接虚拟机了
-
-```conf
-hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
-```
+之后就可以用`ssh techstay@archlinux.local`的方式来登录了。
 
 ## Arch 衍生版
 
