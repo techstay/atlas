@@ -44,7 +44,7 @@
 
 ### 添加远程 SSH
 
-参考[openssh](../linux/openssh.md)先配置好 ssh，然后添加类似下面这样的配置。
+参考[openssh](openssh.md)先配置好 ssh，然后添加类似下面这样的配置。
 
 ```json
 {
