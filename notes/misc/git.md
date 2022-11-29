@@ -231,3 +231,26 @@ git tag -d <tagname>
 # 删除远程标签
 git push origin --delete <tagname>
 ```
+
+## 疑难杂症
+
+### 用户权限问题
+
+重装系统之后，如果把之前的 git 仓库直接拖到新系统中，会出现用户权限问题。git 要求`.git`隐藏文件夹的权限属于当前用户。
+
+解决办法有两种，第一种是直接信任所有仓库，这种办法可能会存在安全问题，不要再共享目录中开启。
+
+```sh
+git config --global --add safe.directory *
+```
+
+还有一种办法就是修改文件夹的权限。相应的 powershell 命令如下。
+
+```powershell
+# 创建临时文件
+Set-Content $env:TEMP\test656 ''
+# 获取权限并应用于git仓库
+Get-Acl $env:TEMP/test656 | Set-Acl -Path .\studyNotes\.git\ -Passthru
+# 删除临时文件
+Remove-Item $env:TEMP/test656
+```
