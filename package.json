@@ -4,9 +4,9 @@
   "description": "落落的学习笔记",
   "main": "index.js",
   "scripts": {
-    "clean-dev": "vuepress dev notes --clean-cache",
-    "dev": "vuepress dev notes",
-    "build": "vuepress build notes"
+    "clean-dev": "vuepress dev --clean-cache",
+    "dev": "vuepress dev",
+    "build": "vuepress build"
   },
   "keywords": [],
   "author": "techstay",
