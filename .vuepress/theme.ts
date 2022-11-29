@@ -9,6 +9,11 @@ export default hopeTheme({
     name: "techstay",
     url: "https://github.com/techstay",
   },
+  navbarLayout: {
+    left: ["Brand"],
+    center: [],
+    right: ["Links", "Language", "Repo", "Outlook", "Search"],
+  },
 
   iconAssets: "iconfont",
 
