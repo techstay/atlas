@@ -10,4 +10,5 @@ export const sidebar: HopeThemeSidebarConfig =
   "/notes/creativity/": "structure",
   "/notes/troubleshooting/": "structure",
   "/notes/japanese/": "structure",
+  "/tutorial/skill/": "structure",
 }

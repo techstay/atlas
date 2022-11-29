@@ -15,5 +15,9 @@ export const navbar: HopeThemeNavbarConfig = [
       'troubleshooting/',
       'japanese/',
     ]
+  },
+  {
+    text: '实用技术',
+    link: '/tutorial/skill/'
   }
 ]
