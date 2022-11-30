@@ -82,6 +82,14 @@ git bash 输入命令时可能会出现终端屏幕闪烁的问题，可以通�
 
 使用 hugo 的时候经常要精挑细选主题，这样需要频繁创建和删除子模块。删除子模块的方法参考这条[gist](https://gist.github.com/myusuf3/7f645819ded92bda6677)。需要经常删除的话，还可以创建一个[脚本文件](https://github.com/panozzaj/conf/blob/master/common/bin/git-submodule-remove)来自动化这一过程，将其放到 PATH 中，下次执行 git 命令的时候即可使用`git submodule-remove path/to/submodule`删除子模块。
 
+### gitmoji
+
+git 提交中可以使用 emoji 表情让提交记录更直观易读。
+
+- [gitmoji](https://gitmoji.dev)项目，规定了一套可以在 git 提交中使用的表情标准，同时提供在线查看、搜索和复制功能
+- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)，一个可以配置在终端中的命令行工具，可以设置为 git 钩子，在提交中交互添加 gitmoji 表情
+- [gitmoji-vscode](https://github.com/seatonjiang/gitmoji-vscode)，vscode 编辑器的插件，支持 emoji 表情和 emoji 代码两种输出格式
+
 ## 速查表
 
 git 操作比较复杂，这里将一些常用的命令列举出来，方便查阅。
