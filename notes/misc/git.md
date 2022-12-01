@@ -20,8 +20,10 @@ linux 系统直接使用系统的包管理器即可安装。windows 可以自己
 
 以下列举几个个人感觉比较好用的 Git GUI 软件。
 
-- [SourceTree](https://www.sourcetreeapp.com)，中规中矩，因为完全免费所以还是比较不错的
+- [fork](https://git-fork.com)，目前我在用的 Git 客户端，可以无限期免费试用，功能全面，轻巧好用
 - [GitKraken](https://www.gitkraken.com)，对个人和开源仓库免费，私有仓库需购买商业版
+- [SourceTree](https://www.sourcetreeapp.com)，中规中矩，因为完全免费所以还是比较不错的
+- [Github Desktop](https://desktop.github.com)，Github 官方客户端，使用简单，但是没有交互式变基等高级功能
 - [Sublime Merge](https://www.sublimemerge.com)，收费软件，但是可以无限试用
 
 ### git 配置
@@ -33,7 +35,7 @@ git config --global user.name techstay
 git config --global user.email lovery521@gmail.com
 ```
 
-必要的话，还有一些进阶内容可以配置。
+推荐配置，这里是我参考其他博客总结出来的一些配置。
 
 ```sh
 # 默认文本编辑器
@@ -42,6 +44,8 @@ git config --global core.editor vim
 git config --global commit.gpgsign true
 git config --global tag.gpgsign true
 git config --global user.signingkey 3E002217712EBA30A53D485F7CDDF9CBDDF9BF2E
+# 强制签名附注标签
+git config --global tag.forceSignAnnotated true
 # 设置默认主分支
 git config --global init.defaultBranch main
 # 自动转换换行符
@@ -50,12 +54,31 @@ git config --global core.autocrlf true
 git config --global rerere.enabled true
 # 自动递归子模块
 git config --global submodule.recurse true
+# 推送时自动尝试提交子模块的更改
+git config --global push.recurseSubmodules on-demand
 # 拉取代码时使用变基
 git config --global pull.rebase true
 # 自动改正
 git config --global help.autocorrect 30
-# 添加查看历史的简写
+# 一些提高效率的简写
 git config --global alias.l 'log --oneline --decorate --all --graph'
+git config --global alias.co 'checkout'
+git config --global alias.st 'status'
+git config --global alias.d 'diff'
+git config --global alias.ci 'commit -m'
+git config --global alias.rc 'rebase --continue'
+git config --global alias.rs 'rebase --skip'
+git config --global alias.sa 'stash apply'
+git config --global alias.sp 'stash pop'
+git config --global alias.sl 'stash list'
+git config --global alias.ri 'rebase -i'
+git config --global alias.can 'commit --amend --no-edit'
+git config --global alias.br 'branch'
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.supdate 'submodule update --remote --merge'
+# 远程URL的简写
+git config --global url.'git@github.com:'.insteadOf 'gh:'
+git config --global url.'git@github.com:techstay/'.insteadOf 'my:'
 ```
 
 ### github 配置
@@ -80,7 +103,7 @@ git bash 输入命令时可能会出现终端屏幕闪烁的问题，可以通�
 
 ### 删除子模块
 
-使用 hugo 的时候经常要精挑细选主题，这样需要频繁创建和删除子模块。删除子模块的方法参考这条[gist](https://gist.github.com/myusuf3/7f645819ded92bda6677)。需要经常删除的话，还可以创建一个[脚本文件](https://github.com/panozzaj/conf/blob/master/common/bin/git-submodule-remove)来自动化这一过程，将其放到 PATH 中，下次执行 git 命令的时候即可使用`git submodule-remove path/to/submodule`删除子模块。
+使用 hugo 的时候经常要精挑细选主题，这样需要频繁创建和删除子模块。删除子模块的方法参考这条[gist](https://gist.github.com/myusuf3/7f645819ded92bda6677)。简单来说，直接运行`git rm <submodule>`就可以了。
 
 ### gitmoji
 
