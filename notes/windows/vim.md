@@ -1,12 +1,20 @@
-# vim 安装笔记
+# vim
 
-简单记录了一下在 windows 系统下安装 vim 的笔记。
+## 安装
 
 首先需要安装 neovim。
 
 ```powershell
 scoop install neovim
 ```
+
+## 学习资源
+
+- vimtutor，最经典的 vim 学习教程。直接在 linux 终端里运行该命令即可，这会使用 vim 打开`vimtutor`文件，你可以一边阅读一遍熟悉 vim 操作，一般多来几遍就可以掌握最基本的 vim 知识了
+- [Vim 从入门到精通](https://github.com/wsdjeg/vim-galore-zh_cn)，这是一篇 vim 资料，同样讲解了很多 vim 知识，必看
+- [VimGolf](http://www.vimgolf.com)，vim 谜题挑战，包含了众多需要使用 vim 操作解决的问题，通过解决谜题你可以击败对手提升等级
+- [vim-adventures](https://vim-adventures.com)，可以练习 vim 操作的冒险游戏，通过娱乐的方式掌握 vim 操作
+- [space-vim](https://spacevim.org)，一套开箱即用的 vim 插件和配置，能让你迅速获得一个强大的 vim 环境
 
 ## 配置集
 

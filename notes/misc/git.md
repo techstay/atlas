@@ -97,6 +97,8 @@ Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub|Set-Clipboard
 gpg -a --export lovery521@gmail.com|Set-Clipboard
 ```
 
+## 功能
+
 ### 防止闪屏
 
 git bash 输入命令时可能会出现终端屏幕闪烁的问题，可以通过编辑`~/.inputrc`文件，并添加`set bell-style none`的方式来解决。
@@ -112,6 +114,24 @@ git 提交中可以使用 emoji 表情让提交记录更直观易读。
 - [gitmoji](https://gitmoji.dev)项目，规定了一套可以在 git 提交中使用的表情标准，同时提供在线查看、搜索和复制功能
 - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)，一个可以配置在终端中的命令行工具，可以设置为 git 钩子，在提交中交互添加 gitmoji 表情
 - [gitmoji-vscode](https://github.com/seatonjiang/gitmoji-vscode)，vscode 编辑器的插件，支持 emoji 表情和 emoji 代码两种输出格式
+
+### 仓库单独配置
+
+仓库默认继承全局配置，如果要为单个仓库启用不同的配置，则要在仓库目录内指定单独的配置。
+
+单独的用户名和邮箱。
+
+```sh
+# 在仓库目录中
+git config user.name user1
+git config user.email user1@email.com
+```
+
+指定不同的密钥。
+
+```sh
+git config core.sshCommand "ssh -i ~/.ssh/id_rsa_example -F /dev/null"
+```
 
 ## 速查表
 
