@@ -315,7 +315,7 @@ sudo pacman -S --noconfirm --needed zsh \
   zsh-doc zshdb grml-zsh-config
 
 # 杂项
-sudo pacman -S --noconfirm --needed neofetch \
+sudo pacman -S --noconfirm --needed neofetch systemd-resolvconf \
   cowsay sl man-db shellcheck curl wget vim nano \
   powerline-vim yadm shfmt thefuck ufw nmap \
   iptables-nft fd fzf ntp exa subversion man bat bottom asciiquarium
