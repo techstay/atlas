@@ -4,15 +4,17 @@ Windows Subsystem for Linux 是 Windows 的一项功能，可以开启一个和 
 
 ## 安装
 
+参考 <https://learn.microsoft.com/zh-cn/windows/wsl/install-manual>
+
 ### 启用 wsl
 
 使用以下命令一键开启 wsl。
 
 ```powershell
-wsl --install
+wsl --install --no-distribution
 ```
 
-安装完成后可能需要重启电脑。
+安装完成后可能需要重启电脑。如果提示需要安装 Linux 内核更新包，[点此安装](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)。
 
 ### 在线发行版
 
@@ -20,19 +22,6 @@ wsl 自带几个受官方支持的发行版，可以直接安装。
 
 ```powershell
 wsl --list --online
-
-以下是可安装的有效分发的列表。
-请使用“wsl --install -d <分发>”安装。
-
-NAME            FRIENDLY NAME
-Ubuntu          Ubuntu
-Debian          Debian GNU/Linux
-kali-linux      Kali Linux Rolling
-openSUSE-42     openSUSE Leap 42
-SLES-12         SUSE Linux Enterprise Server v12
-Ubuntu-16.04    Ubuntu 16.04 LTS
-Ubuntu-18.04    Ubuntu 18.04 LTS
-Ubuntu-20.04    Ubuntu 20.04 LTS
 ```
 
 ### 安装 archwsl
@@ -64,24 +53,48 @@ Arch.exe config --default-user techstay
 接下来进入 arch，继续配置包管理器。
 
 ```sh
+# 更新密钥
 sudo pacman-key --init
 sudo pacman-key --populate
 sudo pacman -Syy archlinux-keyring
+
 # 直接将清华镜像添加到列表第一行
 sudo sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
 # 或者使用reflector
 sudo pacman -S reflector
 sudo reflector --country "China" --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
 # 更新系统
 sudo pacman -Syu
 ```
 
-再配置系统语言。
+之后的配置步骤参考[Archlinux](../linux/archlinux.md)。
+
+## 命令
+
+常用命令
 
 ```sh
-sudo sed -i 's/^# \?zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
-sudo locale-gen
-echo 'LANG=zh_CN.UTF-8' | sudo tee /etc/locale.conf
+# 列出发行版
+wsl --list --verbose
+# 设置WSL版本 1/2
+wsl --set-default-version 2
+# 设置默认WSL，可通过终端键入wsl进入
+wsl --set-default <Distribution Name>
+# 以指定用户登录wsl
+wsl --distribution <Distribution Name> --user <User Name>
+# 更新wsl
+wsl --update
+# 关闭所有wsl虚拟机
+wsl --shutdown
+# 停止指定wsl发行版
+wsl --terminate <Distribution Name>
+# 导出发行版
+wsl --export <Distribution Name> <FileName>
+# 导入发行版
+wsl --import <Distribution Name> <InstallLocation> <FileName>
+# 卸载发行版
+wsl --unregister <DistributionName>
 ```
 
 ## 配置 wsl
@@ -93,7 +106,6 @@ wsl 默认会占用系统一半的内存，如果需要设定可以编辑`$HOME/
 ```conf
 [wsl2]
 memory=4GB
-nestedVirtualization=false
 ```
 
 ### 设定动态端口号范围
