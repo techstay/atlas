@@ -64,3 +64,11 @@ Disable-MMAgent -MemoryCompression
 
 - <https://www.v2ex.com/t/818084>
 - <https://www.xitongtang.com/class/win11/32546.html>
+
+### 中文字体乱码
+
+强制 Console 使用 UTF8 编码。
+
+```powershell
+SET-ItemProperty 'HKLM:\Software\Microsoft\Command Processor' -Name Autorun -Value '@chcp 65001>nul'
+```
