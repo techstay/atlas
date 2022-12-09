@@ -25,6 +25,7 @@ linux 系统直接使用系统的包管理器即可安装。windows 可以自己
 - [SourceTree](https://www.sourcetreeapp.com)，中规中矩，因为完全免费所以还是比较不错的
 - [Github Desktop](https://desktop.github.com)，Github 官方客户端，使用简单，但是没有交互式变基等高级功能
 - [Sublime Merge](https://www.sublimemerge.com)，收费软件，但是可以无限试用
+- [tig](https://jonas.github.io/tig/)，tig 文本图形化界面，Windows 版 git 自带
 
 ### git 配置
 
@@ -96,6 +97,117 @@ Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub|Set-Clipboard
 ```powershell
 gpg -a --export lovery521@gmail.com|Set-Clipboard
 ```
+
+### git-extras
+
+[git-extras](https://github.com/tj/git-extras)是一套 git 命令行功能包，补全了 git 缺少的一些功能，可以从[这里查看安装教程](https://github.com/tj/git-extras/blob/master/Installation.md)。
+
+```PowerShell
+git clone https://github.com/tj/git-extras.git $HOME/git-extras
+cd $HOME/git-extras
+.\install.cmd $HOME\scoop\apps\git-with-openssh\current
+```
+
+[常用命令](https://github.com/tj/git-extras/blob/master/Commands.md#git-ignore-io)
+
+```sh
+# 中断提交
+git abort
+# 别名
+git alias last "cat-file commit HEAD"
+git alias
+# 排除
+git ignore build "*.o" "*.log"
+git ignore -g
+# ignore-io
+git ignore-io vim
+git ignore-io [-a] [-r] vim
+# 仓库信息
+git info
+# 删除本地和远端分支
+git delete-branch feat1
+# 删除本地和远端标签
+git delete-tag v1.0
+# 压缩合并提交
+git squash HEAD~3 "Work on a feature"
+# 列出作者
+git authors --list
+# 取消
+git undo 3
+# 更新日志详见说明
+# https://github.com/tj/git-extras/blob/master/Commands.md#git-changelog
+git changelog
+```
+
+### diff-so-fancy
+
+项目仓库地址：<https://github.com/so-fancy/diff-so-fancy>
+
+安装
+
+```powershell
+scoop install diff-so-fancy
+```
+
+配置
+
+```sh
+# 全局使用
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
+# 调整颜色
+git config --global color.ui true
+
+git config --global color.diff-highlight.oldNormal    "red bold"
+git config --global color.diff-highlight.oldHighlight "red bold 52"
+git config --global color.diff-highlight.newNormal    "green bold"
+git config --global color.diff-highlight.newHighlight "green bold 22"
+
+git config --global color.diff.meta       "11"
+git config --global color.diff.frag       "magenta bold"
+git config --global color.diff.func       "146 bold"
+git config --global color.diff.commit     "yellow bold"
+git config --global color.diff.old        "red bold"
+git config --global color.diff.new        "green bold"
+git config --global color.diff.whitespace "red reverse"
+```
+
+### 语义化 git 提交
+
+- <https://sparkbox.com/foundry/semantic_commit_messages>
+- <https://github.com/conventional-changelog/commitlint>
+
+提交消息结构
+
+```txt
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+提交类型：
+
+- feat，新特性
+- fix，bug 修复
+- docs，文档更改
+- style，样式更改，如代码格式化、添加分号等
+- refactor，重构代码
+- test，测试代码
+- perf，优化性能
+- build，构建项目的代码和脚本
+- chore，其他无关代码的更改
+- revert，回滚代码
+
+作用域，小型项目不需要
+
+- init
+- runner
+- config
+- watcher
+- web-server
+- proxy
 
 ## 功能
 
