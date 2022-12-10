@@ -2,16 +2,22 @@
 
 ## 准备工作
 
+### 包管理器
+
 首先需要配置好包管理器，方便安装一些软件。
 
 - [scoop](./scoop.md)，第三方版的包管理器，主要用来安装绿色版软件
 - winget，微软的包管理器，用命令行的方式安装 Store 和 Win32 程序
+
+### 终端模拟器
 
 终端模拟器使用微软官方的 Windows Terminal。
 
 ```powershell
 winget install Microsoft.WindowsTerminal
 ```
+
+### 支持特殊字符的字体
 
 还需要安装一些 nerd fonts，支持特殊字符。
 
@@ -29,16 +35,12 @@ sudo scoop install -g Iosevka-NF-Mono
 
 :::
 
+### 管理员权限运行
+
 为了方便使用管理员权限，还要安装 gsudo。
 
 ```powershell
 scoop install gsudo
-```
-
-starship 是一个跨平台的终端主题框架，使用 rust 编写，支持多种 shell。
-
-```powershell
-scoop install starship
 ```
 
 编辑配置文件所使用的的文本编辑器为 vscode，如果不想使用的话，也可以将下面所有使用`code`的地方改为`notepad`，用记事本来打开，但是没有高亮和补全，并不适合编辑配置文件。
@@ -69,7 +71,7 @@ Windows Terminal 是现在 Windows 11 默认终端软件，相当好用。
 code $HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 ```
 
-### 使用管理员权限打开 Windows Terminal
+### 管理员权限配置
 
 #### gsudo
 
@@ -102,17 +104,23 @@ scoop install gsudo
 现在 Windows Terminal 的 shell 配置中新增了`elevate`属性，设为`true`以后，窗格就会在管理员权限的新窗口中打开。
 
 ```json
-    {
-        "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-        "elevate": true,
-        "guid": "{41dd7a51-f0e1-4420-a2ec-1a7130b7e950}",
-        "hidden": false,
-        "icon": "https://i.imgur.com/kZeD6EN.png",
-        "name": "Windows PowerShell Elevated"
-    },
+{
+    "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "elevate": true,
+    "guid": "{41dd7a51-f0e1-4420-a2ec-1a7130b7e950}",
+    "hidden": false,
+    "icon": "https://i.imgur.com/kZeD6EN.png",
+    "name": "Windows PowerShell Elevated"
+},
 ```
 
-## 各 Shell 配置
+## 使用 Starship
+
+starship 是一个跨平台的终端主题框架，使用 rust 编写，支持多种 shell。
+
+```powershell
+scoop install starship
+```
 
 ### Windows Powershell
 
@@ -228,3 +236,46 @@ starship preset pastel-powerline > ~/.config/starship.toml
 ```
 
 我的配置文件参考 <https://github.com/techstay/dotfiles-windows>。
+
+## 使用 oh-my-posh
+
+如果觉得 starship 自带的主题较少，也可以试试[oh-my-posh](https://ohmyposh.dev/docs)，主题非常丰富。
+
+### 安装
+
+```sh
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+```
+
+### powershell
+
+编辑配置文件`code $PROFILE`，添加下面一行。
+
+```sh
+oh-my-posh init pwsh | Invoke-Expression
+```
+
+重新打开终端，即可看到效果。使用 powershell 的话，还可以使用`Get-PoshThemes`命令查看所有主题的演示效果，最好在 git 仓库中打开，可以显示较为完整的效果。
+
+### 更换主题
+
+在[官网主题页](https://ohmyposh.dev/docs/themes)挑选好主题，再修改配置文件。
+
+```powershell
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/montys.omp.json" | Invoke-Expression
+```
+
+个人推荐双行主题，避免提示符太长影响显示。
+
+- unicorn
+- thecyberden
+- takuya
+- sonicboom_light
+- quick-term
+- powerlevel10k_rainbow
+- paradox
+- night-owl
+- montys
+- markbull
+- iterm2
+- gmay
