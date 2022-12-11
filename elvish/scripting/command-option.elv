@@ -1,0 +1,1 @@
+echo &sep='; ' foo bar
