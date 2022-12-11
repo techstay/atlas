@@ -14,7 +14,6 @@ export const navbar: HopeThemeNavbarConfig = [
       'software/',
       'creativity/',
       'troubleshooting/',
-      'japanese/',
     ]
   },
   {
