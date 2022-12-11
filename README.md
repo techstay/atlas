@@ -12,7 +12,7 @@
 
 ## 关于
 
-项目采用了[vuepress](https://v2.vuepress.vuejs.org/zh/)框架作为前端框架来实现在线浏览，并采用[vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/zh/)主题，附带了众多 Markdown 文件特性。
+项目采用[vuepress](https://v2.vuepress.vuejs.org/zh/)搭建，和[vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/zh/)主题。
 
 ## Contributors ✨
 
