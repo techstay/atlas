@@ -50,11 +50,11 @@ export default hopeTheme({
        * Using Giscus
        */
       provider: "Giscus",
-      repo: "techstay/giscus-comment",
-      repoId: "R_kgDOIXlpSg",
+      repo: "techstay/studyNotes",
+      repoId: "R_kgDOHFjgRQ",
       category: "Announcements",
-      categoryId: "DIC_kwDOIXlpSs4CSXQU",
-      mapping: "url",
+      categoryId: "DIC_kwDOHFjgRc4CS9bW",
+      mapping: "pathname",
 
       /**
        * Using Waline
