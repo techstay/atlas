@@ -23,3 +23,33 @@ icon: linux
 - CuteFish，界面挺好看的
 - Zorin OS，
 - Nitrux OS，基于 Debian 和 KDE 桌面环境的发行版
+
+## 导入导出密钥
+
+为了方便多设备 git 协作，一个简单办法就是将 SSH 和 GPG 密钥导出到其他系统上。这个工作可以用脚本来完成。
+
+导出密钥的脚本，需在用户主目录执行。
+
+```sh
+#!/usr/bin/bash
+gpg -o ~/.gnupg/private.gpg --export-options backup --export-secret-keys techstay
+gpg --export-ownertrust >~/.gnupg/trust.txt
+tar -cvf keys.tar .ssh/id_ed25519{,.pub} .gnupg/{private.gpg,trust.txt}
+```
+
+将密钥文件复制到目标机器上。
+
+```sh
+# 复制到用户的主文件夹中
+scp keys.tar -P 8080 techstay@192.168.25.129:.
+scp keys.tar rasp:.
+```
+
+导入密钥的脚本。归档文件会自动保存文件权限属性，无需额外操作。
+
+```sh
+#!/usr/bin/bash
+tar -xvf keys.tar
+gpg --import-options restore --import ~/.gnupg/private.gpg
+gpg --import-ownertrust <~/.gnupg/trust.txt
+```
