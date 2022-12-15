@@ -38,9 +38,7 @@ docker ps
 - <https://dnsprivacy.org/public_resolvers/> 几个常用的 DNS 加密服务器
 - <https://www.dnsovertor.tk> V 站老哥分享的一个基于 Tor 网络的隐私保护 DNS 服务器
 - <https://github.com/dnscrypt/dnscrypt-resolvers> 另一些常用的 DNS 服务器
-- <https://iqdns.xyz/all.html> iqdns
-
-然后我还在 V 站上看到了一个老哥分享的私人 DNS 服务，对国内地址做了分流。出于对互联网精神的朴素信任态度，我准备在这里使用一波。因为是私人服务，所以可能不太稳定，不过到时候在注意一下吧。地址在这里 ，可以全部添加，提高稳定性。
+- <https://iqiq.io/servers.html> iqdns
 
 ## 使用
 
