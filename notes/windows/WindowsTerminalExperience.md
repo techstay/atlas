@@ -176,6 +176,14 @@ Set-Alias winfetch pwshfetch-test-1
 
 上面安装的`z.lua`是一个目录跳转插件，使用`z`代替`cd`切换目录时，会自动记录历史记录。下次切换的时候，无需输入完整路径，只输入部分目录名就能切换，可以节约不少时间，详情可以参考[官方中文文档](https://github.com/skywind3000/z.lua/blob/master/README.cn.md)。
 
+一些工具带有补全，可以让 powershell 更加智能。
+
+```powershell
+New-Item -Type Directory -Force -Path $PROFILE/../Completions
+gh completion -s powershell | Out-File -FilePath $PROFILE/../Completions/gh.ps1
+hugo completion powershell | Out-File -FilePat $PROFILE/../Completions/hugo.ps1
+```
+
 ### cmd
 
 先安装 clink。

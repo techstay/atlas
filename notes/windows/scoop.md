@@ -22,19 +22,6 @@ Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
 
 ## 配置
 
-### 添加 bucket
-
-bucket 是 scoop 的软件类别仓库，可以由`scoop bucket known`查看。一般不需要全部添加，只添加几个常用的即可。
-
-```sh
-# bucket依赖git，所以需要先安装git
-scoop install git-with-openssh
-
-scoop bucket add extras
-scoop bucket add nerd-fonts
-scoop bucket add java
-```
-
 ### 设置代理
 
 scoop 默认下载速度比较慢，因为大部分资源都在国外，如果有代理的话，可以设置加速。
@@ -45,6 +32,20 @@ scoop config proxy localhost:7890
 
 # 删除代理
 scop config rm proxy
+```
+
+### 添加 bucket
+
+bucket 是 scoop 的软件类别仓库，可以由`scoop bucket known`查看。一般不需要全部添加，只添加几个常用的即可。
+
+```sh
+# bucket依赖git，所以需要先安装git
+scoop install git-with-openssh
+git config --global http.proxy localhost:7890
+
+scoop bucket add extras
+scoop bucket add nerd-fonts
+scoop bucket add java
 ```
 
 ### 多连接下载

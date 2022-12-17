@@ -99,6 +99,7 @@ scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 
 ### 驱动软件
 
+- [VC++可再发行程序包](https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist)
 - [英伟达 Geforce Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
 - [yamaha usb driver](https://usa.yamaha.com/support/updates/yamaha_steinberg_usb_driver_for_win.html)
 - [视频解码器](https://codecguide.com/klcp_beta.htm)
