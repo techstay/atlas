@@ -32,40 +32,41 @@ wsl --list --online
 scoop install archwsl
 ```
 
-安装完成后需要新建用户。
+安装完成后需要先更新密钥。
+
+```sh
+pacman-key --init
+pacman-key --populate
+pacman -Syy archlinux-keyring
+```
+
+然后配置包管理器。
+
+```sh
+# 直接将清华镜像添加到列表第一行
+sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+# 或者使用reflector
+pacman -S reflector
+reflector --country "China" --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+```
+
+然后配置用户
 
 ```sh
 # root密码
 passwd
 # 新建用户
-user_name=techstay
-echo "$user_name ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$user_name
-useradd -m -G wheel -s /bin/bash $user_name
-passwd $user_name
+useradd -m -G wheel -s /bin/bash techstay
+passwd techstay
+# 更新sudo权限
+sed -i 's/^# \?%wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/g' /etc/sudoers
 ```
 
 然后退出 wsl，设置 arch 的默认用户。
 
 ```powershell
 Arch.exe config --default-user techstay
-```
-
-接下来进入 arch，继续配置包管理器。
-
-```sh
-# 更新密钥
-sudo pacman-key --init
-sudo pacman-key --populate
-sudo pacman -Syy archlinux-keyring
-
-# 直接将清华镜像添加到列表第一行
-sudo sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
-# 或者使用reflector
-sudo pacman -S reflector
-sudo reflector --country "China" --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-
-# 更新系统
-sudo pacman -Syu
 ```
 
 之后的配置步骤参考[Archlinux](../linux/archlinux.md)。
