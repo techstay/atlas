@@ -62,6 +62,24 @@ scoop install aria2
 scoop config aria2-enabled false
 ```
 
+### powershell 补全
+
+安装
+
+```sh
+# add extras bucket
+scoop bucket add extras
+
+# install
+scoop install scoop-completion
+```
+
+然后在`$PROFILE`中添加以下一行。
+
+```powershell
+Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+```
+
 ## 使用
 
 先搜索要安装的软件名字，然后安装。
