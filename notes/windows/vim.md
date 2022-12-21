@@ -33,8 +33,12 @@ New-Item $env:LOCALAPPDATA\nvim -ItemType SymbolicLink -Value $HOME\.SpaceVim
 
 安装 [NvChad](https://nvchad.com/quickstart/install)。
 
-```powershell
+```sh
+# windows
 git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
+
+# linux
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
 卸载 NvChad
@@ -57,3 +61,11 @@ $LV_BRANCH='release-1.2/neovim-0.8'; Invoke-WebRequest https://raw.githubusercon
 ```powershell
 Invoke-WebRequest https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/uninstall.ps1 -UseBasicParsing | Invoke-Expression
 ```
+
+## vscode 配置
+
+安装[vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)扩展，参考文档进行配置。
+
+## cheetsheet
+
+[awesome-cheatsheets](https://github.com/techstay/awesome-cheatsheets/blob/master/editors/vim.txt)
