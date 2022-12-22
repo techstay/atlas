@@ -31,6 +31,7 @@ icon: discover
 - <https://mixkit.co/free-stock-video>
 - <https://www.videvo.net>
 - <https://www.pexels.com>
+- <https://cn.eagle.cool/blog/post/42-of-the-best-free-stock-video-websites-for-great-footage>
 
 ### 音频素材
 
