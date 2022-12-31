@@ -69,3 +69,42 @@ Invoke-WebRequest https://raw.githubusercontent.com/lunarvim/lunarvim/master/uti
 ## cheetsheet
 
 [awesome-cheatsheets](https://github.com/techstay/awesome-cheatsheets/blob/master/editors/vim.txt)
+
+## vim 扩展
+
+这里一些扩展可以通过 vscodevim 模拟出来，详见[vscodevim 官方文档](https://github.com/VSCodeVim/Vim)
+
+### sneak.vim
+
+项目地址 <https://github.com/justinmk/vim-sneak>
+
+用法
+
+- `sab`搜索下一个`ab`出现的位置
+- `;`继续搜索下一个
+- `3;`从当前位置搜索第三次出现的位置
+- `ctrl+o`回到原来位置
+- `s<enter>`执行上次搜索
+- `S`反向搜索
+
+### vim-commentary
+
+项目地址 <https://github.com/tpope/vim-commentary>
+
+用法
+
+- `gc`行注释
+- `gc2j`行注释之后的两行
+- `gC`块注释
+- `gC2j`块注释之后的两行
+
+### vim-surround
+
+项目地址 <https://github.com/tpope/vim-surround>
+
+用法
+
+- `yc<motion><char>`设置环绕字符
+- `dc<char>`删除环绕字符
+- `cs<motion><char>`更改环绕字符
+-
