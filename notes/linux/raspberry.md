@@ -16,6 +16,22 @@ sudo gpasswd docker -a techstay
 sudo systemctl enable -now docker
 ```
 
+### 系统更新
+
+更新系统
+
+```sh
+sudo apt update && sudo apt upgrade -y
+```
+
+更新内核
+
+```sh
+sudo rpi-update
+# 遇到问题时可以尝试跳过自更新，可能需要代理
+sudo UPDATE_SELF=0 rpi-update
+```
+
 ### cockpit
 
 开源的系统管理网页工具。
