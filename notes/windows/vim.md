@@ -41,6 +41,8 @@ git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 &&
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
+修改配置参考[官方文档](https://nvchad.com/config/options)，配置文件路径在`$HOME\AppData\Local\nvim\lua\custom`下，在其他位置编辑会被 NvChad 更新时覆盖。
+
 卸载 NvChad
 
 ```powershell
