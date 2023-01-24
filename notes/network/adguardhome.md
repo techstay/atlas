@@ -33,12 +33,20 @@ docker ps
 
 ## 配置
 
+### 上游 DNS
+
 需要什么的话，直接在 web 界面里配置就行了。因为我是局域网使用，所以不需要启用加密，只需要指定上游的 DNS 服务器即可。这里列出一些常用的 DNS 公共服务器。
 
 - <https://dnsprivacy.org/public_resolvers/> 几个常用的 DNS 加密服务器
 - <https://www.dnsovertor.tk> V 站老哥分享的一个基于 Tor 网络的隐私保护 DNS 服务器
 - <https://github.com/dnscrypt/dnscrypt-resolvers> 另一些常用的 DNS 服务器
 - <https://iqiq.io/servers.html> iqdns
+
+### DNS 拦截
+
+在 DNS 拦截功能里面，可以添加一些规则，以拦截广告和隐私追踪。也有一些第三方规则可供使用。
+
+- <https://github.com/BlueSkyXN/AdGuardHomeRules>
 
 ## 使用
 
