@@ -2,7 +2,10 @@
 
 ## schtasks
 
-Windows 命令行 schtasks，文档<https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/schtasks>
+Windows 命令行 schtasks，文档可参考下面链接
+
+- <https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks-create>
+- <https://www.yumefx.com/?p=2991>
 
 ### 创建计划任务
 
@@ -24,6 +27,19 @@ schtasks /create /tn keepassxc /tr $HOME\scoop\apps\keepassxc\current\KeePassXC.
 
 ```cmd
 schtasks /run /tn keepassxc
+```
+
+### 静默运行
+
+默认情况下，运行命令行程序会显示黑框界面，可以改用 SYSTEM 账户运行，这样就完全不会有提示。下面就是一个简单的例子。
+
+```powershell
+$desktop_path = [Environment]::GetFolderPath('Desktop')
+$cmd = "cmd /c `"echo 666 >> $desktop_path\log.txt`""
+schtasks /create /sc DAILY /mo 1 /tn 'simpletest' /tr $cmd /ru SYSTEM /f
+
+# 测试完成后记得删除计划任务
+schtasks /delete /tn 'simpletest' /f
 ```
 
 ## scheduledtasks
