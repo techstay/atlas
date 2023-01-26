@@ -6,6 +6,17 @@ icon: network
 
 一些网络相关的知识和工具笔记。
 
+## 常用工具
+
+### ping
+
+windows 系统默认关闭 ping，需要手动设置防火墙入站规则。
+
+```powershell
+New-NetFirewallRule -DisplayName "Allow inbound ICMPv4" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -RemoteAddress LocalSubnet -Action Allow
+New-NetFirewallRule -DisplayName "Allow inbound ICMPv6" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -RemoteAddress LocalSubnet -Action Allow
+```
+
 ## 测速
 
 ### iperf3
