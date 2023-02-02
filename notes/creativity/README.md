@@ -19,6 +19,7 @@ icon: discover
 - <https://www.pslkzs.com/fonts.php>
 - <https://fonts.safe.360.cn>
 - 得意黑 <https://github.com/atelier-anchor/smiley-sans>
+- 霞鹜文楷 <https://github.com/lxgw/LxgwWenKai>
 
 ### 图片素材
 
