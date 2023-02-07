@@ -36,9 +36,19 @@ icon: discover
 
 ### 音频素材
 
+音频网站
+
 - <https://www.tosound.com>
 - <https://www.freesound.cn>
 - <https://open.sampld.app>
 - <http://tools.liumingye.cn>
 - <https://musopen.org>
 - <https://freepd.com>
+
+经典 BGM
+
+- 春节序曲，经典过年 BGM
+- Just Blue，动物世界片头曲
+- 渔舟唱晚，天气预报 BGM
+- 故宫的记忆
+- 幻昼，纯音乐，营销号用烂的音乐
