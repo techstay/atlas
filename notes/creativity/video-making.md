@@ -53,6 +53,12 @@ OBS 如果要实现人声录音和背景声音分离，需要在*主界面->混�
 
 先安装[油猴脚本](https://greasyfork.org/zh-CN/scripts/444347-azure-speech-download?)，然后在 [Azure 文本转语音页面](https://azure.microsoft.com/zh-cn/products/cognitive-services/text-to-speech/#features)就可以看到下载按钮，输入文字即可得到 AI 配音的语音。
 
+### 变声器
+
+- <https://www.nchsoftware.com/voicechanger/index.html>
+- <https://filme.imyfone.com/voice-changer/>，不错，可惜很多功能都要收费
+- <https://www.voicemod.net>
+
 ## 字幕
 
 - [pyTranscriber](https://github.com/raryelcostasouza/pyTranscriber)，利用 Google AI 自动生成字幕，需要科学上网
