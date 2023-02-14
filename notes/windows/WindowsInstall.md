@@ -92,6 +92,9 @@ w32tm /resync
 我的 vscode 配置需要安装思源黑体等几个字体。
 
 ```powershell
+# 可能需要sudo scoop -g install fontname
+# 思源黑体 思源宋体 终端nerd-fonts字体
+scoop install Source-Han-Serif-SC Source-Han-Serif-TC Source-Han-Serif-J Source-Han-Serif-K
 scoop install Source-Han-Mono-SC Source-Han-Mono-TC Source-Han-Sans-SC Source-Han-Sans-TC Source-Han-Sans-J
 scoop install LiberationMono-NF
 scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
