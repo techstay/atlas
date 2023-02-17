@@ -69,13 +69,13 @@ adb sideload xxx.zip
 adb push .\boot.img /sdcard/
 ```
 
-再看看手机是否存在单独的 vbmeta 分区。
+再看看手机是否存在单独的 vbmeta 分区，没有输出说明没有 vbmeta 分区。
 
 ```sh
 adb shell ls -l /dev/block/by-name |grep vbmeta
 ```
 
-在手机 magisk 程序中选择刚刚上传的`boot.img`文件，开始修补。如果手机没有单独的 vbmeta 分区，修补选项勾选*Patch vbmeta in boot image*。修补完成后，记下修补文件名。
+在手机 magisk 程序中选择刚刚上传的`boot.img`文件，开始修补。如果手机没有单独的 vbmeta 分区，修补选项勾选*Patch vbmeta in boot image*。我的小米 5 没有该分区，所以需要勾选。修补完成后，记下修补文件名。
 
 ```sh
 adb shell "ls /sdcard/Download"
