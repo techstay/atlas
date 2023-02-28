@@ -54,6 +54,30 @@ uci set system.ntp.enable_server='1'
 uci commit
 ```
 
+### 扩容
+
+openwrt 默认分区比较小，安装一些软件就满了，所以需要扩容。
+
+```sh
+opkg update
+opkg install nano kmod-usb-core block-mount kmod-fs-ext4 kmod-usb-storage-extras e2fsprogs blkid cfdisk
+```
+
+然后通过 cfdisk 新建分区，再格式化。
+
+```sh
+mkfs.ext4 /dev/sda3
+```
+
+挂载，然后将 overlay 分区复制过去。
+
+```sh
+mount /dev/sda3 /mnt
+tar -C /overlay -cvf - . | tar -C /mnt -xf -
+```
+
+最后在 web 界面里找到新添加的分区，选择为外部 overlay 分区，重启设备即可生效。
+
 ### 安装软件
 
 一般的 OpenWrt 都编译了不少工具进去，只有原版的 Openwrt 什么也没有，需要手动安装工具，安装工具需要使用 opkg 工具。
