@@ -52,3 +52,12 @@ icon: discover
 - 渔舟唱晚，天气预报 BGM
 - 故宫的记忆
 - 幻昼，纯音乐，营销号用烂的音乐
+
+## 音频制作
+
+### VST 插件
+
+- [Valhalla Supermassive](https://valhalladsp.com/demos-downloads/)，混响插件
+- [reaplugs](https://www.reaper.fm/reaplugs/)，噪声门插件
+- [Graillon](https://www.auburnsounds.com/products/Graillon.html)，变声器插件
+- [LV-60 Viator DSP](https://www.patreon.com/posts/lv-60-analog-eq-51729432)，均衡器插件
