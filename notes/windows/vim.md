@@ -18,6 +18,17 @@ scoop install neovim
 
 ## 配置集
 
+### lazyvim
+
+[官方文档](https://www.lazyvim.org/installation)，安装。
+
+```sh
+# windows
+git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
+# linux
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+```
+
 ### SpaceVim
 
 安装[SpaceVim](https://spacevim.org/quick-start-guide/)。
