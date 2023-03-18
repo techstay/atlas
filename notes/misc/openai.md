@@ -10,4 +10,5 @@
 
 若实在无法注册，可以改用网络上的第三方镜像站，但是这些镜像站的服务质量无法保证，也可能随时停止服务。
 
-- <https://gpt.chatapi.art>
+- <https://freegpt.one>
+- <https://poe.com>，需注册，内有多种聊天 AI 后端
