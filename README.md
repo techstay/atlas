@@ -1,4 +1,4 @@
-# 落落的学习笔记
+# 易艾福 G 的学习笔记
 
 ![last commit](https://img.shields.io/github/last-commit/techstay/studyNotes)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-✨)

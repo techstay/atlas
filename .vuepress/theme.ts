@@ -33,7 +33,7 @@ export default hopeTheme({
       // sidebar
       sidebar: sidebar,
 
-      footer: "落落的学习笔记",
+      footer: "易艾福G的学习笔记",
       displayFooter: true,
 
       metaLocales: {
