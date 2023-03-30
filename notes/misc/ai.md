@@ -1,6 +1,6 @@
 # 人工智能
 
-## OpenAI
+## 语言模型
 
 ### chatgpt
 
@@ -13,10 +13,12 @@
 若实在无法注册，可以改用网络上的第三方镜像站，但是这些镜像站的服务质量无法保证，也可能随时停止服务。
 
 - <https://github.com/xx025/carrot>
+- 提示词教程<https://learningprompt.wiki/>
+- 强大的翻译浏览器扩展<https://chrome.google.com/webstore/detail/openai-translator/ogjibjphoadhljaoicdnjnmgokohngcc>
+- API 代理，无需翻墙，国内可用<https://github.com/justjavac/openai-proxy>，按照页面提示修改 API 调用地址即可
+- chatbox，使用 API 的 chatgpt 客户端<https://github.com/Bin-Huang/chatbox>
 
-## 微软
-
-### 新必应
+### 微软必应
 
 访问<https://www.bing.com>即可，使用最新版 edge 浏览器访问效果更佳。
 
@@ -24,23 +26,15 @@
 
 链接<https://cn.bing.com/images/create>
 
-### Office Copilot
-
-目前还在内测，仅 Office365 企业版可用。
-
-## 谷歌
-
-### bard
+### 谷歌 bard
 
 目前需要申请资格<https://bard.google.com>，仅英美地区可用。后续会逐渐开放更多地区。
 
-## Adobe
+## AI 绘图
 
-### Firefly
+### Adobe Firefly
 
 目前需要申请资格<https://firefly.adobe.com>。
-
-## 开源
 
 ### stable-diffusion-webui
 
@@ -60,3 +54,6 @@ cd stable-diffusion-webui
 - 提示词网站，可以查找和生成各种提示词<https://promptomania.com>
 - 模型下载，社区收集，注意识别<https://rentry.org/sdmodels#hentai-diffusion>
 - 模型下载和预览图<https://civitai.com>
+- SD 教程<https://stable-diffusion-art.com/>
+- 以及两篇知乎文章<https://www.zhihu.com/collection/735113743>
+- <https://zhuanlan.zhihu.com/p/617133284>
