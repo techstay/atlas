@@ -6,6 +6,7 @@
 - UPDATE2: 之前安装的 Win10 还是蛮好用的，除了系统的 emoji 表情没有 Win11 的好看。不过前两天看到别人新安装的 Win11 看起来还是很好用的，于是又手痒了起来，费了点功夫又重装了一遍系统。所以这次的 Windows 安装笔记又可以更新了。
 - UPDATE3: win11 的卡顿老毛病又犯了，每次动不动卡个一分钟，勉强可以忍，然而这次竟然连着卡顿十分钟，实在忍不了了，所以又装回了 win10，不得不承认，虽然我很喜欢 win11 的新 emoji，但是还是 win10 比较流畅。
 - UPDATE4: 今天不知道啥情况，突然蓝屏了好几次，然后我在 onedrive 文件保管箱中保存文件的时候，资源管理器多次未响应，重启之后点右键再次出现问题，感觉又到了不得不重装系统的时候了。那就在重装回 win11 吧，毕竟过了这么久，问题大概应该修复了吧。之前我在 VHD 双系统里面玩 Win11 感觉还是可以的，反正 Win11 22H2 也更新了，那么就这么定了。
+- UPDATE5:这次坚持了比较长的时间，win11 确实比以前稳定多了。但是用久了不知道是我开机自启程序太多了还是怎么滴，感觉又慢慢有点卡了。特别是最近切换回了 edge 浏览器，正好赶上 win11 效率模式锁定 edge 浏览器的 bug，上网的时候老是感觉 edge 速度有点慢。好巧不巧，又碰到个 win11 无法同步时间的问题。说起来我这电脑也有五六个年头了，可能确实不适合最新的系统了吧，而且确实不符合 win11 的最低需求，我这个爱折腾的毛病还是得改改。虽然我很喜欢更新，但是感觉还是用回 win10 吧。等下次搞台新电脑再用 win11 系统吧。
 
 ## 必备工作
 
@@ -27,10 +28,12 @@
 - git 仓库
 - 其他主文件夹中的配置文件 (`.gitconfig`、`.npmrc`等)
 
+配置文件最好通过[dotfiles](https://github.com/techstay/dotfiles-windows)的方式管理起来，这样以后恢复起来也非常方便。
+
 如果是 git 仓库，那么可能会遇到用户权限的问题，有两种方法可以解决这个问题。第一种就是直接在 git 配置中指定安全文件夹。
 
 ```powershell
-git config --global --add safe.directory C:/Users/techstay/Desktop/dotfiles
+git config --global --add safe.directory C:/Users/techstay/Desktop/*
 ```
 
 第二种就是将用户权限重新指定为当前用户所有。方法如下：
@@ -73,7 +76,7 @@ winget uninstall MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy
 
 ### 系统时间
 
-如果同时安装了 linux 双系统的话，推荐同时让 windows 使用 UTC 代替本地时间，这样两个系统之间的时间就不会冲突了。
+如果同时安装了 linux 双系统的话，推荐同时让 windows 使用 UTC 代替本地时间，这样两个系统之间的时间就不会冲突了。只有 win 系统的话可以完全忽略该配置。
 
 ```powershell
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
@@ -112,10 +115,9 @@ scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 
 - [TrafficMonitor](https://gitee.com/zhongyang219/TrafficMonitor/releases)
 - [gitkraken](https://www.gitkraken.com/download/windows64)
-- [tightvnc](https://www.tightvnc.com/download.php)
-- [vscode](https://code.visualstudio.com)
 - [sandboxie plus](https://github.com/sandboxie-plus/Sandboxie/releases)
 - [jetbrains tool app](https://www.jetbrains.com/toolbox-app/)
+- [tailscale](https://tailscale.com/download)
 
 ```powershell
 winget install GnuPG.Gpg4win
@@ -123,12 +125,16 @@ winget install Microsoft.PowerToys
 winget install Telegram.TelegramDesktop
 winget install OBSProject.OBSStudio
 winget install Audacity.Audacity
+winget install Fork.Fork
+winget install Microsoft.VisualStudioCode
+winget install tailscale.tailscale
 scoop install snipaste screentogif ffmpeg busybox vim yt-dlp imageglass exiftool
 ```
 
 ### 应用软件
 
 - [火绒杀毒软件](https://www.huorong.cn/person5.html)
+- [avast](https://www.avast.com/zh-cn/free-antivirus-download#pc)
 - [搜狗输入法](https://pinyin.sogou.com/)
 - [360 压缩国际版](https://www.360totalsecurity.com/zh-cn/360zip/)
 - [qq](https://im.qq.com/pcqq)
@@ -136,6 +142,7 @@ scoop install snipaste screentogif ffmpeg busybox vim yt-dlp imageglass exiftool
 - [potplayer](https://potplayer.daum.net)
 - [夜神模拟器](https://www.yeshen.com)
 - [有道词典](http://cidian.youdao.com/index.html)
+- [欧陆词典](https://www.eudic.net/v4/en/app/download)
 - [全民 K 歌](https://kg.qq.com/index-pc.html)
 - [qq 音乐](https://y.qq.com)
 - [网易云音乐](https://music.163.com/#/download)
