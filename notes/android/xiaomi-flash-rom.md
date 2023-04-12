@@ -22,6 +22,10 @@ scoop install adb
 
 这时候使用`fastboot devices`测试，显示出设备，驱动就算安装成功了。
 
+:::warning
+AMD 平台电脑刷机时候可能遇到 fastboot 模式下的问题，手机进入 fastboot 模式很快退出，终端显示`?????`。可以参考[XDA](https://forum.xda-developers.com/t/fix-fastboot-issues-on-ryzen-based-pcs.4186321/)的修复方法。
+:::
+
 ### 下载包
 
 - [twrp](https://dl.twrp.me)
