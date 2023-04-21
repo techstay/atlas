@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # -*- ruby -*-
 
+# typed: true
+
 $VERBOSE = nil
 
 begin
@@ -18,7 +20,7 @@ end
 def ruby_version?(version)
   RUBY_VERSION =~ /^#{version}/ ||
     (version == 'jruby' && defined?(JRUBY_VERSION)) ||
-    (version == 'mri' && ! defined?(JRUBY_VERSION))
+    (version == 'mri' && !defined?(JRUBY_VERSION))
 end
 
 def in_ruby_version(*versions)
@@ -29,61 +31,61 @@ def before_ruby_version(version)
   Gem::Version.new(RUBY_VERSION) < Gem::Version.new(version)
 end
 
-in_ruby_version("1.8") do
+in_ruby_version('1.8') do
   class KeyError < StandardError
   end
 end
 
 # Standard, generic replacement value.
 # If value19 is given, it is used in place of value for Ruby 1.9.
-def __(value="FILL ME IN", value19=:mu)
-  if RUBY_VERSION < "1.9"
+def __(value = 'FILL ME IN', value19 = :mu)
+  if RUBY_VERSION < '1.9'
     value
   else
-    (value19 == :mu) ? value : value19
+    value19 == :mu ? value : value19
   end
 end
 
 # Numeric replacement value.
-def _n_(value=999999, value19=:mu)
-  if RUBY_VERSION < "1.9"
+def _n_(value = 999_999, value19 = :mu)
+  if RUBY_VERSION < '1.9'
     value
   else
-    (value19 == :mu) ? value : value19
+    value19 == :mu ? value : value19
   end
 end
 
 # Error object replacement value.
-def ___(value=FillMeInError, value19=:mu)
-  if RUBY_VERSION < "1.9"
+def ___(value = FillMeInError, value19 = :mu)
+  if RUBY_VERSION < '1.9'
     value
   else
-    (value19 == :mu) ? value : value19
+    value19 == :mu ? value : value19
   end
 end
 
 # Method name replacement.
 class Object
-  def ____(method=nil)
-    if method
-      self.send(method)
-    end
+  def ____(method = nil)
+    return unless method
+
+    send(method)
   end
 
-  in_ruby_version("1.9", "2", "3") do
+  in_ruby_version('1.9', '2', '3') do
     public :method_missing
   end
 end
 
 class String
   def side_padding(width)
-    extra = width - self.size
+    extra = width - size
     if width < 0
       self
     else
       left_padding = extra / 2
-      right_padding = (extra+1)/2
-      (" " * left_padding) + self + (" " *right_padding)
+      right_padding = (extra + 1) / 2
+      (' ' * left_padding) + self + (' ' * right_padding)
     end
   end
 end
@@ -96,17 +98,17 @@ module Neo
   end
 
   module Color
-    #shamelessly stolen (and modified) from redgreen
+    # shamelessly stolen (and modified) from redgreen
     COLORS = {
-      :clear   => 0,  :black   => 30, :red   => 31,
-      :green   => 32, :yellow  => 33, :blue  => 34,
-      :magenta => 35, :cyan    => 36,
+      clear: 0,  black: 30, red: 31,
+      green: 32, yellow: 33, blue: 34,
+      magenta: 35, cyan: 36
     }
 
     module_function
 
     COLORS.each do |color, value|
-      module_eval "def #{color}(string); colorize(string, #{value}); end"
+      module_eval "def #{color}(string); colorize(string, #{value}); end", __FILE__, __LINE__
       module_function color
     end
 
@@ -124,12 +126,12 @@ module Neo
 
     def use_colors?
       return false if ENV['NO_COLOR']
+
       if ENV['ANSI_COLOR'].nil?
-        if using_windows?
-          using_win32console
-        else
-          return true
-        end
+        return true unless using_windows?
+
+        using_win32console
+
       else
         ENV['ANSI_COLOR'] =~ /^(t|y)/i
       end
@@ -151,33 +153,33 @@ module Neo
       raise FailedAssertionError, msg
     end
 
-    def assert(condition, msg=nil)
-      msg ||= "Failed assertion."
+    def assert(condition, msg = nil)
+      msg ||= 'Failed assertion.'
       flunk(msg) unless condition
       true
     end
 
-    def assert_equal(expected, actual, msg=nil)
+    def assert_equal(expected, actual, msg = nil)
       msg ||= "Expected #{expected.inspect} to equal #{actual.inspect}"
       assert(expected == actual, msg)
     end
 
-    def assert_not_equal(expected, actual, msg=nil)
+    def assert_not_equal(expected, actual, msg = nil)
       msg ||= "Expected #{expected.inspect} to not equal #{actual.inspect}"
       assert(expected != actual, msg)
     end
 
-    def assert_nil(actual, msg=nil)
+    def assert_nil(actual, msg = nil)
       msg ||= "Expected #{actual.inspect} to be nil"
       assert(nil == actual, msg)
     end
 
-    def assert_not_nil(actual, msg=nil)
+    def assert_not_nil(actual, msg = nil)
       msg ||= "Expected #{actual.inspect} to not be nil"
       assert(nil != actual, msg)
     end
 
-    def assert_match(pattern, actual, msg=nil)
+    def assert_match(pattern, actual, msg = nil)
       msg ||= "Expected #{actual.inspect} to match #{pattern.inspect}"
       assert pattern =~ actual, msg
     end
@@ -185,20 +187,18 @@ module Neo
     def assert_raise(exception)
       begin
         yield
-      rescue Exception => ex
-        expected = ex.is_a?(exception)
-        assert(expected, "Exception #{exception.inspect} expected, but #{ex.inspect} was raised")
-        return ex
+      rescue Exception => e
+        expected = e.is_a?(exception)
+        assert(expected, "Exception #{exception.inspect} expected, but #{e.inspect} was raised")
+        return e
       end
       flunk "Exception #{exception.inspect} expected, but nothing raised"
     end
 
     def assert_nothing_raised
-      begin
-        yield
-      rescue Exception => ex
-        flunk "Expected nothing to be raised, but exception #{exception.inspect} was raised"
-      end
+      yield
+    rescue Exception => e
+      flunk "Expected nothing to be raised, but exception #{exception.inspect} was raised"
     end
   end
 
@@ -218,17 +218,17 @@ module Neo
 
     def add_progress(prog)
       @_contents = nil
-      exists = File.exists?(PROGRESS_FILE_NAME)
-      File.open(PROGRESS_FILE_NAME,'a+') do |f|
+      exists = File.exist?(PROGRESS_FILE_NAME)
+      File.open(PROGRESS_FILE_NAME, 'a+') do |f|
         f.print "#{',' if exists}#{prog}"
       end
     end
 
     def progress
       if @_contents.nil?
-        if File.exists?(PROGRESS_FILE_NAME)
-          File.open(PROGRESS_FILE_NAME,'r') do |f|
-            @_contents = f.read.to_s.gsub(/\s/,'').split(',')
+        if File.exist?(PROGRESS_FILE_NAME)
+          File.open(PROGRESS_FILE_NAME, 'r') do |f|
+            @_contents = f.read.to_s.gsub(/\s/, '').split(',')
           end
         else
           @_contents = []
@@ -253,7 +253,7 @@ module Neo
     end
 
     def failed?
-      ! @failure.nil?
+      !@failure.nil?
     end
 
     def assert_failed?
@@ -262,7 +262,7 @@ module Neo
 
     def instruct
       if failed?
-        @observations.each{|c| puts c }
+        @observations.each { |c| puts c }
         encourage
         guide_through_error
         a_zenlike_statement
@@ -275,17 +275,17 @@ module Neo
     def show_progress
       bar_width = 50
       total_tests = Neo::Koan.total_tests
-      scale = bar_width.to_f/total_tests
-      print Color.green("your path thus far [")
-      happy_steps = (pass_count*scale).to_i
+      scale = bar_width.to_f / total_tests
+      print Color.green('your path thus far [')
+      happy_steps = (pass_count * scale).to_i
       happy_steps = 1 if happy_steps == 0 && pass_count > 0
-      print Color.green('.'*happy_steps)
+      print Color.green('.' * happy_steps)
       if failed?
         print Color.red('X')
-        print Color.cyan('_'*(bar_width-1-happy_steps))
+        print Color.cyan('_' * (bar_width - 1 - happy_steps))
       end
       print Color.green(']')
-      print " #{pass_count}/#{total_tests} (#{pass_count*100/total_tests}%)"
+      print " #{pass_count}/#{total_tests} (#{pass_count * 100 / total_tests}%)"
       puts
     end
 
@@ -298,59 +298,61 @@ module Neo
     end
 
     def boring_end_screen
-      puts "Mountains are again merely mountains"
+      puts 'Mountains are again merely mountains'
     end
 
     def artistic_end_screen
-      "JRuby 1.9.x Koans"
-      ruby_version = "(in #{'J' if defined?(JRUBY_VERSION)}Ruby #{defined?(JRUBY_VERSION) ? JRUBY_VERSION : RUBY_VERSION})"
+      'JRuby 1.9.x Koans'
+      ruby_version = "(in #{if defined?(JRUBY_VERSION)
+                              'J'
+                            end}Ruby #{defined?(JRUBY_VERSION) ? JRUBY_VERSION : RUBY_VERSION})"
       ruby_version = ruby_version.side_padding(54)
-        completed = <<-ENDTEXT
-                                  ,,   ,  ,,
-                                :      ::::,    :::,
-                   ,        ,,: :::::::::::::,,  ::::   :  ,
-                 ,       ,,,   ,:::::::::::::::::::,  ,:  ,: ,,
-            :,        ::,  , , :, ,::::::::::::::::::, :::  ,::::
-           :   :    ::,                          ,:::::::: ::, ,::::
-          ,     ,:::::                                  :,:::::::,::::,
-      ,:     , ,:,,:                                       :::::::::::::
-     ::,:   ,,:::,                                           ,::::::::::::,
-    ,:::, :,,:::                                               ::::::::::::,
-   ,::: :::::::,       Mountains are again merely mountains     ,::::::::::::
-   :::,,,::::::                                                   ::::::::::::
- ,:::::::::::,                                                    ::::::::::::,
- :::::::::::,                                                     ,::::::::::::
-:::::::::::::                                                     ,::::::::::::
-::::::::::::                      Ruby Koans                       ::::::::::::
-::::::::::::#{                  ruby_version                     },::::::::::::
-:::::::::::,                                                      , :::::::::::
-,:::::::::::::,                brought to you by                 ,,::::::::::::
-::::::::::::::                                                    ,::::::::::::
- ::::::::::::::,                                                 ,:::::::::::::
- ::::::::::::,               Neo Software Artisans              , ::::::::::::
-  :,::::::::: ::::                                               :::::::::::::
-   ,:::::::::::  ,:                                          ,,:::::::::::::,
-     ::::::::::::                                           ,::::::::::::::,
-      :::::::::::::::::,                                  ::::::::::::::::
-       :::::::::::::::::::,                             ::::::::::::::::
-        ::::::::::::::::::::::,                     ,::::,:, , ::::,:::
-          :::::::::::::::::::::::,               ::,: ::,::, ,,: ::::
-              ,::::::::::::::::::::              ::,,  , ,,  ,::::
-                 ,::::::::::::::::              ::,, ,   ,:::,
-                      ,::::                         , ,,
-                                                  ,,,
-ENDTEXT
-        puts completed
+      completed = <<~ENDTEXT
+                                          ,,   ,  ,,
+                                        :      ::::,    :::,
+                           ,        ,,: :::::::::::::,,  ::::   :  ,
+                         ,       ,,,   ,:::::::::::::::::::,  ,:  ,: ,,
+                    :,        ::,  , , :, ,::::::::::::::::::, :::  ,::::
+                   :   :    ::,                          ,:::::::: ::, ,::::
+                  ,     ,:::::                                  :,:::::::,::::,
+              ,:     , ,:,,:                                       :::::::::::::
+             ::,:   ,,:::,                                           ,::::::::::::,
+            ,:::, :,,:::                                               ::::::::::::,
+           ,::: :::::::,       Mountains are again merely mountains     ,::::::::::::
+           :::,,,::::::                                                   ::::::::::::
+         ,:::::::::::,                                                    ::::::::::::,
+         :::::::::::,                                                     ,::::::::::::
+        :::::::::::::                                                     ,::::::::::::
+        ::::::::::::                      Ruby Koans                       ::::::::::::
+        ::::::::::::#{ruby_version},::::::::::::
+        :::::::::::,                                                      , :::::::::::
+        ,:::::::::::::,                brought to you by                 ,,::::::::::::
+        ::::::::::::::                                                    ,::::::::::::
+         ::::::::::::::,                                                 ,:::::::::::::
+         ::::::::::::,               Neo Software Artisans              , ::::::::::::
+          :,::::::::: ::::                                               :::::::::::::
+           ,:::::::::::  ,:                                          ,,:::::::::::::,
+             ::::::::::::                                           ,::::::::::::::,
+              :::::::::::::::::,                                  ::::::::::::::::
+               :::::::::::::::::::,                             ::::::::::::::::
+                ::::::::::::::::::::::,                     ,::::,:, , ::::,:::
+                  :::::::::::::::::::::::,               ::,: ::,::, ,,: ::::
+                      ,::::::::::::::::::::              ::,,  , ,,  ,::::
+                         ,::::::::::::::::              ::,, ,   ,:::,
+                              ,::::                         , ,,
+                                                          ,,,
+      ENDTEXT
+      puts completed
     end
 
     def encourage
       puts
-      puts "The Master says:"
-      puts Color.cyan("  You have not yet reached enlightenment.")
-      if ((recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1)
-        puts Color.cyan("  I sense frustration. Do not be afraid to ask for help.")
+      puts 'The Master says:'
+      puts Color.cyan('  You have not yet reached enlightenment.')
+      if (recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1
+        puts Color.cyan('  I sense frustration. Do not be afraid to ask for help.')
       elsif progress.last(2).size == 2 && progress.last(2).uniq.size == 1
-        puts Color.cyan("  Do not lose hope.")
+        puts Color.cyan('  Do not lose hope.')
       elsif progress.last.to_i > 0
         puts Color.cyan("  You are progressing. Excellent. #{progress.last} completed.")
       end
@@ -358,58 +360,58 @@ ENDTEXT
 
     def guide_through_error
       puts
-      puts "The answers you seek..."
+      puts 'The answers you seek...'
       puts Color.red(indent(failure.message).join)
       puts
-      puts "Please meditate on the following code:"
+      puts 'Please meditate on the following code:'
       puts embolden_first_line_only(indent(find_interesting_lines(failure.backtrace)))
       puts
     end
 
     def embolden_first_line_only(text)
       first_line = true
-      text.collect { |t|
+      text.collect do |t|
         if first_line
           first_line = false
           Color.red(t)
         else
           Color.cyan(t)
         end
-      }
+      end
     end
 
     def indent(text)
       text = text.split(/\n/) if text.is_a?(String)
-      text.collect{|t| "  #{t}"}
+      text.collect { |t| "  #{t}" }
     end
 
     def find_interesting_lines(backtrace)
-      backtrace.reject { |line|
+      backtrace.reject do |line|
         line =~ /neo\.rb/
-      }
+      end
     end
 
     # Hat's tip to Ara T. Howard for the zen statements from his
     # metakoans Ruby Quiz (http://rubyquiz.com/quiz67.html)
     def a_zenlike_statement
-      if !failed?
-        zen_statement =  "Mountains are again merely mountains"
-      else
-        zen_statement = case (@pass_count % 10)
-        when 0
-          "mountains are merely mountains"
-        when 1, 2
-          "learn the rules so you know how to break them properly"
-        when 3, 4
-          "remember that silence is sometimes the best answer"
-        when 5, 6
-          "sleep is the best meditation"
-        when 7, 8
-          "when you lose, don't lose the lesson"
-        else
-          "things are not what they appear to be: nor are they otherwise"
-        end
-      end
+      zen_statement = if !failed?
+                        'Mountains are again merely mountains'
+                      else
+                        case (@pass_count % 10)
+                        when 0
+                          'mountains are merely mountains'
+                        when 1, 2
+                          'learn the rules so you know how to break them properly'
+                        when 3, 4
+                          'remember that silence is sometimes the best answer'
+                        when 5, 6
+                          'sleep is the best meditation'
+                        when 7, 8
+                          "when you lose, don't lose the lesson"
+                        else
+                          'things are not what they appear to be: nor are they otherwise'
+                        end
+                      end
       puts Color.green(zen_statement)
     end
   end
@@ -419,7 +421,7 @@ ENDTEXT
 
     attr_reader :name, :failure, :koan_count, :step_count, :koan_file
 
-    def initialize(name, koan_file=nil, koan_count=0, step_count=0)
+    def initialize(name, koan_file = nil, koan_count = 0, step_count = 0)
       @name = name
       @failure = nil
       @koan_count = koan_count
@@ -435,23 +437,21 @@ ENDTEXT
       @failure = failure
     end
 
-    def setup
-    end
+    def setup; end
 
-    def teardown
-    end
+    def teardown; end
 
     def meditate
       setup
       begin
         send(name)
-      rescue StandardError, Neo::Sensei::FailedAssertionError => ex
-        failed(ex)
+      rescue StandardError, Neo::Sensei::FailedAssertionError => e
+        failed(e)
       ensure
         begin
           teardown
-        rescue StandardError, Neo::Sensei::FailedAssertionError => ex
-          failed(ex) if passed?
+        rescue StandardError, Neo::Sensei::FailedAssertionError => e
+          failed(e) if passed?
         end
       end
       self
@@ -474,16 +474,15 @@ ENDTEXT
       def command_line(args)
         args.each do |arg|
           case arg
-          when /^-n\/(.*)\/$/
-            @test_pattern = Regexp.new($1)
+          when %r{^-n/(.*)/$}
+            @test_pattern = Regexp.new(::Regexp.last_match(1))
           when /^-n(.*)$/
-            @test_pattern = Regexp.new(Regexp.quote($1))
+            @test_pattern = Regexp.new(Regexp.quote(::Regexp.last_match(1)))
           else
-            if File.exist?(arg)
-              load(arg)
-            else
-              fail "Unknown command line argument '#{arg}'"
-            end
+            raise "Unknown command line argument '#{arg}'" unless File.exist?(arg)
+
+            load(arg)
+
           end
         end
       end
@@ -493,7 +492,7 @@ ENDTEXT
         @subclasses ||= []
       end
 
-       # Lazy initialize list of test methods.
+      # Lazy initialize list of test methods.
       def testmethods
         @test_methods ||= []
       end
@@ -507,7 +506,7 @@ ENDTEXT
       end
 
       def total_tests
-        self.subclasses.inject(0){|total, k| total + k.testmethods.size }
+        subclasses.inject(0) { |total, k| total + k.testmethods.size }
       end
     end
   end
@@ -522,20 +521,20 @@ ENDTEXT
     end
 
     def each_step
-      catch(:neo_exit) {
+      catch(:neo_exit) do
         step_count = 0
-        Neo::Koan.subclasses.each_with_index do |koan,koan_index|
+        Neo::Koan.subclasses.each_with_index do |koan, koan_index|
           koan.testmethods.each do |method_name|
-            step = koan.new(method_name, koan.to_s, koan_index+1, step_count+=1)
+            step = koan.new(method_name, koan.to_s, koan_index + 1, step_count += 1)
             yield step
           end
         end
-      }
+      end
     end
   end
 end
 
-END {
+at_exit do
   Neo::Koan.command_line(ARGV)
   Neo::ThePath.new.walk
-}
+end

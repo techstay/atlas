@@ -1,3 +1,5 @@
+# typed: true
+
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 include Java

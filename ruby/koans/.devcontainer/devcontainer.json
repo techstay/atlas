@@ -3,7 +3,7 @@
 {
   "name": "Ruby",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/ruby:0-3-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/ruby:0-2-bullseye",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,7 +13,8 @@
         "EditorConfig.EditorConfig"
       ]
     }
-  }
+  },
+  "postCreateCommand": "bash setup.sh"
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

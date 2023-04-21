@@ -10,6 +10,7 @@ GEM
     parser (3.2.2.0)
       ast (~> 2.4.1)
     rainbow (3.1.1)
+    rake (13.0.6)
     rbi (0.0.16)
       ast
       parser (>= 2.6.4.0)
@@ -68,12 +69,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  rake
   reek
   rubocop
   sorbet
   sorbet-runtime
-  spoom
   tapioca
 
 BUNDLED WITH
-   2.4.10
+   2.4.12
