@@ -34,3 +34,12 @@ npm set registry https://registry.npmmirror.com
 corepack enable
 corepack prepare pnpm@latest --activate
 ```
+
+## vuepress-hope 博客
+
+安装插件
+
+```sh
+pnpm i -D @vuepress/plugin-google-analytics@next
+pnpm i -D @vuepress/plugin-search@next
+```
