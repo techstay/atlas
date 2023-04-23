@@ -1,6 +1,7 @@
 # Visual Studio
 .vs/
 .vscode/
+!.vscode/launch.json
 bin/
 obj/
 *.exe
