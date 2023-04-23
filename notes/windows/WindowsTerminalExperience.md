@@ -19,7 +19,7 @@ winget install Microsoft.WindowsTerminal
 
 ### 支持特殊字符的字体
 
-还需要安装一些 nerd fonts，支持特殊字符。
+还需要安装一些 nerd fonts，支持特殊字符。如果不知道怎么选择字体，还可以到[codingfont](https://www.codingfont.com/)和[programmingfonts](https://www.programmingfonts.org)这两个网站上选择。
 
 ```powershell
 scoop install FantasqueSansMono-NF-Mono Meslo-NF-Mono Iosevka-NF-Mono
