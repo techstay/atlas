@@ -1,0 +1,85 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!fsharp
+
+let f1 = 42
+f1
+
+#!fsharp
+
+let f2 x = x
+f2 5
+
+#!fsharp
+
+let f3 x : int = x * x
+f3 4
+
+#!fsharp
+
+let sum a b = a + b
+sum 6 4
+
+#!fsharp
+
+let cubeVolume length width height = length * width * height
+cubeVolume 3 4 5
+
+#!fsharp
+
+let rec fibonacci n =
+  if n < 2 then n else fibonacci (n - 1) + fibonacci (n - 2)
+
+fibonacci 7
+
+#!fsharp
+
+// tail recursive functions
+let fibonacci2 n =
+  let rec loop acc1 acc2 n = 
+    match n with
+      | 0 -> acc1
+      | 1 -> acc2
+      | _ ->
+        loop acc2 (acc1 + acc2) (n - 1)
+  loop 0 1 n
+  
+fibonacci2 7
+
+#!fsharp
+
+let rec factorial n =
+  if n < 2 then 1 else factorial (n - 1) * n
+
+factorial 5
+
+#!fsharp
+
+// partial functions
+let sum4 = sum 4
+sum4 10
+
+#!fsharp
+
+// lambda expressions
+let result = (fun x -> x * x) 4
+result
+
+#!fsharp
+
+// pipelines
+let result2 =
+  100
+  |> fun x -> x / 10
+  |> fun x -> x / 2
+  |> fun x -> x * x
+  |> fun x -> x * 2
+result2
+
+#!fsharp
+
+// composition
+let add2thentimes10 = (fun x -> x + 2) >> (fun x -> x * 10)
+add2thentimes10 4
