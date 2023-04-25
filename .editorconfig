@@ -17,3 +17,9 @@ indent_style = tab
 [*.rb]
 indent_size = 2
 end_of_line = lf
+
+[*.kt]
+indent_size = 4
+
+[*.kts]
+indent_size = 4
