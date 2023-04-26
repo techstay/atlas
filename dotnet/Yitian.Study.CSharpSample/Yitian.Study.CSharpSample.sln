@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yitian.Study.CSharpSample.Basic", "Yitian.Study.CSharpSample.Basic\Yitian.Study.CSharpSample.Basic.csproj", "{76F4F296-7292-4872-8DDC-AF3E5168D6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yitian.Study.CSharpSample.Data", "Yitian.Study.CSharpSample.Data\Yitian.Study.CSharpSample.Data.csproj", "{B3BFFA08-D253-40F2-A08B-F7846D48F82E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76F4F296-7292-4872-8DDC-AF3E5168D6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F4F296-7292-4872-8DDC-AF3E5168D6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F4F296-7292-4872-8DDC-AF3E5168D6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F4F296-7292-4872-8DDC-AF3E5168D6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BFFA08-D253-40F2-A08B-F7846D48F82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BFFA08-D253-40F2-A08B-F7846D48F82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BFFA08-D253-40F2-A08B-F7846D48F82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BFFA08-D253-40F2-A08B-F7846D48F82E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63D73086-0365-4D10-A8FB-0B2D7FE12971}
+	EndGlobalSection
+EndGlobal
