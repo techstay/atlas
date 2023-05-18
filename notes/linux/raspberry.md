@@ -2,19 +2,11 @@
 
 记录树莓派的一些玩法，使用的设备是树莓派 3B+。
 
-## 开始使用
+## 准备工作
 
-### 安装
+### 安装 raspberrypi os
 
 到[官网](https://www.raspberrypi.com/software/)下载安装官方烧录工具，可选官方镜像和第三方镜像。官方镜像可预先开启 SSH 和 WIFI 进行无界面安装和配置，第三方镜像需要连接显示器和键盘进行配置。
-
-开启 docker，方便容器化安装一些服务。
-
-```sh
-sudo apt install docker.io
-sudo gpasswd docker -a techstay
-sudo systemctl enable -now docker
-```
 
 ### 系统更新
 
@@ -31,6 +23,53 @@ sudo rpi-update
 # 遇到问题时可以尝试跳过自更新，可能需要代理
 sudo UPDATE_SELF=0 rpi-update
 ```
+
+### nala
+
+nala 是一个界面优雅的 apt 前端，可以替代日常 apt 使用。
+
+```sh
+echo "deb [arch=amd64,arm64,armhf] http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt update && sudo apt install nala-legacy
+```
+
+### neovim
+
+neovim 官方没有提供 arm 的版本，而树莓派官方仓库自带的版本又太老了。最后没办法我只能尝试自己编译，好在 neovim 比我想象的小一些，编译半个小时左右就完成了。反倒是从 github 上下载依赖的时候失败了好几次，浪费了我不少时间。
+
+```sh
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+```
+
+然后安装[lazyvim](https://www.lazyvim.org/installation)，不过 lazyvim 初始化的时候需要编译一些插件，很可能会导致树莓派卡死无法连接，遇到这种情况需要耐心等待。成功编译之后，应该就不会出现这种问题了。不过树莓派上运行 lazyvim 还是有点卡，或许我需要找一个轻量级的配置。
+
+### docker
+
+docker，方便容器化安装一些服务。
+
+```sh
+sudo apt install docker-compose
+sudo gpasswd docker -a techstay
+sudo systemctl enable -now docker
+```
+
+## 开始使用
+
+### 各种应用
+
+### 青龙面板
+
+用来管理和执行各种自动任务。如果 docker-compose 启动出现问题，可以将配置文件版本号改为 3 再试试。
+
+```sh
+mkdir -p "$HOME/.config/qinglong" && cd "$HOME/.config/qinglong"
+wget https://raw.githubusercontent.com/whyour/qinglong/master/docker/docker-compose.yml
+docker-compose up -d
+```
+
+打开浏览器，访问<http://raspberrypi:5700>，其他命令参考[官方仓库](https://github.com/whyour/qinglong)。
 
 ### cockpit
 
@@ -249,3 +288,13 @@ sha256sum -c sh256sum
 下载完成后，使用 etcher 或者其他软件写入内存卡，注意内存卡需 4G 以上。镜像制作需 1 分钟左右，制作完成后，取下来插入树莓派中。
 
 其他配置参考[openwrt](./../network/openwrt.md)
+
+## troubleshooting
+
+### SSH 挂起
+
+在`/etc/ssh/sshd_config`中添加下面一行。
+
+```sh
+IPQoS cs0 cs0
+```

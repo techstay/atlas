@@ -6,21 +6,10 @@
 
 我在树莓派上试着安装了一下，顺便做个记录。
 
-使用 docker 方式安装最简单，首先需要安装好 docker，然后在拉取最新 adguardhome 镜像。
+通过 docker-compose 方式安装最简单。docker-compose 文件可以在[我的树莓派 dotfiles](https://github.com/techstay/dotfile-rasp)中找到。
 
 ```sh
-sudo apt install docker.io
-docker pull adguard/adguardhome
-```
-
-然后启动 adgardhome，因为 docker 是容器，所以要用`--network host`参数直接使用宿主的网络，而不是容器的网络。
-
-```sh
-docker run --name adguardhome \
-  --restart unless-stopped \
-  -v /my/own/workdir:/opt/adguardhome/work \
-  -v /my/own/confdir:/opt/adguardhome/conf \
-  --network host -d adguard/adguardhome
+sudo apt install docker-compose
 ```
 
 启动后查看一下 adguardhome 的状态。
