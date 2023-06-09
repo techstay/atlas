@@ -77,3 +77,13 @@ scoop reset openjdk
 
 - java-samples，我的 java 学习代码，里面包含了一些 java 语言特性的示例
 - thirdparty-samples，包含了一些第三方类库的使用示例
+  - junit5
+  - jackson
+  - datafaker
+  - jdbc
+  - logging
+  - okhttp
+  - owner
+- spring-samples,包含了 spring 类库的相关例子
+- vertx-samples,包含了 vertx 类库的相关例子
+- javafx-samples,包含了一些 javafx 的例子
