@@ -1,6 +1,6 @@
 # dotnet-libraries
 
-.NET 一些常用类库的例子。
+dotnet 一些常用类库的例子。
 
 ## hashids.net
 
