@@ -6,4 +6,4 @@ multiline comments
 multiline comments
 */
 
-int magic = 42;
+Console.WriteLine("comments");

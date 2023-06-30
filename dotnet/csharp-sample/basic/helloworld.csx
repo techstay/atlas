@@ -1,3 +1,1 @@
-using Internal;
-
-Console.WriteLine("Hello world!");
+Console.WriteLine("Hello C# world!");

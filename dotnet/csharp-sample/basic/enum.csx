@@ -1,6 +1,10 @@
 enum TrafficLight : int
 {
-  RED, YELLOW, GREEN
+  RED,
+  YELLOW,
+  GREEN
 }
 
-var traffic = TrafficLight.GREEN;
+
+var trafficLight = TrafficLight.RED;
+Console.WriteLine(trafficLight);

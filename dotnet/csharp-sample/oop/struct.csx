@@ -1,12 +1,14 @@
 struct Person
 {
-  string name;
-  int age;
+  public string Name { get; set; }
+  public string Nickname { get; set; }
+  public DateTime Birthday { set; get; }
+
+  override public string ToString() => $"Person(Name:{Name}, Nickname:{Nickname}, Birthday:{Birthday})"
 }
 
-// all fields in readonly structs should be readonly
-readonly struct Employee
-{
-  readonly string name;
-  readonly int age;
-}
+var person = new Person { Name = "techstay", Nickname = "Tech", Birthday = new DateTime(1993, 1, 12) };
+System.Console.WriteLine(person);
+
+var person2 = person with { Name = "techbro" };
+System.Console.WriteLine(person2);

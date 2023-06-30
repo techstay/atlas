@@ -10,22 +10,29 @@ ulong ul = 1000UL;
 
 // depends on platforms
 nint ni;
-unint nui;
+nuint nui;
 
 int hex = 0xcafe;
 int octal = 012345;
 int binary = 0b1010_1010;
 
+// initializing with default values
+int defaultInt = default;
+var defaultDouble = default(double);
+
 // 布尔型
 bool isChecked = true;
 
 // 小数
-float f;
-double d;
+float f = 3.1f;
+double d = 3.14156d;
 
 // 高精度数字
 decimal decimalNumber = 123475m;
 
 // 字符类型
 char c = 'c';
-string text = "12345";
+string text = "abc";
+
+System.Console.WriteLine(c);
+System.Console.WriteLine(text);
