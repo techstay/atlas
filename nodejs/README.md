@@ -57,6 +57,21 @@ corepack prepare pnpm@latest --activate
 ## 学习
 
 - [阮一峰的 ES6 入门教程](https://es6.ruanyifeng.com/)
+- [typescript 官方文档](https://www.typescriptlang.org/docs/)
+
+### eslint
+
+在项目中初始化 eslint，命令行提供了一些初始化选项，可以使用预配置的模板或者自定义规则。
+
+```sh
+npx eslint --init
+```
+
+自动修复问题
+
+```sh
+npx eslint **/*.js --fix
+```
 
 ## node 生态
 
