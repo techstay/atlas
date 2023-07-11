@@ -2,6 +2,10 @@
 
 我的 nodejs 学习笔记。
 
+- [javascript-sample](./javascript-sample/README.md)，一些 JavaScript 代码例子
+- [typescript-sample](./typescript-sample/README.md)，一些 typescript 代码例子
+- [node-sample](./node-sample/README.md)，一些 nodejs 代码例子
+
 编程语言永远是程序员们可以争论的话题之一。现在世界上有众多编程语言，各具特色，众口难调。我当初入门的时候，初学的还是 C、Java 这些静态语言，他们也的确很棒。除了这些静态语言之外，还有一种动态语言，典型的就是 Python、JavaScript 这些。其实动态语言写一些功能较为单一的脚本还是很舒服的，但是如果涉及到大型项目，动态语言的缺点就显现出来了。最直观的就是 IDE 没办法做非常智能的跟踪，很多错误都必须等到编译器才能知道。
 
 这对于习惯了 IDE 提示的我来说是一个极大的挑战，如果使用 Java 这些静态语言，现代的 IDE 可以对每一个变量和函数做非常详细的类型提示，就算使用函数式链式调用，也可以非常清晰的看出每一个返回类型和输入类型，让人非常安心。但是在动态语言中就没办法做到了，只能依靠文档和人脑去确定每一个变量的类型，稍不留神就会掉到坑里。所以现在很多动态语言也开始提供类型标注等“静态功能”，目的就是让编译器和 IDE 可以更准确的推断类型，及时报告错误。但是这样一来，动态语言的一个特点就不复存在，这也算编程语言的一点曲折的发展吧。
@@ -58,6 +62,7 @@ corepack prepare pnpm@latest --activate
 
 - [阮一峰的 ES6 入门教程](https://es6.ruanyifeng.com/)
 - [typescript 官方文档](https://www.typescriptlang.org/docs/)
+- [nodejs 文档](https://nodejs.org/docs/latest-v20.x/api/documentation.html)
 
 ### eslint
 
