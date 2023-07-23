@@ -1,0 +1,18 @@
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=22.12.0",
+]
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "techstay", email = "lovery521@gmail.com"},
+]
+dependencies = [
+    "flet>=0.2.4",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}

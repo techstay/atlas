@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <title>pyotp sample</title>
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-app-bar justify="center" align="center" app>
+        <h1>pyotp sample</h1>
+      </v-app-bar>
+
+      <v-main cols="8">
+        <v-container>
+          <v-form>
+            <v-row>
+              <v-col cols="6">
+                <v-text-field label="Secret" v-model="secret_key"></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6">
+                <v-text-field readonly label="Provision Uri" v-model="provisioning_uri"></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6">
+                <v-otp-input v-model="otp" disabled length="6" type="number"></v-otp-input>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="6">
+                <v-progress-linear v-model="progress" striped height="10"></v-progress-linear>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="4">
+                <v-btn color="primary" @click="gen_secret()">生成密钥</v-btn>
+                <v-btn color="#BA68C8" @click="show_otp()">显示OTP</v-btn>
+                <p>先生成一个密钥，然后查询该密钥对应的密码</p>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-container>
+      </v-main>
+      <v-footer app>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        secret_key: '',
+        provisioning_uri: '',
+        otp: '',
+        time_remaining: 0,
+        interval: 0
+      },
+      computed: {
+        progress: function () {
+          return this.time_remaining / 30 * 100
+        }
+      },
+      watch: {
+        time_remaining: function (val) {
+          if (val >= 0) return
+          this.show_otp()
+        }
+      },
+
+      beforeDestroy () {
+        clearInterval(this.interval)
+      },
+      methods: {
+        gen_secret () {
+          axios.get('/gen_secret')
+            .then(response => {
+              this.secret_key = response.data.secret_key
+            })
+            .catch(error => {
+              alert(error)
+            })
+        },
+        show_otp () {
+          axios.get('/show_otp', { params: { secret_key: this.secret_key } })
+            .then(response => {
+              this.provisioning_uri = response.data.provisioning_uri
+              this.otp = response.data.otp
+              this.time_remaining = response.data.time_remaining
+              this.start_countdown()
+            })
+            .catch(error => {
+              alert(error)
+            })
+        },
+        start_countdown () {
+          clearInterval(this.interval)
+          this.interval = setInterval(() => {
+            this.time_remaining = this.time_remaining - 1
+          }, 1000)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
