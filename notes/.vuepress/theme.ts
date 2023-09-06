@@ -10,9 +10,9 @@ export default hopeTheme({
     url: "https://github.com/techstay",
   },
   navbarLayout: {
-    left: ["Brand"],
+    start: ["Brand"],
     center: [],
-    right: ["Links", "Language", "Repo", "Outlook", "Search"],
+    end: ["Links", "Language", "Repo", "Outlook", "Search"],
   },
 
   iconAssets: "iconfont",
@@ -75,9 +75,9 @@ export default hopeTheme({
       flowchart: true,
       footnote: true,
       gfm: true,
-      imageLazyload: true,
-      imageTitle: true,
-      imageSize: true,
+      imgLazyload: true,
+      figure: true,
+      imgSize: true,
       include: true,
       katex: true,
       mark: true,
@@ -85,9 +85,7 @@ export default hopeTheme({
       playground: {
         presets: ["ts", "vue"],
       },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
+      presentation: ["highlight", "math", "search", "notes", "zoom"],
       stylize: [
         {
           matcher: "Recommended",
