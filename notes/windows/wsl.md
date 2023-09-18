@@ -69,7 +69,7 @@ sed -i 's/^# \?%wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD:
 Arch.exe config --default-user techstay
 ```
 
-之后的配置步骤参考[Archlinux](../linux/archlinux.md)。
+最后克隆[dotfiles](https://github.com/techstay/dotfiles)。
 
 ## 命令
 
