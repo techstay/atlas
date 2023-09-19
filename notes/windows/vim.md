@@ -79,7 +79,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/lunarvim/lunarvim/master/uti
 
 安装[vscodevim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)扩展，参考文档进行配置。
 
-## cheetsheet
+## cheat sheet
 
 [awesome-cheatsheets](https://github.com/techstay/awesome-cheatsheets/blob/master/editors/vim.txt)
 
