@@ -17,6 +17,20 @@ New-NetFirewallRule -DisplayName "Allow inbound ICMPv4" -Direction Inbound -Prot
 New-NetFirewallRule -DisplayName "Allow inbound ICMPv6" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -RemoteAddress LocalSubnet -Action Allow
 ```
 
+### 更改网络状态
+
+查看网络状态
+
+```powershell
+Get-NetConnectionProfile
+```
+
+修改网络状态
+
+```pwsh
+Set-NetConnectionProfile -InterfaceIndex 42 -NetworkCategory Private
+```
+
 ## 测速
 
 ### iperf3
