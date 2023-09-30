@@ -18,6 +18,26 @@ opkg install tailscale
 tailscale up --advertise-routes=192.168.31.0/24
 ```
 
+#### 一些有用的命令
+
+[serve](https://tailscale.com/kb/1080/cli/#serve)将网络服务暴露于 tailnet 中：
+
+```sh
+# 语法
+tailscale serve http[:<port>] <mount-point> <source> [off]
+# 例子 开放hugo博客端口号
+tailscale serve http / http://localhost:1313
+```
+
+[funnel](https://tailscale.com/kb/1080/cli/#funnel)命令将 serve 命令中的服务暴露于公网之中：
+
+```sh
+# 语法 限制三个端口号
+tailscale funnel <443/8443/10000> [on/off]
+# 查看状态
+tailscale funnel status
+```
+
 ### headscale
 
 tailscale 的服务端是一个私有的服务，通过官方服务器承载。而[headscale](https://github.com/juanfont/headscale)是一个开源的服务端程序，兼容 tailscale，实现了 tailscale 的多数功能，可以部署在自己的服务器上。如果你有自己的服务器，那么部署一个 headscale 更加灵活方便。
@@ -59,8 +79,8 @@ zerotier-cli listnetworks
 使用命令行连接，多个客户端英指定不同的 IP 地址，`-c`和`-k`参数建议也是用不一样的名称。n2n 会尝试打洞直连，当直连失败的时候，会使用服务器进行中转。
 
 ```sh
-$ sudo edge -c mynetwork -k mysecretpass -a 192.168.100.1 -f -l supernode.ntop.org:7777
-$ sudo edge -c mynetwork -k mysecretpass -a 192.168.100.2 -f -l supernode.ntop.org:7777
+sudo edge -c mynetwork -k mysecretpass -a 192.168.100.1 -f -l supernode.ntop.org:7777
+sudo edge -c mynetwork -k mysecretpass -a 192.168.100.2 -f -l supernode.ntop.org:7777
 ```
 
 官方服务器可能不稳定，建议自建 supernode。自建之后，用自建的服务器地址替代官方地址。
