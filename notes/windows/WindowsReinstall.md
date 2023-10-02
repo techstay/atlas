@@ -110,19 +110,23 @@ scoop install Meslo-NF-Mono FantasqueSansMono-NF-Mono
 - [tailscale](https://tailscale.com/download)
 
 ```powershell
-winget install Microsoft.DotNet.SDK.7
-winget install GnuPG.Gpg4win
-winget install Microsoft.PowerToys
-winget install Telegram.TelegramDesktop
-winget install Cloudflare.Warp
-winget install voidtools.everything
-winget install ActivityWatch.ActivityWatch
-winget install OBSProject.OBSStudio
-winget install Microsoft.VisualStudioCode
-winget install Audacity.Audacity
-winget install Fork.Fork
-winget install Microsoft.VisualStudioCode
-winget install tailscale.tailscale
+winget install `
+  Microsoft.DotNet.SDK.7 `
+  GnuPG.Gpg4win `
+  Microsoft.PowerToys `
+  Telegram.TelegramDesktop `
+  Cloudflare.Warp `
+  voidtools.everything `
+  ActivityWatch.ActivityWatch `
+  OBSProject.OBSStudio `
+  Microsoft.VCRedist.2015+.x64 `
+  Microsoft.VisualStudioCode `
+  Audacity.Audacity `
+  Fork.Fork `
+  tailscale.tailscale `
+  Obsidian.Obsidian `
+  Datronicsoft.SpacedeskDriver.Server
+
 scoop install screentogif ffmpeg busybox vim yt-dlp imageglass exiftool
 ```
 
