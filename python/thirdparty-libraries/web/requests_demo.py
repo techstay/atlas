@@ -4,7 +4,7 @@ import json
 import requests
 import requests.cookies
 
-base_url = "http://httpbin.org/"
+base_url = "https://httpbin.org/"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"
 }
@@ -113,5 +113,20 @@ response = requests.get(
 )
 
 print(response.text)
+
+# %%
+# 一言 hitokoto
+hitokoto_url = "https://v1.hitokoto.cn"
+
+response = requests.get(
+    url=hitokoto_url,
+    params={
+        "c": "l",
+    },
+)
+
+print(f'{response.json()["hitokoto"]}  ——{response.json()["from_who"]}')
+
+response.json()
 
 # %%
