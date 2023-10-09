@@ -89,7 +89,8 @@ pipx install pdm
 pdm config venv.backend venv
 # 开启全局下载缓存，节约存储空间
 pdm config install.cache on
-
+# 使用清华镜像
+pdm config pypi.url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 在当前目录创建新项目
