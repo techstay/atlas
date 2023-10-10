@@ -74,6 +74,7 @@
     'ChangeNtpServer',
     'CheckDotnetVersion',
     'OptimizeServices',
+    'RebuildIconCache',
     'SetGradleEnv',
     'SetPublicDns',
     'ToggleWin11ContextMenu'

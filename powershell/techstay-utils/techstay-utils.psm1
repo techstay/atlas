@@ -4,6 +4,7 @@
 . $PsScriptRoot\ChangeNtpServer.ps1
 . $PSScriptRoot\CheckDotnetVersion.ps1
 . $PSScriptRoot\OptimizeServices.ps1
+. $PSScriptRoot\RebuildIconCache.ps1
 . $PSScriptRoot\SetGradleEnv.ps1
 . $PSScriptRoot\SetPublicDns.ps1
 . $PSScriptRoot\ToggleWin11ContextMenu.ps1
