@@ -1,4 +1,4 @@
-# 易艾福 G 的学习笔记
+# 学习笔记
 
 ![last commit](https://img.shields.io/github/last-commit/techstay/studyNotes)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-✨)
@@ -6,13 +6,7 @@
 
 ## 介绍
 
-我的学习笔记仓库，记录了学习各种知识和技能的笔记和代码。
-
-项目分为两部分内容，笔记内容是一个 vuepress 项目，可以直接在线查看。代码类内容需要将项目克隆到本地，然后根据说明运行。
-
-## 关于
-
-项目采用[vuepress](https://v2.vuepress.vuejs.org/zh/)搭建，和[vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/zh/)主题。
+我的学习笔记，代码和其他一些练习都放在这里了。
 
 ## Contributors ✨
 
