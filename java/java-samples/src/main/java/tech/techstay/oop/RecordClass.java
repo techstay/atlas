@@ -1,9 +1,9 @@
 package tech.techstay.oop;
 
 import java.util.Objects;
-import java.util.StringJoiner;
 
 public class RecordClass {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
 
     // using java beans
@@ -83,7 +83,6 @@ class Employee {
 
   @Override
   public String toString() {
-    return new StringJoiner(", ", Employee.class.getSimpleName() + "[", "]").add("id=" + id)
-        .add("name='" + name + "'").add("age=" + age).toString();
+    return String.format("%s{id=%d, name='%s', age=%d}", getClass().getSimpleName(), id, name, age);
   }
 }

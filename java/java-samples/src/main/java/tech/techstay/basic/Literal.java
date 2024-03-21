@@ -1,6 +1,7 @@
 package tech.techstay.basic;
 
 public class Literal {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     // integers
     int i = 42;

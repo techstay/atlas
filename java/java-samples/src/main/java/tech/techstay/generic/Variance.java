@@ -56,6 +56,7 @@ public class Variance {
     }
   }
 
+  @SuppressWarnings("unused")
   static void varianceOfCollections() {
     // arrays
     try {

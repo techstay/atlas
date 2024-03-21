@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.Queue;
 
 public class QueueOperation {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     // queues
     Queue<Integer> queue = new LinkedList<>();

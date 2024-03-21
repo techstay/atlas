@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.stream.Stream;
 
 public class StreamCreating {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
 
     Stream<Integer> stream1 = Stream.of(1, 2, 3, 4);

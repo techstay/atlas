@@ -1,6 +1,6 @@
 package tech.techstay.exception;
 
-public class LostException {
+public class MissingExceptions {
   public static void main(String[] args) {
     try {
       lostException1();

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ListOperation {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     ArrayList<Integer> list1 = new ArrayList<>();
 

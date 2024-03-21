@@ -3,6 +3,7 @@ package tech.techstay.function;
 import java.util.Optional;
 
 public class OptionalOperation {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     Optional<Integer> obj1 = Optional.empty();
     Optional<Integer> obj2 = Optional.of(42);

@@ -1,6 +1,11 @@
 package tech.techstay.collection;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.IntStream;
 
 public class SetOperation {

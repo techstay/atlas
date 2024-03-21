@@ -12,11 +12,10 @@ public class PatternMatching {
     }
 
     // switch pattern matching
-    // TODO: this is a preview feature
-    // switch (obj) {
-    // case Integer i -> System.out.println(i);
-    // case String s -> System.out.println(s.toUpperCase());
-    // default -> System.out.println("not matched");
-    // }
+    switch (obj) {
+      case Integer i -> System.out.println(i);
+      case String s -> System.out.println(s.toUpperCase());
+      default -> System.out.println("not matched");
+    }
   }
 }

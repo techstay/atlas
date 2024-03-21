@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ArrayOperation {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     int[] arr1 = new int[] {5, 4, 3, 3, 1};
     Integer[] arr2 = new Integer[5];

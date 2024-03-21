@@ -1,7 +1,6 @@
 package tech.techstay.datetime;
 
 import java.time.LocalDate;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class DateDemo {
