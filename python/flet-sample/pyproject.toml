@@ -14,5 +14,5 @@ authors = [
 dependencies = [
     "flet>=0.2.4",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = {text = "MIT"}
