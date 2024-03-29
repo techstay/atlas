@@ -20,3 +20,14 @@ dist
 *.lck
 # ruby
 *.path_progress
+
+# rust
+target/
+
+# scala
+cache/
+
+# java
+*.manifest
+debug/
+*.class
