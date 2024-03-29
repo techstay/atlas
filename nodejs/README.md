@@ -96,3 +96,9 @@ pnpm create vuepress-theme-hope hope-project
 pnpm i -D @vuepress/plugin-google-analytics@next
 pnpm i -D @vuepress/plugin-search@next
 ```
+
+升级依赖
+
+```sh
+pnpm dlx vp-update
+```
