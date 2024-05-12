@@ -1,6 +1,5 @@
 package tech.techstay.function;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -59,8 +58,7 @@ public class StreamOperation {
 
     System.out.println("\ncollecting:");
     System.out.println(people.stream().mapToInt(Person::age).boxed().collect(Collectors.toSet()));
-    System.out.println(people.stream().mapToInt(Person::age).boxed()
-        .collect(Collectors.toCollection(ArrayList::new)));
+    System.out.println(people.stream().mapToInt(Person::age).boxed().collect(Collectors.toList()));
 
     System.out.println("\ndistinct:");
     System.out.println(Stream.of(1, 1, 2, 3, 5, 5).distinct().toList());
@@ -78,8 +76,8 @@ public class StreamOperation {
   static List<Person> generateRandomData() {
     Random rand = new Random(42);
     String[] names = "jack lisa ada bob mike franklin john lin henry lion".split(" ");
-    int[] ages = rand.ints(12, 32).limit(10).toArray();
-    int[] ids = rand.ints(0, 10).limit(10).toArray();
+    int[] ages = rand.ints(12, 32).limit(names.length).toArray();
+    int[] ids = rand.ints(0, 10).limit(names.length).toArray();
     return IntStream.range(0, 10).mapToObj(i -> new Person(ids[i], names[i], ages[i]))
         .collect(Collectors.toList());
   }

@@ -1,6 +1,5 @@
 package tech.techstay.datetime;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -13,7 +12,7 @@ public class OldFashionedDate {
     System.out.println(dateTime);
 
     // 新日期转换为旧日期
-    Date now = Date.from(Instant.now());
+    Date now = Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant());
     System.out.println(now);
   }
 
