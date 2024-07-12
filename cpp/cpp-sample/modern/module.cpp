@@ -1,5 +1,6 @@
 // precompiled std.core modules, available in c++23
-import std.core;
+// import std;
+#include <print>
 
 using namespace std;
 
@@ -7,5 +8,5 @@ using namespace std;
 
 int main()
 {
-    cout << "I'm using C++ 20 modules!" << endl;
+    println("I'm using C++ 20 modules!");
 }

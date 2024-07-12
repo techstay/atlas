@@ -8,7 +8,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "amazonwebservices.aws-toolkit-vscode",
         "formulahendry.code-runner",
         "llvm-vs-code-extensions.vscode-clangd",
         "foxundermoon.shell-format",

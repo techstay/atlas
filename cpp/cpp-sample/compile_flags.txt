@@ -1,2 +1,1 @@
---std=c++2b
--fmodules-ts
+--std=c++23

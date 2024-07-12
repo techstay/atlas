@@ -1,6 +1,4 @@
-#include <cstdio>
-#include <iostream>
-
+#include <print>
 using namespace std;
 
 int main()
@@ -11,6 +9,6 @@ int main()
         {
             printf("%d*%d=%d\t", b, a, a * b);
         }
-        cout << endl;
+        println();
     }
 }
