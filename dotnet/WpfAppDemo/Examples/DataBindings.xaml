@@ -1,0 +1,142 @@
+﻿<UserControl
+    x:Class="WpfAppDemo.Examples.DataBindings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    d:DesignHeight="450"
+    d:DesignWidth="800">
+    <ScrollViewer
+        VerticalScrollBarVisibility="Auto">
+        <StackPanel
+            Orientation="Vertical">
+            <GroupBox
+                Header="Two Way Binding">
+                <WrapPanel>
+                    <Label
+                        Target="{Binding ElementName=TextBox}"
+                        Content="Text:" />
+                    <TextBox
+                        x:Name="TextBox" />
+                    <Label
+                        Target="{Binding ElementName=TextBox2}"
+                        Content="Text2:" />
+                    <TextBox
+                        x:Name="TextBox2"
+                        Text="{Binding Text, ElementName=TextBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox
+                Header="Data Context">
+                <WrapPanel>
+                    <Label>Window Title:</Label>
+                    <TextBlock
+                        Text="{Binding WindowTitle}" />
+                    <Label>Window Height:</Label>
+                    <TextBlock
+                        Text="{Binding WindowHeight}" />
+                    <Label>Window Width:</Label>
+                    <TextBlock
+                        Text="{Binding WindowWidth}" />
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox
+                Header="Custom Data Source">
+                <DockPanel
+                    Margin="10">
+                    <StackPanel
+                        DockPanel.Dock="Right"
+                        Margin="10,0,0,0">
+                        <Button
+                            Name="BtnAddUser"
+                            Click="BtnAddUser_Click">
+                            Add user
+                        </Button>
+                        <Button
+                            Name="BtnChangeUser"
+                            Click="BtnChangeUser_Click"
+                            Margin="0,5">
+                            Change user
+                        </Button>
+                        <Button
+                            Name="BtnDeleteUser"
+                            Click="BtnDeleteUser_Click">
+                            Delete user
+                        </Button>
+                    </StackPanel>
+                    <ListBox
+                        Name="LbUsers"
+                        DisplayMemberPath="Name" />
+                </DockPanel>
+            </GroupBox>
+            <GroupBox
+                Header="Slider">
+                <StackPanel
+                    Orientation="Vertical">
+                    <WrapPanel>
+                        <Label>Slider Value:</Label>
+                        <TextBox
+                            Text="{Binding ElementName=Slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" />
+                    </WrapPanel>
+                    <Slider
+                        x:Name="Slider"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="50"
+                        TickFrequency="1"
+                        TickPlacement="BottomRight"
+                        IsSnapToTickEnabled="True" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox
+                Header="Progress Bar">
+                <StackPanel
+                    Orientation="Vertical">
+                    <ProgressBar
+                        x:Name="ProgressBar"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="{Binding ElementName=Slider, Path=Value}" />
+                    <ProgressBar
+                        x:Name="ProgressBar2"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="50"
+                        IsIndeterminate="True" />
+                </StackPanel>
+
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+
+    <UserControl.Resources>
+        <Style
+            TargetType="TextBox">
+            <Setter
+                Property="MinWidth"
+                Value="100" />
+            <Setter
+                Property="VerticalContentAlignment"
+                Value="Center" />
+        </Style>
+        <Style
+            TargetType="TextBlock">
+            <Setter
+                Property="MinWidth"
+                Value="50" />
+            <Setter
+                Property="VerticalAlignment"
+                Value="Center" />
+        </Style>
+        <Style
+            TargetType="ProgressBar">
+            <Setter
+                Property="Margin"
+                Value="2,2,2,2" />
+            <Setter
+                Property="MinHeight"
+                Value="20" />
+        </Style>
+    </UserControl.Resources>
+</UserControl>
