@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIExample.Pages.LocalizationsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIExample.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="using:WinUIExample.UserControls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Style="{StaticResource ExampleContainerStyle}">
+        <uc:UserControlExample
+            Header="Localization">
+            <StackPanel
+                Orientation="Vertical">
+                <RadioButtons
+                    x:Name="RadioButtonsChangeLocale"
+                    MaxColumns="{x:Bind LocaleOptions.Count}"
+                    ItemsSource="{x:Bind LocaleOptions}"
+                    SelectionChanged="RadioButtonsChangeLocale_SelectionChanged" />
+                <StackPanel
+                    Orientation="Horizontal"
+                    Spacing="20">
+                    <TextBlock
+                        x:Name="TextBlockChangeLocale"
+                        FontSize="24" />
+                    <TextBlock
+                        x:Name="TextBlockGreeting"
+                        FontSize="24" />
+                </StackPanel>
+            </StackPanel>
+        </uc:UserControlExample>
+    </StackPanel>
+</Page>

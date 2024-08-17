@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIExample.Pages.TextControlsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIExample.Pages"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:uc="using:WinUIExample.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Style="{ThemeResource ExampleContainerStyle}">
+        <uc:UserControlExample
+            Header="TextBlock">
+            <controls:WrapPanel>
+                <TextBlock
+                    Text="TextBlock" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="TextBox">
+            <controls:WrapPanel>
+                <TextBox
+                    PlaceholderText="This is a textbox"
+                    Width="300" />
+            </controls:WrapPanel>
+
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="NumberBox">
+            <controls:WrapPanel>
+                <NumberBox
+                    x:Name="NumberBox1"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="50"
+                    VerticalContentAlignment="Center"
+                    SmallChange="10"
+                    LargeChange="20"
+                    Width="300" />
+                <RadioButtons
+                    x:Name="SpinButtonPlacementModeRadioButtons"
+                    SelectedIndex="0"
+                    SelectionChanged="SpinButtonPlacementModeRadioButtons_SelectionChanged"
+                    MaxColumns="2">
+                    <x:String>Inline</x:String>
+                    <x:String>Compact</x:String>
+                </RadioButtons>
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="AutoSuggestBox">
+            <controls:WrapPanel>
+                <AutoSuggestBox
+                    x:Name="AutoSuggestBox1"
+                    PlaceholderText="Input a fruit name"
+                    QueryIcon="Find"
+                    Width="300"
+                    SuggestionChosen="AutoSuggestBox1_SuggestionChosen"
+                    TextChanged="AutoSuggestBox1_TextChanged" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="PasswordBox">
+            <controls:WrapPanel>
+                <PasswordBox
+                    x:Name="PasswordBox1"
+                    Width="300"
+                    PlaceholderText="Input password" />
+                <CheckBox
+                    x:Name="ShowPasswordCheckBox"
+                    Content="Show password"
+                    Checked="ShowPasswordCheckBox_Changed"
+                    Unchecked="ShowPasswordCheckBox_Changed" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="RichTextBlock">
+            <controls:WrapPanel>
+                <RichTextBlock>
+                    <Paragraph>Hello
+                        <Run
+                            FontStyle="Italic"
+                            FontWeight="Bold">RichTextBlock</Run> !
+                    </Paragraph>
+                </RichTextBlock>
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+    </StackPanel>
+</Page>

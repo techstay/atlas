@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIExample.Pages.AnimationsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIExample.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="using:WinUIExample.UserControls"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Style="{StaticResource ExampleContainerStyle}">
+        <uc:UserControlExample
+            Header="Storyboard Animations">
+            <controls:WrapPanel>
+                <controls:WrapPanel.Resources>
+                    <Storyboard
+                        x:Name="Storyboard1">
+                        <DoubleAnimation
+                            Storyboard.TargetName="MyAnimatedRectangle"
+                            Storyboard.TargetProperty="Opacity"
+                            From="1.0"
+                            To="0.0"
+                            Duration="0:0:1"
+                            RepeatBehavior="Forever"
+                            AutoReverse="True" />
+                    </Storyboard>
+                    <Storyboard
+                        x:Name="Storyboard2">
+                        <ColorAnimation
+                            Storyboard.TargetName="MyAnimatedRectangle2"
+                            Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                            From="Green"
+                            To="Purple"
+                            Duration="0:0:2"
+                            RepeatBehavior="Forever"
+                            AutoReverse="True" />
+                    </Storyboard>
+                    <Storyboard
+                        x:Name="Storyboard3">
+                        <ColorAnimationUsingKeyFrames
+                            Storyboard.TargetName="MyAnimatedRectangle3"
+                            Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                            RepeatBehavior="Forever"
+                            AutoReverse="True">
+                            <LinearColorKeyFrame
+                                Value="Red" />
+                            <LinearColorKeyFrame
+                                Value="Orange"
+                                KeyTime="0:0:1" />
+                            <LinearColorKeyFrame
+                                Value="Yellow"
+                                KeyTime="0:0:2" />
+                            <EasingColorKeyFrame
+                                Value="Green"
+                                KeyTime="0:0:3">
+                                <EasingColorKeyFrame.EasingFunction>
+                                    <CubicEase />
+                                </EasingColorKeyFrame.EasingFunction>
+                            </EasingColorKeyFrame>
+                            <EasingColorKeyFrame
+                                Value="Aqua"
+                                KeyTime="0:0:4">
+                                <EasingColorKeyFrame.EasingFunction>
+                                    <SineEase />
+                                </EasingColorKeyFrame.EasingFunction>
+                            </EasingColorKeyFrame>
+                            <LinearColorKeyFrame
+                                Value="Blue"
+                                KeyTime="0:0:5">
+                            </LinearColorKeyFrame>
+                            <EasingColorKeyFrame
+                                Value="Purple"
+                                KeyTime="0:0:6">
+                                <EasingColorKeyFrame.EasingFunction>
+                                    <ExponentialEase />
+                                </EasingColorKeyFrame.EasingFunction>
+                            </EasingColorKeyFrame>
+                        </ColorAnimationUsingKeyFrames>
+
+                    </Storyboard>
+                </controls:WrapPanel.Resources>
+                <Button
+                    x:Name="ButtonStoryboard1"
+                    Padding="0"
+                    ToolTipService.ToolTip="Click me to change the opacity."
+                    Click="ButtonStoryboard1_Click">
+                    <Rectangle
+                        x:Name="MyAnimatedRectangle"
+                        Width="150"
+                        Height="100"
+                        Fill="Blue" />
+                </Button>
+                <Button
+                    x:Name="ButtonStoryboard2"
+                    Padding="0"
+                    ToolTipService.ToolTip="Click me to change the color."
+                    Click="ButtonStoryboard2_Click">
+                    <Rectangle
+                        x:Name="MyAnimatedRectangle2"
+                        Width="150"
+                        Height="100"
+                        Fill="Blue" />
+                </Button>
+                <Button
+                    x:Name="ButtonStoryboard3"
+                    Padding="0"
+                    ToolTipService.ToolTip="Click me to see the animation."
+                    Click="ButtonStoryboard3_Click">
+                    <Rectangle
+                        x:Name="MyAnimatedRectangle3"
+                        Width="150"
+                        Height="100"
+                        Fill="Blue" />
+                </Button>
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="VisualStatesManager">
+            <controls:WrapPanel>
+                <Button>
+                    <Button.Template>
+                        <ControlTemplate
+                            TargetType="Button">
+                            <Grid
+                                Height="30"
+                                Width="100"
+                                CornerRadius="3">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup
+                                        x:Name="CommonStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition
+                                                GeneratedDuration="0:0:0.2" />
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState
+                                            x:Name="Normal" />
+                                        <VisualState
+                                            x:Name="PointerOver">
+                                            <Storyboard>
+                                                <ColorAnimation
+                                                    Storyboard.TargetName="ButtonBrush"
+                                                    Storyboard.TargetProperty="Color"
+                                                    To="Red" />
+                                            </Storyboard>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid.Background>
+                                    <SolidColorBrush
+                                        x:Name="ButtonBrush"
+                                        Color="Green" />
+                                </Grid.Background>
+                                <TextBlock
+                                    Text="Hello"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button>
+                    <Button.Template>
+                        <ControlTemplate
+                            TargetType="Button">
+                            <Grid
+                                Height="30"
+                                Width="100"
+                                CornerRadius="3">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup
+                                        x:Name="CommonStates">
+                                        <VisualState
+                                            x:Name="Normal" />
+                                        <VisualState
+                                            x:Name="PointerOver">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames
+                                                    Storyboard.TargetName="ButtonBrush"
+                                                    Storyboard.TargetProperty="Color">
+                                                    <DiscreteColorKeyFrame
+                                                        KeyTime="0"
+                                                        Value="LightGreen" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid.Background>
+                                    <SolidColorBrush
+                                        x:Name="ButtonBrush"
+                                        Color="LightGray" />
+                                </Grid.Background>
+                                <TextBlock
+                                    Text="Hello"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+
+    </StackPanel>
+</Page>

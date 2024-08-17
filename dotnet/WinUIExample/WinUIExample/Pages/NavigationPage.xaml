@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIExample.Pages.NavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIExample.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:uc="using:WinUIExample.UserControls"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Style="{StaticResource ExampleContainerStyle}">
+        <uc:UserControlExample
+            Header="BreadcrumbBar">
+            <BreadcrumbBar
+                x:Name="BreadcrumbBar1">
+            </BreadcrumbBar>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="SelectorBar">
+            <StackPanel
+                Orientation="Vertical">
+                <SelectorBar
+                    x:Name="SelectorBar1"
+                    SelectionChanged="SelectorBar1_SelectionChanged">
+                    <SelectorBarItem
+                        x:Name="SelectorBarItem1"
+                        Text="Item1"
+                        IsSelected="True" />
+                    <SelectorBarItem
+                        x:Name="SelectorBarItem2"
+                        Text="Item2" />
+                    <SelectorBarItem
+                        x:Name="SelectorBarItem3"
+                        Text="Item3" />
+                </SelectorBar>
+                <Frame
+                    x:Name="SelectorBarContentFrame"
+                    IsNavigationStackEnabled="False" />
+            </StackPanel>
+
+        </uc:UserControlExample>
+    </StackPanel>
+</Page>

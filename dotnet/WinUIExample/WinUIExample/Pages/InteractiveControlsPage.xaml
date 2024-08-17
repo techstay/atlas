@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIExample.Pages.InteractiveControlsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUIExample.Pages"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="using:WinUIExample.UserControls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel
+        Style="{StaticResource ExampleContainerStyle}">
+        <uc:UserControlExample
+            Header="TeachingTip">
+            <controls:WrapPanel>
+                <Button
+                    Content="Show TeachingTip"
+                    x:Name="TeachingTipButton"
+                    Click="TeachingTipButton_Click" />
+                <TeachingTip
+                    x:Name="TeachingTip1"
+                    Target="{x:Bind TeachingTipButton}"
+                    Title="This is a teaching tip"
+                    Subtitle="This is detailed information" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="Flyouts">
+            <Button
+                Content="Show Flyout">
+                <Button.Flyout>
+                    <Flyout>
+                        <TextBlock>This is the flyout!</TextBlock>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="ContentDialog">
+            <controls:WrapPanel>
+                <Button
+                    x:Name="ShowDialogButton"
+                    Content="Show Dialog"
+                    Click="ShowDialogButton_Click" />
+                <TextBlock
+                    x:Name="DialogText"
+                    VerticalAlignment="Center"
+                    Text="" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="InfoBar">
+            <controls:WrapPanel
+                Orientation="Horizontal">
+                <InfoBar
+                    x:Name="InfoBar1"
+                    MinWidth="300"
+                    Title="Title"
+                    Message="Some message."
+                    IsOpen="True"
+                    Severity="{x:Bind (InfoBarSeverity)InfoBarSeverity1.SelectedItem, Mode=OneWay}" />
+                <CheckBox
+                    Content="Open InfoBar"
+                    x:Name="InfoBarOpen"
+                    IsChecked="{x:Bind InfoBar1.IsOpen, Mode=TwoWay}" />
+                <ComboBox
+                    x:Name="InfoBarSeverity1"
+                    xmlns:ui="using:CommunityToolkit.WinUI"
+                    ItemsSource="{ui:EnumValues Type=InfoBarSeverity}"
+                    SelectedIndex="1"
+                    VerticalAlignment="Center" />
+
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="Date and Time">
+            <controls:WrapPanel>
+                <TimePicker
+                    ClockIdentifier="12HourClock" />
+                <DatePicker />
+                <CalendarDatePicker />
+                <Button
+                    Content="Show Calendar">
+                    <Button.Flyout>
+                        <Flyout>
+                            <CalendarView />
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="ColorPicker">
+            <controls:WrapPanel>
+                <Button
+                    Content="Color Picker">
+                    <Button.Flyout>
+                        <Flyout>
+                            <ColorPicker />
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+                <controls:ColorPickerButton
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    SelectedColor="LightBlue" />
+            </controls:WrapPanel>
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="Slider">
+            <StackPanel
+                Orientation="Vertical">
+                <Slider
+                    MinWidth="500"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="34" />
+            </StackPanel>
+
+        </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="ProgressBar">
+            <StackPanel
+                Orientation="Vertical"
+                Spacing="20">
+                <ProgressBar
+                    MinWidth="500"
+                    IsIndeterminate="True" />
+                <ProgressRing
+                    IsIndeterminate="True" />
+            </StackPanel>
+        </uc:UserControlExample>
+    </StackPanel>
+</Page>
