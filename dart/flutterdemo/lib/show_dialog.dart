@@ -305,7 +305,7 @@ class _ShowDialogViewState extends State<ShowDialogView>
       context,
       // New in version 3.0.0 custom transitions support.
       transitionBuilder: _veryCoolTransition,
-      backgroundColor: globalTheme.value.colorScheme.background,
+      backgroundColor: globalTheme.value.colorScheme.surface,
       transitionDuration: const Duration(milliseconds: 400),
       constraints:
           const BoxConstraints(minHeight: 460, minWidth: 300, maxWidth: 320),
