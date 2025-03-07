@@ -1,0 +1,46 @@
+[project]
+dependencies = [
+  # "agentops>=0.4.3",
+  # "arize-phoenix>=8.19.0",
+  # "arize-phoenix-otel>=0.9.0",
+  # "openinference-instrumentation-openai>=0.1.22",
+  # "openinference-instrumentation-openai-agents>=0.1.4",
+  # "scorecard-ai>=1.1.1",
+  "agno>=1.2.5",
+  "baidusearch>=1.0.3",
+  "braintrust[openai-agents]>=0.0.190",
+  "datasets>=3.4.1",
+  "duckduckgo-search>=7.5.1",
+  "gradio>=5.22.0",
+  "langfuse>=2.60.2",
+  "logfire>=3.8.1",
+  "nest-asyncio>=1.6.0",
+  "numpy>=2.2.4",
+  "openai>=1.65.4",
+  "openai-agents>=0.0.4",
+  "pycountry>=24.6.1",
+  "pydantic>=2.11.3",
+  "pydantic-ai>=0.0.36",
+  "pydantic-ai-slim[duckduckgo,tavily]>=0.0.36",
+  "rich>=13.9.4",
+  "smolagents[telemetry]>=1.12.0",
+]
+description = "Add your description here"
+name = "ai-demos"
+pythonpath = [
+  "src",
+]
+readme = "README.md"
+requires-python = ">=3.13"
+version = "0.1.0"
+[dependency-groups]
+dev = [
+  "ipykernel>=6.29.5",
+  "ipywidgets>=8.1.5",
+  "pytest>=8.3.5",
+  "python-dotenv>=1.0.1",
+  "ruff>=0.9.10",
+]
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]

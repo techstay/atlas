@@ -45,6 +45,19 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 - [poetry](https://python-poetry.org/)，这也是一个非常流行的包管理器，在 github 上有大量 star。
 - [pdm](https://pdm.fming.dev/latest/)，一个现代的包管理器。相比于前面这些兄弟，pdm 支持一个实验性的特性 PEP 582，不需要像虚拟环境那样要为每个虚拟环境都安装一遍第三方类库，更加节约存储空间。不过这个提案最后被官方否决了-\_-||。[这里](https://github.com/pdm-project/pdm/blob/main/README_zh.md#%E4%B8%8E%E5%85%B6%E4%BB%96%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E6%AF%94%E8%BE%83)有几个包管理器的对比，我推荐使用 pdm。
 - pipx，这是一个 Python 软件的包管理器。前面介绍的那些都是通用的包管理器，可以用来安装第三方类库和 Python 编写的软件。而 pipx 专门用来管理 Python 软件，它会在单独的位置安装 Python 软件，保证软件之间隔离互不干扰，创建环境变量，同时也提供了命令行可以直接更新所有软件包。所以通过 pipx 安装前面这些包管理器，再用这些包管理器去管理具体的依赖，是一个很好的方案。
+- 觉得前面这些太麻烦？现在有了终极解决方案 uv，谁用谁知道。
+
+#### uv
+
+```sh
+scoop install uv
+# 安装工具，全局可用，独立虚拟环境，可取代pipx
+uv tool install <package>
+# 包管理器，本地虚拟环境，可取代上面这些包管理器
+uv init <project>
+# 添加依赖
+uv add <package>
+```
 
 #### pipx
 
@@ -147,7 +160,7 @@ vscode 安装扩展：
 - flake8，linter 扩展，帮助分析并指出代码中可能存在的错误
 - isort，代码风格扩展，将导入类库排序
 - jupyter，一组扩展，在 vscode 中提供 jupyter 笔记本的支持
-- ruff，另一个 linter
+- ruff，另一个 linter，速度非常快
 
 我的 vsocde 配置文件：
 
@@ -160,8 +173,6 @@ vscode 安装扩展：
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
   "python.languageServer": "Pylance",
-  "python.linting.banditEnabled": true,
-  "python.linting.flake8Enabled": true,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": true
 }

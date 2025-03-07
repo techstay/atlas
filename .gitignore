@@ -32,3 +32,4 @@ cache/
 *.manifest
 debug/
 *.class
+.gradio
