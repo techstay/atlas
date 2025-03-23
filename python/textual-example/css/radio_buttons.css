@@ -1,0 +1,12 @@
+Screen {
+  align: center middle;
+}
+
+RadioSet {
+  width: 50%;
+  align: center middle;
+}
+
+.container {
+  align: center middle;
+}

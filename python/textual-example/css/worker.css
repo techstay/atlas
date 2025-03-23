@@ -1,0 +1,27 @@
+Screen {
+  width: 100%;
+  padding: 1;
+}
+
+ProgressBar {
+  width: 100%;
+}
+
+ProgressBar Bar {
+  width: 100%;
+}
+
+Button {
+  color: white;
+  margin: 2;
+}
+
+
+#text {
+  content-align: center top;
+}
+
+.horizontal {
+  align: center top;
+  height: auto;
+}
