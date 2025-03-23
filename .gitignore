@@ -33,3 +33,4 @@ cache/
 debug/
 *.class
 .gradio
+media
