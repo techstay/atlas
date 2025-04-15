@@ -7,7 +7,7 @@ end
 
 begin
   file = File.open('/etc/hosts', 'r')
-  raise IDontKnowWhyError, 'I really dont know what happened'
+  raise IDontKnowWhyError, 'I really don\'t know what happened'
 # rescue clause is used to handle errors
 rescue IDontKnowWhyError => e
   p e

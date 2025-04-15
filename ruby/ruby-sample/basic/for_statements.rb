@@ -8,6 +8,11 @@ for i in 1..5
 end
 puts
 
+# each statements
+(1..5).each do |i|
+  print i
+end
+
 # time method
 # 01234
 5.times { |i| print i }

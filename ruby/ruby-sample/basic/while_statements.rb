@@ -18,3 +18,12 @@ begin
 end while i < 5
 
 puts
+
+i = 0
+loop do
+  print i
+  i += 1
+  break unless i < 5
+end
+
+puts

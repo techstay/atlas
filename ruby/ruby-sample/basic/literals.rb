@@ -6,7 +6,7 @@ p 500
 p 500_500
 p(-700)
 
-# octal, hexdecimal and binary
+# octal, hexadecimal and binary
 p 0o77
 p 0xcafe
 p 0b00100100

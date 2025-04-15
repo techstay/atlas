@@ -10,7 +10,7 @@ puts("array element type: #{array1[0].class}")
 
 # access array elements
 puts("the first element of array: #{array1[0]}")
-puts("the first element of aaray: #{array1.first}")
+puts("the first element of array: #{array1.first}")
 puts("the last element of array: #{array1.last}")
 puts("the last element of array: #{array1[-1]}")
 

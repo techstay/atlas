@@ -13,5 +13,5 @@ p numbers.collect(&:even?)
 p(numbers.map { |i| i**2 })
 
 # using above methods together
-p numbers.select { |i| i >= 5 }
-         .map { |i| i**2 }
+p(numbers.select { |i| i >= 5 }
+         .map { |i| i**2 })

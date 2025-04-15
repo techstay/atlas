@@ -3,12 +3,11 @@
 {
   "name": "Ruby",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/ruby:0-2-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/ruby:0-3-bullseye",
   "customizations": {
     "vscode": {
       "extensions": [
         "Shopify.ruby-extensions-pack",
-        "amazonwebservices.aws-toolkit-vscode",
         "formulahendry.code-runner",
         "EditorConfig.EditorConfig"
       ]

@@ -2,7 +2,7 @@
 # typed: true
 
 # new file
-filename = 'temptemp.txt'
+filename = 'temp temp.txt'
 file = File.new(filename, 'w+')
 
 # writing some data

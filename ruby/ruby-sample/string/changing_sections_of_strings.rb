@@ -13,7 +13,7 @@ puts my_string
 my_string[11, 6] = 'Ruby'
 puts my_string
 
-# leaving orginal string unchanged
+# leaving original string unchanged
 puts my_string.gsub('Ruby', 'Python')
 puts my_string
 
