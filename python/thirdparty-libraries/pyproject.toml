@@ -16,6 +16,7 @@ dependencies = [
     "openpyxl>=3.1.2",
     "reactivex>=4.0.4",
     "requests-html>=0.10.0",
+    "whenever>=0.7.3",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
@@ -26,4 +27,9 @@ dev = [
     "bandit>=1.7.5",
     "flake8>=6.0.0",
     "ipykernel>=6.24.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
 ]
