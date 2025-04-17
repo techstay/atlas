@@ -17,6 +17,7 @@ dependencies = [
     "reactivex>=4.0.4",
     "requests-html>=0.10.0",
     "whenever>=0.7.3",
+    "typer>=0.15.2",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
