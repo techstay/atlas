@@ -1,40 +1,75 @@
 import asyncio
 import time
+from functools import wraps
 
 
-async def task1():
-    await asyncio.sleep(1)
+def sync_task(f: float):
+    time.sleep(f)
     return "foo"
 
 
-async def task2():
-    await asyncio.sleep(1.5)
+async def async_task(f: float):
+    await asyncio.sleep(f)
     return "bar"
 
 
-async def serialize_tasks():
-    t1 = time.time()
-    s1 = await task1()
-    s2 = await task2()
-    t2 = time.time()
+def measure_time(func):
+    @wraps(func)
+    def sync_wrapper(*args, **kwargs):
+        start_time = time.perf_counter()
+        result = func(*args, **kwargs)
+        end_time = time.perf_counter()
+        print(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
+        return result
 
-    print(s1, s2)
-    print(f"time used: {t2-t1:.3f} secs")
+    @wraps(func)
+    async def async_wrapper(*args, **kwargs):
+        start_time = time.perf_counter()
+        result = await func(*args, **kwargs)
+        end_time = time.perf_counter()
+        print(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
+        return result
+
+    if asyncio.iscoroutinefunction(func):
+        return async_wrapper
+    else:
+        return sync_wrapper
 
 
+@measure_time
+def sequential_tasks():
+    r1 = sync_task(0.5)
+    r2 = sync_task(1.5)
+    print(r1, r2)
+
+
+@measure_time
+async def async_sequential_tasks():
+    r1 = await async_task(0.5)
+    r2 = await async_task(1.5)
+    print(r1, r2)
+
+
+@measure_time
 async def parallel_tasks():
-    s1 = None
-    s2 = None
-    t1 = None
+    r1, r2 = await asyncio.gather(async_task(0.5), async_task(1.5))
+    print(r1, r2)
+
+
+@measure_time
+async def parallel_tasks_using_task_group():
     async with asyncio.TaskGroup() as tg:
-        s1 = tg.create_task(task1())
-        s2 = tg.create_task(task2())
-        t1 = time.time()
-    t2 = time.time()
-    print(s1.result(), s2.result())
-    print(f"time used: {t2-t1:.3f} secs")
+        r1 = tg.create_task(async_task(0.5))
+        r2 = tg.create_task(async_task(1.5))
+    print(r1.result(), r2.result())
+
+
+async def main():
+    sequential_tasks()
+    await async_sequential_tasks()
+    await parallel_tasks()
+    await parallel_tasks_using_task_group()
 
 
 if __name__ == "__main__":
-    asyncio.run(serialize_tasks())
-    asyncio.run(parallel_tasks())
+    asyncio.run(main())
