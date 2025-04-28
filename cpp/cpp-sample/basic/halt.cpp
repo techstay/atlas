@@ -1,19 +1,19 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 void before_exit()
 {
-    cout << "before exiting, we should do some cleanup work" << endl;
+    println("before exiting, we should do some cleanup work");
 }
 
 int main()
 {
-    cout << "do something..." << endl;
+    println("do something...");
     // specifying cleanup functions
     atexit(before_exit);
 
     exit(0);
 
-    cout << "this will be executed since the program is terminated" << endl;
+    println("this will be executed since the program is terminated");
 }

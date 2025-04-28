@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <print>
 using namespace std;
 
 int main()
@@ -7,9 +6,11 @@ int main()
     // typedef关键字
     typedef int integer;
     integer i = 5;
+
     typedef int *pointer;
     pointer p1 = &i;
-    cout << "*p1=" << *p1 << endl;
+
+    println("*p1={}", *p1);
 
     // 别名声明
     using charater = char;

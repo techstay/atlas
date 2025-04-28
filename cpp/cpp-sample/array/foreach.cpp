@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -8,7 +8,7 @@ int main()
 
     for (const auto &e : array)
     {
-        cout << e << " ";
+        print("{} ", e);
     }
-    cout << endl;
+    println();
 }

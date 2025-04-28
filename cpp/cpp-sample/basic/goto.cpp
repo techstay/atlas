@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <print>
 using namespace std;
 
 int main()
@@ -14,7 +13,7 @@ START:
     }
     else
     {
-        cout << "now i is " << i << endl;
-        cout << "never use goto!" << endl;
+        println("now i is {}", i);
+        println("never use goto!");
     }
 }

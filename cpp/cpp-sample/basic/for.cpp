@@ -1,14 +1,12 @@
-#include <iostream>
-
-using namespace std;
+#include <print>
 
 int main()
 {
     for (auto i = 0; i <= 5; i++)
     {
-        cout << i << " ";
+        std::print("{} ", i);
     }
-    cout << endl;
+    std::println("");
 
     // infinite loops
     auto i = 0;
@@ -20,5 +18,5 @@ int main()
         }
         i++;
     }
-    cout << "infinite loop ends." << endl;
+    std::println("infinite loop ends.");
 }

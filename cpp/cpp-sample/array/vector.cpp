@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <vector>
 
 using namespace std;
@@ -13,9 +13,9 @@ int main()
     vector v3{1, 2, 3, 4, 5};
 
     // vector length
-    cout << "the length of v3: " << v3.size() << endl;
+    println("the length of v3: {}", v3.size());
 
     // resizing
     v1.resize(10);
-    cout << "the length of v1: " << v1.size() << endl;
+    println("the length of v1: {}", v1.size());
 }

@@ -1,9 +1,9 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 // the raw array are inherited from c and is deprecated,
-// so it should be replaced with the vector or the  array in modern c++
+// so it should be replaced with the vector or the array in modern c++
 int main()
 {
     // raw arrays
@@ -15,9 +15,9 @@ int main()
 
     // iterating
     // noting that std::size is not available with function parameter arrays!
-    for (int i = 0; i < size(indexes); i++)
+    for (int i = 0; i < size(scores); i++)
     {
-        cout << indexes[i] << " ";
+        print("{} ", scores[i]);
     }
-    cout << endl;
+    println();
 }

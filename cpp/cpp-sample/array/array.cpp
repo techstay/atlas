@@ -1,5 +1,5 @@
 #include <array>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -9,9 +9,9 @@ void print_array(const array<T, size> &a)
 {
     for (const auto &i : a)
     {
-        cout << i << " ";
+        print("{} ", i);
     }
-    cout << endl;
+    println();
 }
 
 int main()

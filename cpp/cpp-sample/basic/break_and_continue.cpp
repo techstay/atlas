@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -11,9 +11,9 @@ int main()
         {
             break;
         }
-        cout << i << " ";
+        print("{} ", i);
     }
-    cout << endl;
+    println();
 
     // continue
     for (auto i{0}; i <= 10; i++)
@@ -23,7 +23,7 @@ int main()
             // skip the value 5
             continue;
         }
-        cout << i << " ";
+        print("{} ", i);
     }
-    cout << endl;
+    println();
 }

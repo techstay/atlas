@@ -1,5 +1,5 @@
 #include <array>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -13,7 +13,7 @@ int main()
 
     for (auto p = begin; p != end; p++)
     {
-        cout << *p << " ";
+        print("{} ", *p);
     }
-    cout << endl;
+    println();
 }

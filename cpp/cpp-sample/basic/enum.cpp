@@ -1,5 +1,6 @@
-#include <iostream>
-#include <ostream>
+#include <format>
+#include <print>
+#include <string_view>
 #include <utility>
 
 using namespace std;
@@ -20,57 +21,40 @@ enum class Fruit
     ORANGE
 };
 
-ostream &operator<<(ostream &out, const Color &color)
+template <>
+struct std::formatter<Color> : std::formatter<string_view>
 {
-    switch (color)
+    auto format(Color c, auto &ctx) const
     {
-    case RED:
-        out << "RED";
-        break;
-    case BLUE:
-        out << "BLUE";
-        break;
-    case GREEN:
-        out << "GREEN";
-        break;
+        constexpr array<string_view, 3> color_names{"RED", "BLUE", "GREEN"};
+        return formatter<string_view>::format(color_names[static_cast<int>(c)], ctx);
     }
-    return out;
-}
+};
 
-ostream &operator<<(ostream &out, const Fruit &fruit)
+template <>
+struct std::formatter<Fruit> : std::formatter<string_view>
 {
-    // using enum class, available in C++20
-    using enum Fruit;
-
-    switch (fruit)
+    auto format(Fruit f, auto &ctx) const
     {
-    case APPLE:
-        out << "Fruit::APPLE";
-        break;
-    case BANANA:
-        out << "Fruit::BANANA";
-        break;
-    case ORANGE:
-        out << "Fruit::ORANGE";
-        break;
+        constexpr array<string_view, 3> fruit_names{"APPLE", "BANANA", "ORANGE"};
+        return formatter<string_view>::format(fruit_names[static_cast<int>(f)], ctx);
     }
-    return out;
-}
+};
 
 int main()
 {
     auto red{RED};
     auto blue{static_cast<Color>(1)};
-    cout << red << endl;
-    cout << blue << endl;
+    println("{}", red);
+    println("{}", blue);
 
     auto apple{Fruit::APPLE};
     auto orange{static_cast<Fruit>(2)};
-    cout << apple << endl;
-    cout << orange << endl;
+    println("{}", apple);
+    println("{}", orange);
 
     // converting enum to underlying
     // to_underlying, available in C++23
-    cout << static_cast<int>(orange) << endl;
-    cout << to_underlying(orange) << endl;
+    println("{}", static_cast<int>(orange));
+    println("{}", to_underlying(orange));
 }
