@@ -1,6 +1,7 @@
 # %%
-import asyncio
 import socket
+import time
+from multiprocessing.pool import ThreadPool
 
 socket.gethostbyname("www.baidu.com")
 
@@ -9,40 +10,46 @@ socket.gethostbyname("www.baidu.com")
 socket.gethostname()
 # %%
 
-# TODO: 程序逻辑有些问题，没办法正常运行
 host = socket.gethostbyname("localhost")
 port = 20086
 
 
-async def server():
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind((host, port))
-        s.listen(1)
+def server():
+    addr = (host, port)
+    with socket.create_server(addr) as s:
         conn, addr = s.accept()
-        print(f"connection established: {addr}")
-        for i in range(5):
-            conn.send(f"hello {i}\n".encode())
-            await asyncio.sleep(0.5)
-        print("send finished")
-
-
-async def client():
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        await asyncio.sleep(1)
-        s.connect((host, port))
         while True:
-            data = s.recv(1024)
+            data = conn.recv(1024)
             if not data:
+                continue
+            data = data.decode()
+            if data.lower() == "quit":
                 break
-            print(data.decode())
+            print(data)
+    print("Server closed.")
 
 
-async def socket_demo():
-    async with asyncio.TaskGroup() as tg:
-        tg.create_task(server())
-        tg.create_task(client())
+def client():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        print("Client wait 1 second and start:")
+        time.sleep(1)
+        s.connect((host, port))
+        for i in range(1, 6):
+            msg = f"Hello {i} from client"
+            time.sleep(1)
+            s.sendall(msg.encode())
+        s.sendall(b"quit")
+    time.sleep(0.5)
+    print("Client finished")
+
+
+def main():
+    with ThreadPool(processes=4) as pool:
+        pool.apply_async(func=client)
+        pool.apply_async(func=server)
+        pool.close()
+        pool.join()
 
 
 if __name__ == "__main__":
-    asyncio.run(socket_demo())
-# %%
+    main()

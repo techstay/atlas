@@ -1,5 +1,7 @@
 import asyncio
 
+from loguru import logger
+
 
 async def very_long_work():
     await asyncio.sleep(3600)
@@ -11,7 +13,7 @@ async def main():
         await asyncio.wait_for(very_long_work(), timeout=2)
 
     except TimeoutError:
-        print("Timeout!")
+        logger.error("timeout error")
 
 
 asyncio.run(main())
