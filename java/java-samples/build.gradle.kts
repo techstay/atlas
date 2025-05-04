@@ -10,8 +10,9 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 dependencies {
@@ -19,15 +20,4 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("--enable-preview")
-}
 
-tasks.withType<JavaExec> {
-    jvmArgs(listOf("--enable-preview"))
-}
-
-tasks.test {
-    useJUnitPlatform()
-    jvmArgs(listOf("--enable-preview"))
-}

@@ -2,7 +2,7 @@ package tech.techstay.generic;
 
 import java.util.*;
 
-public class Variance {
+public class VarianceDemo {
   public static void main(String[] args) {
     invariance();
     covariance();
@@ -11,13 +11,13 @@ public class Variance {
   }
 
   static void invariance() {
-    Businessman<Animal> animalBusinessman = new Businessman<>();
-    animalBusinessman.buy(new Animal());
-    Animal animal = animalBusinessman.sell();
+    Merchant<Animal> animalMerchant = new Merchant<>();
+    animalMerchant.buy(new Animal());
+    Animal animal = animalMerchant.sell();
 
-    Businessman<Cat> catBusinessman = new Businessman<>();
-    catBusinessman.buy(new Cat());
-    Cat cat = catBusinessman.sell();
+    Merchant<Cat> catMerchant = new Merchant<>();
+    catMerchant.buy(new Cat());
+    Cat cat = catMerchant.sell();
 
     if (Objects.nonNull(animal) && Objects.nonNull(cat)) {
       System.out.println("invariance success");
@@ -27,11 +27,11 @@ public class Variance {
   }
 
   static void covariance() {
-    Businessman<? extends Animal> businessman = new Businessman<Cat>(List.of(new Cat(), new Cat()));
+    Merchant<? extends Animal> businessman = new Merchant<Cat>(List.of(new Cat(), new Cat()));
     Animal animal = businessman.sell();
 
-    // 这个商人什么也买不了
-    // businessman.buy(new Animal());
+    // This merchant can buy nothing
+    // businessman.buy(new Cat());
 
     if (Objects.nonNull(animal)) {
       System.out.println("covariance success");
@@ -43,13 +43,13 @@ public class Variance {
 
   static void contravariance() {
     Cat catForSale = new Cat();
-    Businessman<? super Cat> catBusinessman = new Businessman<Animal>();
-    catBusinessman.buy(catForSale);
+    Merchant<? super Cat> catMerchant = new Merchant<Animal>();
+    catMerchant.buy(catForSale);
 
-    // 这个商人只能卖出去东西
-    Object c = catBusinessman.sell();
+    // The merchant can only sell goods
+    Object c = catMerchant.sell();
 
-    if (catBusinessman.inventory.isEmpty()) {
+    if (catMerchant.inventory.isEmpty()) {
       System.out.println("contravariance success");
     } else {
       throw new RuntimeException("contravariance failed");
@@ -63,7 +63,7 @@ public class Variance {
       Animal[] animals = new Dog[3];
       animals[0] = new Dog();
       animals[1] = new Dog();
-      // type mismatch, will cause exceptions
+      // type mismatch, it will cause exceptions
       animals[2] = new Cat();
     } catch (ArrayStoreException e) {
       System.err.println("the cat cannot be added to dog arrays");
@@ -73,7 +73,7 @@ public class Variance {
     List<? extends Animal> animals = List.of(new Cat(), new Cat());
     Animal animal1 = animals.get(0);
 
-    // 会报错，只能读不能写
+    // fails, can only read but not write
     // animals.add(new Cat());
 
     // contravariance
@@ -81,7 +81,7 @@ public class Variance {
     cats.add(new Cat());
     cats.add(new Cat());
 
-    // 只能读取到Object
+    // Only get object type
     Object o = cats.get(0);
 
   }
@@ -100,13 +100,15 @@ class Cat extends Animal {
 }
 
 
-class Businessman<T> {
-  public final LinkedList<T> inventory = new LinkedList<>();
+class Merchant<T> {
+  public final Deque<T> inventory;
 
-  public Businessman() {}
+  public Merchant() {
+    this.inventory = new ArrayDeque<>();
+  }
 
-  public Businessman(Collection<T> collection) {
-    inventory.addAll(collection);
+  public Merchant(Collection<T> collection) {
+    this.inventory = new ArrayDeque<>(collection);
   }
 
   public void buy(T t) {
