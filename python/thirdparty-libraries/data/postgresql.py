@@ -3,15 +3,6 @@ import datetime
 
 import psycopg2
 
-# docker commands
-"""
-docker run --name some-postgres `
-    -e POSTGRES_PASSWORD=123456 `
-    -e POSTGRES_DB=test `
-    -p 5432:5432 `
-    -d --rm postgres
-"""
-
 host = "localhost"
 username = "postgres"
 password = "123456"

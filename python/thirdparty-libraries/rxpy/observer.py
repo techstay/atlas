@@ -1,5 +1,5 @@
-from rx import of, operators as op
-import rx
+from reactivex import of, pipe
+from reactivex import operators as op
 
 ob = of(1, 2, 34, 5, 6, 7, 7)
 subscription = ob.pipe(
@@ -9,7 +9,7 @@ subscription = ob.pipe(
 
 
 def capitalize():
-    return op.pipe(
+    return pipe(
         op.map(lambda i: i.capitalize())
     )
 

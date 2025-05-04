@@ -1,0 +1,13 @@
+@base_url=https://api.github.com
+
+# @name limit
+GET {{base_url}}/rate_limit
+Accept: application/vnd.github+json
+Authorization: Bearer {{$dotenv GITHUB_TOKEN}}
+
+
+###
+# @name repo
+GET {{base_url}}/repos/volkanceylan/Serenity
+Accept: application/vnd.github+json
+Authorization: Bearer {{$dotenv GITHUB_TOKEN}}

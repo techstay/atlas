@@ -1,39 +1,37 @@
 [project]
-name = "thirdparty-libraries"
-version = "1.0"
-description = "my python 3rd party libraries demos"
 authors = [
-    {name = "techstay", email = "lovery521@gmail.com"},
+  {name = "techstay", email = "lovery521@gmail.com"},
 ]
 dependencies = [
-    "faker>=19.2.0",
-    "pendulum>=2.1.2",
-    "requests>=2.31.0",
-    "psycopg2>=2.9.6",
-    "pymysql>=1.1.0",
-    "pymongo>=4.4.1",
-    "pyodbc>=4.0.39",
-    "openpyxl>=3.1.2",
-    "reactivex>=4.0.4",
-    "requests-html>=0.10.0",
-    "whenever>=0.7.3",
-    "typer>=0.15.2",
-    "feedparser>=6.0.11",
-    "httpx>=0.28.1",
-    "pydantic>=2.11.3",
+  "faker>=19.2.0",
+  "pendulum>=2.1.2",
+  "requests>=2.31.0",
+  "psycopg2>=2.9.6",
+  "pymysql>=1.1.0",
+  "pymongo>=4.4.1",
+  "pyodbc>=4.0.39",
+  "openpyxl>=3.1.2",
+  "reactivex>=4.0.4",
+  "requests-html>=0.10.0",
+  "whenever>=0.7.3",
+  "typer>=0.15.2",
+  "feedparser>=6.0.11",
+  "httpx[http2]>=0.28.1",
+  "pydantic>=2.11.3",
+  "selectolax>=0.3.29",
+  "hrequests[all]>=0.9.2",
+  "lxml[html-clean]>=5.4.0",
+  "rich>=14.0.0",
+  "loguru>=0.7.3",
 ]
-requires-python = ">=3.11"
-readme = "README.md"
+description = "my python 3rd party libraries demos"
 license = {text = "MIT"}
-
-[tool.pdm.dev-dependencies]
-dev = [
-    "bandit>=1.7.5",
-    "flake8>=6.0.0",
-    "ipykernel>=6.24.0",
-]
-
+name = "thirdparty-libraries"
+readme = "README.md"
+requires-python = ">=3.13"
+version = "1.0"
 [dependency-groups]
 dev = [
-    "ipykernel>=6.29.5",
+  "ipykernel>=6.29.5",
+  "ruff>=0.11.8",
 ]
