@@ -9,3 +9,4 @@ for (let r of result) {
 let pattern2 = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
 result = pattern2.exec('2002-12-24')
 console.log(result.groups)
+console.log(result.groups.year, result.groups.month, result.groups.day)

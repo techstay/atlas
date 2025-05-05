@@ -1,5 +1,5 @@
 function foo (a = 100) {
-  return 42
+  return a
 }
 
 console.log(foo())

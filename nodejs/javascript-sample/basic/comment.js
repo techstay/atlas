@@ -9,3 +9,5 @@ multiline comments
 multiline comments
 */
 let _bar = 2
+
+console.log(_foo + _bar)

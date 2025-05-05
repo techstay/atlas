@@ -5,6 +5,7 @@ console.log('start doing...')
 let work = new Promise((resolve, reject) => {
   console.log('doing something')
   resolve('good result')
+  reject('bad result')
 })
 
 work.then((value) => {

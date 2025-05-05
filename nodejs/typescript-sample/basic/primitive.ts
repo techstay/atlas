@@ -1,5 +1,5 @@
 // boolean
-const bool = true || false
+const bool = true // || false
 console.log(bool)
 
 // string

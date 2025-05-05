@@ -5,11 +5,12 @@ async function sleep (ms) {
 }
 
 async function longWork (value) {
-  await sleep(500)
+  console.log('start')
+  await sleep(1000)
   console.log(value)
 }
 
 await longWork('hello world')
 
 // after finish long work
-console.log('something')
+console.log('fished')

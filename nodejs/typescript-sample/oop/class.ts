@@ -20,6 +20,13 @@ class Person {
     this.#name = value
   }
 
+  get age (): number {
+    return this.#age
+  }
+  set age (value: number) {
+    this.#age = value
+  }
+
   // methods
   sleep (): void {
     console.log(`have a good night, ${this.#name}`)
@@ -31,6 +38,7 @@ class Person {
 
 const p = new Person('zs', 18)
 p.name = 'john'
+
 p.sleep()
 new Person('jj', 6)
 console.log(Person.getPeopleCount())
