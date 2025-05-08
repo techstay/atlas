@@ -78,6 +78,27 @@ npx eslint --init
 npx eslint **/*.js --fix
 ```
 
+### eslint-typescript
+
+```sh
+bun add -d eslint @eslint/js typescript typescript-eslint
+```
+
+Create `eslint.config.mjs` with the following content.
+
+```js
+// @ts-check
+
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.strict,
+  tseslint.configs.stylistic
+);
+```
+
 ## node 生态
 
 ### vuepress-hope 博客

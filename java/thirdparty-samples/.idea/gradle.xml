@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/scoop/apps/gradle/current" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/datafaker-sample" />
+            <option value="$PROJECT_DIR$/jackson-sample" />
+            <option value="$PROJECT_DIR$/jdbc-sample" />
+            <option value="$PROJECT_DIR$/junit5-sample" />
+            <option value="$PROJECT_DIR$/logging-sample" />
+            <option value="$PROJECT_DIR$/okhttp-sample" />
+            <option value="$PROJECT_DIR$/owner-sample" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

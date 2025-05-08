@@ -1,0 +1,7 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "dotnet.defaultSolution": "disable",
+    "git.ignoreLimitWarning": true
+}
