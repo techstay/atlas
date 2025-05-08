@@ -1,12 +1,12 @@
-# 学习笔记
+# study-notes
 
 ![last commit](https://img.shields.io/github/last-commit/techstay/studyNotes)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-✨)
 [![codebeat badge](https://codebeat.co/badges/ac8f94b6-0d8b-4fd1-8606-1be38bcfe39c)](https://codebeat.co/projects/github-com-techstay-studynotes-main)
 
-## 介绍
+## Intro
 
-我的学习笔记，代码和其他一些练习都放在这里了。
+My study notes, includes codes and notes.
 
 ## Contributors ✨
 
