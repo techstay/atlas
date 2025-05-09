@@ -1,0 +1,22 @@
+{
+  "name": "js-libraries--examples",
+  "version": "1.0.0",
+  "description": "javascript libraries examples",
+  "main": "index.ts",
+  "scripts": {
+    "upp": "bun update --latest"
+  },
+  "author": "techstay",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "dependencies": {
+    "alova": "^3.2.10"
+  }
+}
