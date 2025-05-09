@@ -1,12 +1,7 @@
-# %%
 import subprocess
+
+import rich
 
 prog = subprocess.run("ls".split(" "), shell=True, check=True, capture_output=True)
 
-# %%
-prog.args
-# %%
-prog.returncode
-# %%
-prog.stdout
-# %%
+rich.print(prog)

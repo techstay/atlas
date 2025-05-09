@@ -7,9 +7,9 @@ async def task1():
 
 
 async def main():
-    print("before task1")
     rst = await task1()
     print(rst)
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())

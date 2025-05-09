@@ -2,6 +2,8 @@ import asyncio
 import time
 from functools import wraps
 
+from loguru import logger
+
 
 def sync_task(f: float):
     time.sleep(f)
@@ -19,7 +21,7 @@ def measure_time(func):
         start_time = time.perf_counter()
         result = func(*args, **kwargs)
         end_time = time.perf_counter()
-        print(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
+        logger.info(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
         return result
 
     @wraps(func)
@@ -27,7 +29,7 @@ def measure_time(func):
         start_time = time.perf_counter()
         result = await func(*args, **kwargs)
         end_time = time.perf_counter()
-        print(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
+        logger.info(f"{func.__name__} used: {end_time - start_time:.4f} seconds.")
         return result
 
     if asyncio.iscoroutinefunction(func):
@@ -40,20 +42,20 @@ def measure_time(func):
 def sequential_tasks():
     r1 = sync_task(0.5)
     r2 = sync_task(1.5)
-    print(r1, r2)
+    logger.info([r1, r2])
 
 
 @measure_time
 async def async_sequential_tasks():
     r1 = await async_task(0.5)
     r2 = await async_task(1.5)
-    print(r1, r2)
+    logger.info([r1, r2])
 
 
 @measure_time
 async def parallel_tasks():
     r1, r2 = await asyncio.gather(async_task(0.5), async_task(1.5))
-    print(r1, r2)
+    logger.info([r1, r2])
 
 
 @measure_time
@@ -61,7 +63,7 @@ async def parallel_tasks_using_task_group():
     async with asyncio.TaskGroup() as tg:
         r1 = tg.create_task(async_task(0.5))
         r2 = tg.create_task(async_task(1.5))
-    print(r1.result(), r2.result())
+    logger.info([r1.result(), r2.result()])
 
 
 async def main():
