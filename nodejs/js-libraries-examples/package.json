@@ -4,7 +4,8 @@
   "description": "javascript libraries examples",
   "main": "index.ts",
   "scripts": {
-    "upp": "bun update --latest"
+    "upp": "bun update --latest",
+    "downb": "bun run puppeteer browsers install chrome"
   },
   "author": "techstay",
   "license": "MIT",
@@ -17,6 +18,8 @@
     "typescript-eslint": "^8.32.0"
   },
   "dependencies": {
-    "alova": "^3.2.10"
+    "alova": "^3.2.10",
+    "puppeteer": "^24.8.2",
+    "winston": "^3.17.0"
   }
 }
