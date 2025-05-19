@@ -1,18 +1,11 @@
-# %%
-
 from decimal import Decimal
 
-# exact decimal representations
+number1 = 0.0
+number2 = Decimal("0")
 
-d1 = Decimal("0.07")
-d2 = Decimal("0.03")
+for i in range(10000):
+    number1 += 0.01
+    number2 += Decimal("0.01")
 
-d1 + d2
-
-# %%
-d1 - d2
-# %%
-d1 * d2
-# %%
-d1 / d2
-# %%
+print(number1)
+print(number2)
