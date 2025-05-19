@@ -1,4 +1,5 @@
 # typed: true
+# frozen_string_literal: false
 
 # replacing a section of a string
 

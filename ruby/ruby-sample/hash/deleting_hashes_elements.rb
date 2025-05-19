@@ -4,11 +4,11 @@
 # emulating dice with ten sides
 rank = {
   techstay: 100,
-  zhang3: 90,
-  li4: 80,
-  wang5: 70,
-  zhao6: 60,
   jack: 46,
+  jason: 78,
+  josh: 90,
+  jake: 50,
+  jerry: 60,
   kevin: 30,
   git: 0
 }

@@ -14,6 +14,6 @@ class Person
   end
 end
 
-p = Person.new 'zhang3', 20
+p = Person.new 'jackson', 20
 
 puts p

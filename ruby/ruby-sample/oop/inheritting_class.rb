@@ -9,9 +9,7 @@ class Animal
     @@count += 1
   end
 
-  def get_name
-    @name
-  end
+  attr_reader :name
 
   def to_s
     "Animal{name=#{@name},count=#{@@count}}"
@@ -33,5 +31,5 @@ end
 
 dog = Dog.new
 dog2 = Dog.new
-puts dog.get_name
-puts dog
+puts dog.name
+puts dog2

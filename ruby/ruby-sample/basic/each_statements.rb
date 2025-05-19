@@ -1,17 +1,11 @@
 # frozen_string_literal: true
 # typed: true
 
-# for statements
-
-for i in 1..5
-  print i
-end
-puts
-
 # each statements
 (1..5).each do |i|
   print i
 end
+puts
 
 # time method
 # 01234

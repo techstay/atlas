@@ -7,7 +7,7 @@ require 'pathname'
 root = Pathname.getwd
 root = root.parent until root.children.map(&:basename).inspect.include?('README.md')
 
-# searching all ruby files and insering typed:true if necessary
+# searching all ruby files and inserting `typed:true` if necessary
 sub_directories = root.children.select(&:directory?)
 sub_directories.each do |dir|
   ruby_files = dir.children.select { |e| e.extname == '.rb' }

@@ -3,6 +3,7 @@
 
 # bigdecimal
 require 'bigdecimal'
+require 'awesome_print'
 
 sum1 = 0.0
 sum2 = BigDecimal('0')
@@ -13,3 +14,4 @@ sum2 = BigDecimal('0')
 end
 
 p sum1, sum2.to_f
+ap sum1

@@ -3,5 +3,4 @@
 
 # single line comments
 
-# multiline
-# comments
+puts 'Hello world!'

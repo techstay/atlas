@@ -1,0 +1,20 @@
+{
+  "name": "Ruby",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-extensions-pack",
+        "formulahendry.code-runner",
+        "EditorConfig.EditorConfig",
+        "streetsidesoftware.code-spell-checker",
+        "foxundermoon.shell-format",
+        "Codeium.codeium",
+        "KoichiSasada.vscode-rdbg"
+      ]
+    }
+  },
+  "postCreateCommand": "bash setup.sh"
+}

@@ -6,7 +6,7 @@
 value = 100
 unless value > 100
   puts "value #{value} <= 100"
-  # useless comment
+  # Prevent rubocop reformatting
 end
 
 # unless modifiers

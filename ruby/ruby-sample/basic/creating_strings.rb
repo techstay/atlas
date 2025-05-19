@@ -3,14 +3,14 @@
 
 # creating strings
 
-p 'some content of strings'
+puts 'some content of strings'
 
 # custom delimiter
-p %(some content of string to avoid double quotes"" or singe quotes'')
+puts %(some content of string to avoid double quotes"" or singe quotes'')
 
 # here documents
-p <<~EOL
+puts <<~STRING
   this is a long text
   may contain many lines
-  end with 'end of line'
-EOL
+  end with 'end of line'.
+STRING

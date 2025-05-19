@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 # typed: true
 
-# while statements
+# While statements
 
 i = 0
 while i < 5
@@ -11,6 +11,7 @@ end
 
 puts
 
+# Do while statements
 i = 0
 begin
   print i
@@ -19,6 +20,7 @@ end while i < 5
 
 puts
 
+# Use loop with break rather than while
 i = 0
 loop do
   print i

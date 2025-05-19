@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 # typed: true
 
-# check variable type
+require('awesome_print')
+
+# Check variable type
 a = 100
-p(a.is_a?(Integer))
+ap a.is_a?(Integer)
 
-# variable type
-p(a.class)
+# Variable type
+ap(a.class)
 
-# convert variable
+# Converting
 
-# to string
-p(a.to_s)
-p(a.to_s(2))
-p(a.to_s(8))
-p(a.to_s(16))
-# to float
-p(a.to_f)
+ap(a.to_s)
+ap(a.to_s(2))
+ap(a.to_s(8))
+ap(a.to_s(16))
+ap(a.to_f)
+
+s = '100.05'
+ap(s.to_f)
+ap(s.to_i)

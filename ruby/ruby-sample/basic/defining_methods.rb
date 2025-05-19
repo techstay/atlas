@@ -23,7 +23,7 @@ def print_names(*names)
 end
 
 print_names('techstay')
-print_names('techstay', 'zhang3', 'li4')
+print_names('techstay', 'Jackson', 'Tanaka')
 
 # default parameters
 def hello(name = 'techstay')
@@ -31,7 +31,7 @@ def hello(name = 'techstay')
 end
 
 hello
-hello 'zhang3'
+hello 'Jackson'
 
 # method alias
 alias add plus

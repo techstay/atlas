@@ -3,11 +3,11 @@
 
 # formatting strings
 
-puts format('%s is %d years old.', 'zhang3', 18)
-puts format('%<name>s is %<age>d years old.', age: 18, name: 'wang5')
+puts format('%s is %d years old.', 'jack', 18)
+puts format('%<name>s is %<age>d years old.', age: 18, name: 'jackson')
 
-puts format('%-10s is %7d years old.', 'zhang3', 18)
-puts format('%<name>-10s is %<age>7d years old.', age: 18, name: 'wang5')
+puts format('%<name>-10s is %<age>7d years old.', name: 'david', age: 18)
+puts format('%<name>-10s is %<age>7d years old.', age: 18, name: 'michael')
 
 # String interpolation
 name = 'Jack'

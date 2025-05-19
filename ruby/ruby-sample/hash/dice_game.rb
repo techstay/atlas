@@ -3,7 +3,7 @@
 
 dice = {}
 
-N = 100_000
+N = 1_000_000
 
 N.times do |_i|
   index = rand(1..6)

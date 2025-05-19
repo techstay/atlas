@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 # typed: true
 
+# Module1
 module Module1
   def f1; end
 end
 
+# Module2
 module Module2
   def f2; end
 end

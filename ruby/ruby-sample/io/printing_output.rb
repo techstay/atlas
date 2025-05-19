@@ -10,9 +10,12 @@ print 'abc'
 puts 'def'
 
 # print single character
-putc 'a'
+putc 105
 putc 0x67
 puts
 
 # print formatted strings
-printf("%s is %d years old.\n", 'techstay', 18)
+printf($stdout, "%s is %d years old.\n", 'techstay', 18)
+
+# print formatted strings
+puts format('%<name>s is %<age>d years old.', name: 'techstay', age: 18)

@@ -6,7 +6,6 @@
 value = 30
 if value > 100
   puts("value #{value} > 100")
-  # useless comment
   # preventing rubocop refactor this block to if modifiers
 end
 
