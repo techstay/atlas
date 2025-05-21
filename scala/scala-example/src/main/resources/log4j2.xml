@@ -1,0 +1,12 @@
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%style{%d{ISO8601}}{cyan} %highlight{%-5p}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} %c{1.} - %m%n%throwable"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
