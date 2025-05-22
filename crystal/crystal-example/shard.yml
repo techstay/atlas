@@ -1,0 +1,13 @@
+name: crystal-example
+version: 0.1.0
+
+authors:
+  - techstay <lovery521@gmail.com>
+
+targets:
+  crystal-example:
+    main: src/crystal-example.cr
+
+crystal: ">= 1.16.3"
+
+license: MIT
