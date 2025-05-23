@@ -18,6 +18,7 @@ dependencies = [
   "mcp[cli]>=1.6.0",
   "nest-asyncio>=1.6.0",
   "numpy>=2.2.4",
+  "ollama>=0.4.8",
   "openai>=1.65.4",
   "openai-agents>=0.0.4",
   "pycountry>=24.6.1",

@@ -81,6 +81,11 @@ qwen_config = OpenAIClientConfig(
     # model="qwen-turbo-latest",
 )
 
+ollama_config = OpenAIClientConfig(
+    base_url="http://localhost:11434/v1",
+    model="qwen3:14b",
+)
+
 
 def baidu_ai_search(query: str) -> str:
     client = OpenAI(
