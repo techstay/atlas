@@ -6,7 +6,7 @@
 
 ## Intro
 
-My study notes, includes codes and notes.
+My study notes, includes codes and notes. Notes are placed in `notes` folder as a dendron project. You can open it with the dendron extension.
 
 ## Contributors ✨
 

@@ -1,4 +1,10 @@
-# mathematica
+---
+id: 8mg7xiixc8mkgbla3tsrs0c
+title: Mathematica
+desc: ""
+updated: 1753733407513
+created: 1753733407513
+---
 
 ## 环境配置
 
