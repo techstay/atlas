@@ -6,14 +6,14 @@ from pydantic_ai import Agent
 from pydantic_ai.messages import ModelRequest, ModelResponse
 
 from ai_demos.pydantic_ai_examples.utils import (
-    configure_and_get_pydantic_ai_provider,
+    get_pydantic_ai_provider,
 )
 from ai_demos.utils import gemini_config as config
 
 load_dotenv()
 
 guessing_number_agent = Agent(
-    configure_and_get_pydantic_ai_provider(config),
+    get_pydantic_ai_provider(config),
 )
 
 max_number = 50

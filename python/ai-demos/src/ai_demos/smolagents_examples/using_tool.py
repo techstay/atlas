@@ -1,7 +1,7 @@
 from smolagents import CodeAgent
 from smolagents.tools import tool
 
-from ai_demos.smolagents_examples.utils import configure_and_get_custom_model
+from ai_demos.smolagents_examples.utils import get_custom_model
 
 
 @tool
@@ -20,7 +20,7 @@ def get_weather(city: str) -> str:
 
 agent = CodeAgent(
     tools=[get_weather],
-    model=configure_and_get_custom_model(),
+    model=get_custom_model(),
     add_base_tools=True,
 )
 

@@ -1,9 +1,6 @@
 from agno.agent.agent import Agent
-from dotenv import load_dotenv
 
-from ai_demos.agno_examples.utils import configure_and_get_openai_client
-
-load_dotenv()
+from ai_demos.agno_examples.utils import configure_openai_client
 
 
 def get_weather(city: str) -> str:
@@ -22,7 +19,7 @@ def get_weather(city: str) -> str:
 
 agent = Agent(
     tools=[get_weather],
-    model=configure_and_get_openai_client(),
+    model=configure_openai_client(),
     instructions="You are a helpful assistant.",
     show_tool_calls=True,
     markdown=True,

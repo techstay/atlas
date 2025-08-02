@@ -20,6 +20,12 @@ gptdos_config = OpenAIClientConfig(
     model="gpt-4o-mini",
 )
 
+openai_config = OpenAIClientConfig(
+    api_key=os.getenv("OPENAI_API_KEY", ""),
+    base_url="https://api.openai.com/v1",
+    model="gpt-4.1",
+)
+
 deepseek_config = OpenAIClientConfig(
     api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
     base_url="https://api.deepseek.com",
@@ -35,22 +41,20 @@ siliconflow_config = OpenAIClientConfig(
 ark_config = OpenAIClientConfig(
     api_key=os.getenv("ARK_API_KEY", ""),
     base_url="https://ark.cn-beijing.volces.com/api/v3",
-    model="deepseek-v3-250324",
     # model="deepseek-r1-250120",
+    model="kimi-k2-250711",
 )
 
 ark_config_mini = OpenAIClientConfig(
     api_key=os.getenv("ARK_API_KEY", ""),
     base_url="https://ark.cn-beijing.volces.com/api/v3",
-    # model="deepseek-v3-250324",
-    model="doubao-1.5-pro-32k-250115",
+    model="deepseek-v3-250324",
 )
 
 
 baidu_config = OpenAIClientConfig(
     api_key=os.getenv("BAIDU_API_KEY", ""),
     base_url="https://qianfan.baidubce.com/v2",
-    # model="deepseek-v3",
     model="ernie-x1-32k",
 )
 
@@ -63,10 +67,14 @@ openrouter_config = OpenAIClientConfig(
 gemini_config = OpenAIClientConfig(
     api_key=os.getenv("GEMINI_API_KEY", ""),
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
-    model="gemini-2.0-flash",
-    # model="gemini-2.5-pro-exp-03-25",
+    model="gemini-2.5-pro",
 )
 
+gemini_config_mini = OpenAIClientConfig(
+    api_key=os.getenv("GEMINI_API_KEY", ""),
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    model="gemini-2.5-flash",
+)
 
 baidu_ai_search_config = OpenAIClientConfig(
     api_key=os.getenv("BAIDU_API_KEY", ""),
@@ -84,6 +92,30 @@ qwen_config = OpenAIClientConfig(
 ollama_config = OpenAIClientConfig(
     base_url="http://localhost:11434/v1",
     model="qwen3:14b",
+)
+
+hunyuan_config = OpenAIClientConfig(
+    api_key=os.getenv("TENCENT_API_KEY", ""),
+    base_url="https://api.hunyuan.cloud.tencent.com/v1",
+    model="hunyuan-turbos-latest",
+)
+
+bigmodel_config = OpenAIClientConfig(
+    api_key=os.getenv("BIGMODEL_API_KEY", ""),
+    base_url="https://open.bigmodel.cn/api/paas/v4",
+    model="glm-4.5-air",
+)
+
+moonshot_config = OpenAIClientConfig(
+    api_key=os.getenv("MOONSHOT_API_KEY", ""),
+    base_url="https://api.moonshot.cn/v1",
+    model="kimi-k2-0711-preview",
+)
+
+minimax_config = OpenAIClientConfig(
+    api_key=os.getenv("MINIMAX_API_KEY", ""),
+    base_url="https://api.minimaxi.com/v1",
+    model="MiniMax-M1",
 )
 
 

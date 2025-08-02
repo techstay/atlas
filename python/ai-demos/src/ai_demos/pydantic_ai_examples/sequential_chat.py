@@ -1,14 +1,14 @@
 from pydantic_ai import Agent
 
 from ai_demos.pydantic_ai_examples.utils import (
-    configure_and_get_pydantic_ai_provider,
+    get_pydantic_ai_provider,
 )
 
 
 def sequential_chat():
     message_history = []
     agent = Agent(
-        configure_and_get_pydantic_ai_provider(),
+        get_pydantic_ai_provider(),
         system_prompt="Answer questions briefly in one sentence.",
     )
     result = agent.run_sync("Who is Albert Einstein?")

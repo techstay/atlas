@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from pydantic_ai import Agent
 
-from ai_demos.pydantic_ai_examples.utils import configure_and_get_pydantic_ai_provider
+from ai_demos.pydantic_ai_examples.utils import get_pydantic_ai_provider
 
 
 class CityInfo(BaseModel):
@@ -10,7 +10,7 @@ class CityInfo(BaseModel):
 
 
 agent = Agent(
-    configure_and_get_pydantic_ai_provider(),
+    get_pydantic_ai_provider(),
     output_type=CityInfo,
 )
 

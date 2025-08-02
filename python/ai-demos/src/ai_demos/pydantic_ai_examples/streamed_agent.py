@@ -1,9 +1,9 @@
 from pydantic_ai import Agent
 
-from ai_demos.pydantic_ai_examples.utils import configure_and_get_pydantic_ai_provider
+from ai_demos.pydantic_ai_examples.utils import get_pydantic_ai_provider
 
 agent = Agent(
-    configure_and_get_pydantic_ai_provider(),
+    get_pydantic_ai_provider(),
     system_prompt="You are a helpful assistant.",
 )
 

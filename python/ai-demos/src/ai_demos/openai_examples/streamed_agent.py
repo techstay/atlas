@@ -3,12 +3,12 @@ import asyncio
 from agents import Agent, Runner
 from openai.types.responses import ResponseTextDeltaEvent
 
-from ai_demos.openai_examples.utils import configure_and_get_custom_model
+from ai_demos.openai_examples.utils import configure_custom_model
 
 agent = Agent(
     name="agent",
     instructions="You are a helpful assistant.",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
 )
 
 

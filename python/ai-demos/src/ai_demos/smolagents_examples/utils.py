@@ -1,21 +1,25 @@
 import os
 
-from openinference.instrumentation.smolagents import SmolagentsInstrumentor
-from phoenix.otel import register
+# from phoenix.otel import register
 from smolagents import HfApiModel, OpenAIServerModel
 
 from ai_demos.utils import OpenAIClientConfig
-from ai_demos.utils import ark_config_mini as ai_config
+from ai_demos.utils import bigmodel_config as model_config
+
+# https://app.phoenix.arize.com/management/spaces
+os.environ["PHOENIX_CLIENT_HEADERS"] = f"api_key={os.getenv('PHOENIX_API_KEY')}"
+os.environ["PHOENIX_COLLECTOR_ENDPOINT"] = "https://app.phoenix.arize.com/s/techstay"
+
+# tracer_provider = register(
+#     project_name="default",  # Default is 'default'
+#     auto_instrument=True,  # Auto-instrument your app based on installed OI dependencies
+#     protocol="http/protobuf"
+# )
 
 
-def configure_and_get_custom_model(
-    config: OpenAIClientConfig = ai_config,
-) -> OpenAIServerModel | HfApiModel:
-    # Setting up the trace
-    # visit http://localhost:6006
-    register()
-    SmolagentsInstrumentor().instrument()
-
+def get_custom_model(
+    config: OpenAIClientConfig = model_config,
+):
     return OpenAIServerModel(
         model_id=config.model,
         api_key=config.api_key,

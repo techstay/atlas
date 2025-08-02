@@ -1,16 +1,9 @@
 from dotenv import load_dotenv
-from langfuse.decorators import observe
 from openai import OpenAI
-from phoenix.otel import register
 
 from ai_demos.utils import ark_config_mini as config
 
 load_dotenv()
-
-# configure phoenix tracer
-tracer_provider = register(
-    auto_instrument=True,
-)
 
 
 def completion_api():
@@ -38,7 +31,6 @@ def completion_api():
 
 
 # Currently only OpenAI supports response API
-@observe
 def response_api():
     client = OpenAI(
         api_key=config.api_key,

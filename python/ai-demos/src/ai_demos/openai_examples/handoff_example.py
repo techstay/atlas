@@ -9,7 +9,7 @@ from agents import (
 )
 from pydantic import BaseModel
 
-from ai_demos.openai_examples.utils import configure_and_get_custom_model
+from ai_demos.openai_examples.utils import configure_custom_model
 
 
 class FunnyTopic(BaseModel):
@@ -19,7 +19,7 @@ class FunnyTopic(BaseModel):
 
 guardrail_agent = Agent(
     name="guardrail",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
     instructions="你是一个守护者，判断话题是否是有趣的",
     output_type=FunnyTopic,
 )
@@ -43,19 +43,19 @@ async def funny_topic_guardrail(
 
 joke_agent = Agent(
     "joke",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
     instructions="你是一个笑话大师,擅长讲笑话",
 )
 
 nerd_agent = Agent(
     "nerd",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
     instructions="你是一个学霸,擅长回答各种问题",
 )
 
 adviser_agent = Agent(
     "adviser",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
     instructions="你来根据问题决定应该使用哪个agent来回答",
     handoffs=[joke_agent, nerd_agent],
     input_guardrails=[

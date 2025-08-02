@@ -1,25 +1,25 @@
 import logfire
 from agents import (
+    add_trace_processor,
     set_default_openai_api,
     set_default_openai_client,
-    set_trace_processors,
 )
 from braintrust import init_logger
 from braintrust.wrappers.openai import BraintrustTracingProcessor
-from dotenv import load_dotenv
 from openai import AsyncOpenAI
 
 from ai_demos.utils import OpenAIClientConfig
-from ai_demos.utils import ark_config_mini as con
-
-load_dotenv()
+from ai_demos.utils import bigmodel_config as model_config
 
 
-def configure_and_get_custom_model(config: OpenAIClientConfig = con) -> str:
-    set_trace_processors([BraintrustTracingProcessor(init_logger("openai-agent"))])
+def configure_custom_model(config: OpenAIClientConfig = model_config) -> str:
+    # Enable braintrust tracing: https://www.braintrust.dev/app/
+    add_trace_processor(BraintrustTracingProcessor(init_logger("openai-agent")))
 
+    # Enable logfire instrumentation: https://www.logfire.dev/app/
     logfire.configure()
     logfire.instrument_openai_agents()
+
     client = AsyncOpenAI(
         base_url=config.base_url,
         api_key=config.api_key,

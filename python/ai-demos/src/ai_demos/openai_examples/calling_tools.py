@@ -1,6 +1,6 @@
 from agents import Agent, Runner, function_tool
 
-from ai_demos.openai_examples.utils import configure_and_get_custom_model
+from ai_demos.openai_examples.utils import configure_custom_model
 
 
 @function_tool
@@ -15,7 +15,7 @@ def get_weather(city: str) -> str:
 agent = Agent(
     name="weather broadcast",
     instructions="You are a weather agent",
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
     tools=[get_weather],
 )
 

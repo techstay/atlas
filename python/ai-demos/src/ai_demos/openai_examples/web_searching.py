@@ -1,25 +1,27 @@
-from agents import Agent, Runner, function_tool
-from agno.tools.duckduckgo import DuckDuckGoTools
+from typing import Any
 
-from ai_demos.openai_examples.utils import configure_and_get_custom_model
+from agents import Agent, Runner, function_tool
+from ddgs import DDGS
+
+from ai_demos.openai_examples.utils import configure_custom_model
 
 
 @function_tool
-def search_internet(query: str) -> str:
+def search_internet(query: str) -> list[dict[str, Any]]:
     """Search internet for more information.
 
     Args:
         query (str): The query to search for
     Returns:
-        str: The results of the search
+        result (list[dict[str, Any]]): The results of the search
     """
-    return DuckDuckGoTools().duckduckgo_search(query)
+    return DDGS().text(query)
 
 
 agent = Agent(
     name="web search",
-    instructions="你是一个强大的助手，遇到问题可以尝试通过网络搜索获取更多信息。",
-    model=configure_and_get_custom_model(),
+    instructions="You are a helpful assistant.",
+    model=configure_custom_model(),
     tools=[search_internet],
 )
 

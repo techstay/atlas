@@ -1,6 +1,6 @@
 from agents import Agent, RunContextWrapper, Runner
 
-from ai_demos.openai_examples.utils import configure_and_get_custom_model
+from ai_demos.openai_examples.utils import configure_custom_model
 
 
 def dynamic_instructions(wrapper: RunContextWrapper[str], agent: Agent[str]) -> str:
@@ -10,7 +10,7 @@ def dynamic_instructions(wrapper: RunContextWrapper[str], agent: Agent[str]) -> 
 agent = Agent(
     name="agent",
     instructions=dynamic_instructions,
-    model=configure_and_get_custom_model(),
+    model=configure_custom_model(),
 )
 
 
