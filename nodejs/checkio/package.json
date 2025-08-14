@@ -1,0 +1,18 @@
+{
+  "name": "checkio",
+  "description": "My typescript solutions for checkio.org",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "lint": "biome check",
+    "format": "biome format --write",
+    "test": "bun test"
+  }
+}
