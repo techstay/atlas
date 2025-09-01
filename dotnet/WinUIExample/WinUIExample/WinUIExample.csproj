@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>WinUIExample</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -9,11 +9,13 @@
     <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &gt;= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
-	<WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
-	<WindowsPackageType>None</WindowsPackageType>
-	<UseWinUI>true</UseWinUI>
+    <WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
+    <WindowsPackageType>MSIX</WindowsPackageType>
+    <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <SupportedOSPlatformVersion>10.0.26100.0</SupportedOSPlatformVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="ControlItem.xaml" />
@@ -25,8 +27,12 @@
     <None Remove="Pages\LayoutsPage.xaml" />
     <None Remove="Pages\LocalizationsPage.xaml" />
     <None Remove="Pages\MediaPage.xaml" />
+    <None Remove="Pages\MenusPage.xaml" />
     <None Remove="Pages\NavigationPage.xaml" />
     <None Remove="Pages\ResourcesPage.xaml" />
+    <None Remove="Pages\SamplePage1.xaml" />
+    <None Remove="Pages\SamplePage2.xaml" />
+    <None Remove="Pages\SamplePage3.xaml" />
     <None Remove="Pages\SettingsPage.xaml" />
     <None Remove="Pages\StylesPage.xaml" />
     <None Remove="Pages\TextControlsPage.xaml" />
@@ -164,5 +170,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\SamplePage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\SamplePage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\SamplePage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\MenusPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

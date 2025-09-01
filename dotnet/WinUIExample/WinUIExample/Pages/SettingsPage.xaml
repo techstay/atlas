@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="WinUIExample.Pages.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -23,8 +23,21 @@
                 ItemsSource="{x:Bind SystemBackdropOptions}"
                 SelectionChanged="SystemBackdropRadioButtons_SelectionChanged"
                 MaxColumns="3"
-                SelectedItem="{x:Bind Settings.SystemBackdrop, Mode=TwoWay}">
+                SelectedItem="{x:Bind SystemBackdrop, Mode=TwoWay}">
+			</RadioButtons>
+		</controls:SettingsCard>
+
+        <controls:SettingsCard
+            Header="App theme"
+            HeaderIcon="{ui:FontIcon Glyph=&#xE790;}"
+            Description="Choose Light, Dark, or follow the system (Auto).">
+            <RadioButtons
+                x:Name="ApplicationThemeRadioButtons"
+                ItemsSource="{x:Bind ApplicationThemeOptions}"
+                SelectionChanged="ApplicationThemeRadioButtons_SelectionChanged"
+                MaxColumns="3"
+                SelectedItem="{x:Bind ApplicationTheme, Mode=TwoWay}">
             </RadioButtons>
         </controls:SettingsCard>
-    </StackPanel>
+	</StackPanel>
 </Page>

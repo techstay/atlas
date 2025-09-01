@@ -16,21 +16,21 @@ using Microsoft.UI.Xaml.Navigation;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample.Pages
+namespace WinUIExample.Pages;
+
+/// <summary>
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class CollectionControlsPage : Page
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class CollectionControlsPage : Page
+    public CollectionControlsPage()
     {
-        public CollectionControlsPage()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
+    }
 
-        public List<string> MyItems { get; set; } = ["one", "two", "three", "four"];
+    public List<string> MyItems { get; set; } = ["one", "two", "three", "four"];
 
-        public List<string> MyImageUrls { get; set; } = new List<string> {
+    public List<string> MyImageUrls { get; set; } = new List<string> {
             "https://i.pinimg.com/564x/a0/52/c1/a052c135e5d7c0d457941299c65b35c8.jpg",
             "https://i.pinimg.com/564x/db/a0/d6/dba0d6ab6cb5d75851e7298c0af9acde.jpg",
             "https://i.pinimg.com/564x/5d/5e/e8/5d5ee8679b25510f2946f069ca1ea681.jpg",
@@ -39,5 +39,4 @@ namespace WinUIExample.Pages
             "https://i.pinimg.com/474x/26/95/16/26951652734e5601e8519bcc9e79d665.jpg",
             "https://i.pinimg.com/564x/5e/e7/00/5ee700f1c0608ed075a8d5313eeff5c9.jpg"
         };
-    }
 }

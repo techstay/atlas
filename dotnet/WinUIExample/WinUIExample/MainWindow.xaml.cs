@@ -13,46 +13,66 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using WinUIExample.Pages;
+using Windows.Storage;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample
+namespace WinUIExample;
+
+/// <summary>
+/// An empty window that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class MainWindow : Window
 {
-    /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            this.InitializeComponent();
-            ExtendsContentIntoTitleBar = true;
-        }
+        this.InitializeComponent();
+        ExtendsContentIntoTitleBar = true;
 
-        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+        var saved = ApplicationData.Current.LocalSettings.Values["SystemBackdrop"] as string ?? "None";
+        SystemBackdrop = saved switch
         {
-            NavigationView.SelectedItem = NavigationView.MenuItems[0];
-        }
+            "Mica" => new MicaBackdrop(),
+            "Acrylic" => new DesktopAcrylicBackdrop(),
+            _ => null
+        };
 
-        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        // Apply saved app theme to the root content
+        var savedTheme = ApplicationData.Current.LocalSettings.Values["AppTheme"] as string ?? "Auto";
+        if (Content is FrameworkElement root)
         {
-            if (args.IsSettingsSelected)
+            root.RequestedTheme = savedTheme switch
             {
-                ContentFrame.Navigate(typeof(SettingsPage), args.RecommendedNavigationTransitionInfo);
-            }
-            else if (args.SelectedItemContainer != null)
-            {
-                NavigationView.Header = args.SelectedItemContainer.Content.ToString();
-                Type navigationType = Type.GetType(args.SelectedItemContainer.Tag.ToString());
-                ContentFrame.Navigate(navigationType, args.RecommendedNavigationTransitionInfo);
-            }
+                "Light" => ElementTheme.Light,
+                "Dark" => ElementTheme.Dark,
+                _ => ElementTheme.Default
+            };
         }
+    }
 
-        private void NavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+    private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+    {
+        NavigationView.SelectedItem = NavigationView.MenuItems[0];
+    }
+
+    private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+    {
+        if (args.IsSettingsSelected)
         {
-            ContentFrame.GoBack();
+            ContentFrame.Navigate(typeof(SettingsPage), args.RecommendedNavigationTransitionInfo);
         }
+        else if (args.SelectedItemContainer != null)
+        {
+            NavigationView.Header = args.SelectedItemContainer.Content.ToString();
+            Type navigationType = Type.GetType(args.SelectedItemContainer.Tag.ToString());
+            ContentFrame.Navigate(navigationType, args.RecommendedNavigationTransitionInfo);
+        }
+    }
+
+    private void NavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+    {
+        ContentFrame.GoBack();
     }
 }
 

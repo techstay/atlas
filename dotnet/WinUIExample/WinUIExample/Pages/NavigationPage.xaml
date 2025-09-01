@@ -43,5 +43,12 @@
             </StackPanel>
 
         </uc:UserControlExample>
+        <uc:UserControlExample
+            Header="TabView">
+            <TabView
+                AddTabButtonClick="TabView_AddTabButtonClick"
+                TabCloseRequested="TabView_TabCloseRequested"
+                Loaded="TabView_Loaded" />
+        </uc:UserControlExample>
     </StackPanel>
 </Page>

@@ -12,22 +12,21 @@ using System.Runtime.InteropServices.WindowsRuntime;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample.UserControls
+namespace WinUIExample.UserControls;
+
+public sealed class UserControlExample : ContentControl
 {
-    public sealed class UserControlExample : ContentControl
+    public UserControlExample()
     {
-        public UserControlExample()
-        {
-            this.DefaultStyleKey = typeof(UserControlExample);
-        }
-        public string Header
-        {
-            get { return (string)GetValue(HeaderProperty); }
-            set { SetValue(HeaderProperty, value); }
-        }
-
-        public static readonly DependencyProperty HeaderProperty =
-            DependencyProperty.Register("Header", typeof(string), typeof(UserControlExample), new PropertyMetadata(string.Empty));
-
+        this.DefaultStyleKey = typeof(UserControlExample);
     }
+    public string Header
+    {
+        get { return (string)GetValue(HeaderProperty); }
+        set { SetValue(HeaderProperty, value); }
+    }
+
+    public static readonly DependencyProperty HeaderProperty =
+        DependencyProperty.Register("Header", typeof(string), typeof(UserControlExample), new PropertyMetadata(string.Empty));
+
 }

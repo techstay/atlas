@@ -17,52 +17,51 @@ using Microsoft.UI.Xaml.Media.Animation;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample.Pages
+namespace WinUIExample.Pages;
+
+/// <summary>
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class AnimationsPage : Page
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class AnimationsPage : Page
+    public AnimationsPage()
     {
-        public AnimationsPage()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
+    }
 
-        private void ButtonStoryboard1_Click(object sender, RoutedEventArgs e)
+    private void ButtonStoryboard1_Click(object sender, RoutedEventArgs e)
+    {
+        if (Storyboard1.GetCurrentState() == ClockState.Stopped)
         {
-            if (Storyboard1.GetCurrentState() == ClockState.Stopped)
-            {
-                Storyboard1.Begin();
-            }
-            else
-            {
-                Storyboard1.Stop();
-            }
+            Storyboard1.Begin();
         }
-
-        private void ButtonStoryboard2_Click(object sender, RoutedEventArgs e)
+        else
         {
-            if (Storyboard2.GetCurrentState() == ClockState.Stopped)
-            {
-                Storyboard2.Begin();
-            }
-            else
-            {
-                Storyboard2.Stop();
-            }
+            Storyboard1.Stop();
         }
+    }
 
-        private void ButtonStoryboard3_Click(object sender, RoutedEventArgs e)
+    private void ButtonStoryboard2_Click(object sender, RoutedEventArgs e)
+    {
+        if (Storyboard2.GetCurrentState() == ClockState.Stopped)
         {
-            if (Storyboard3.GetCurrentState() == ClockState.Stopped)
-            {
-                Storyboard3.Begin();
-            }
-            else
-            {
-                Storyboard3.Stop();
-            }
+            Storyboard2.Begin();
+        }
+        else
+        {
+            Storyboard2.Stop();
+        }
+    }
+
+    private void ButtonStoryboard3_Click(object sender, RoutedEventArgs e)
+    {
+        if (Storyboard3.GetCurrentState() == ClockState.Stopped)
+        {
+            Storyboard3.Begin();
+        }
+        else
+        {
+            Storyboard3.Stop();
         }
     }
 }

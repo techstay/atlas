@@ -16,36 +16,35 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample.Pages
+namespace WinUIExample.Pages;
+
+/// <summary>
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class BasicControlsPage : Page
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class BasicControlsPage : Page
+    private int _button1Value = 0;
+    private int _repeatButton1Value = 0;
+    private bool _toggleButtonValue = false;
+
+    public BasicControlsPage()
     {
-        private int _button1Value = 0;
-        private int _repeatButton1Value = 0;
-        private bool _toggleButtonValue = false;
+        this.InitializeComponent();
+    }
 
-        public BasicControlsPage()
-        {
-            this.InitializeComponent();
-        }
+    private void Button1_Click(object sender, RoutedEventArgs e)
+    {
+        Button1.Content = $"Button: {++_button1Value}";
+    }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
-            Button1.Content = $"Button: {++_button1Value}";
-        }
+    private void RepeatButton1_Click(object sender, RoutedEventArgs e)
+    {
+        RepeatButton1.Content = $"RepeatButton: {++_repeatButton1Value}";
+    }
 
-        private void RepeatButton1_Click(object sender, RoutedEventArgs e)
-        {
-            RepeatButton1.Content = $"RepeatButton: {++_repeatButton1Value}";
-        }
-
-        private void ToggleButton1_Click(object sender, RoutedEventArgs e)
-        {
-            _toggleButtonValue = !_toggleButtonValue;
-            ToggleButton1.Content = $"""ToggleButton: {(_toggleButtonValue ? "On" : "Off")}""";
-        }
+    private void ToggleButton1_Click(object sender, RoutedEventArgs e)
+    {
+        _toggleButtonValue = !_toggleButtonValue;
+        ToggleButton1.Content = $"""ToggleButton: {(_toggleButtonValue ? "On" : "Off")}""";
     }
 }

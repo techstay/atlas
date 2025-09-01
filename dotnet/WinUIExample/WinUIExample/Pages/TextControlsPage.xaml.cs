@@ -16,57 +16,56 @@ using Microsoft.UI.Xaml.Navigation;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace WinUIExample.Pages
+namespace WinUIExample.Pages;
+
+/// <summary>
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// </summary>
+public sealed partial class TextControlsPage : Page
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class TextControlsPage : Page
+    public TextControlsPage()
     {
-        public TextControlsPage()
-        {
-            this.InitializeComponent();
-        }
+        this.InitializeComponent();
+    }
 
-        private void SpinButtonPlacementModeRadioButtons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private void SpinButtonPlacementModeRadioButtons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (sender is RadioButtons radioButtons)
         {
-            if (sender is RadioButtons radioButtons)
+            var mode = (radioButtons.SelectedItem as string) switch
             {
-                var mode = (radioButtons.SelectedItem as string) switch
-                {
-                    "Inline" => NumberBoxSpinButtonPlacementMode.Inline,
-                    "Compact" => NumberBoxSpinButtonPlacementMode.Compact,
-                    _ => NumberBoxSpinButtonPlacementMode.Hidden,
-                };
-                NumberBox1.SpinButtonPlacementMode = mode;
-            }
+                "Inline" => NumberBoxSpinButtonPlacementMode.Inline,
+                "Compact" => NumberBoxSpinButtonPlacementMode.Compact,
+                _ => NumberBoxSpinButtonPlacementMode.Hidden,
+            };
+            NumberBox1.SpinButtonPlacementMode = mode;
         }
+    }
 
-        private void AutoSuggestBox1_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        {
-            AutoSuggestBox1.Text = args.SelectedItem.ToString();
-        }
+    private void AutoSuggestBox1_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+    {
+        AutoSuggestBox1.Text = args.SelectedItem.ToString();
+    }
 
-        private void AutoSuggestBox1_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+    private void AutoSuggestBox1_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+    {
+        var fruits = new List<string> { "Apple", "Banana", "Orange", "Pear", "Strawberry", "Mango" };
+        if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
         {
-            var fruits = new List<string> { "Apple", "Banana", "Orange", "Pear", "Strawberry", "Mango" };
-            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            var found = (from fruit in fruits
+                         where fruit.ToLower().Contains(sender.Text)
+                         select fruit).ToList();
+            if (found.Count() == 0)
             {
-                var found = (from fruit in fruits
-                             where fruit.ToLower().Contains(sender.Text)
-                             select fruit).ToList();
-                if (found.Count() == 0)
-                {
-                    found.Add("No result found.");
-                }
-                sender.ItemsSource = found;
+                found.Add("No result found.");
             }
+            sender.ItemsSource = found;
         }
+    }
 
-        private void ShowPasswordCheckBox_Changed(object sender, RoutedEventArgs e)
-        {
-            PasswordBox1.PasswordRevealMode = ShowPasswordCheckBox.IsChecked == true ? PasswordRevealMode.Visible : PasswordRevealMode.Hidden;
-        }
+    private void ShowPasswordCheckBox_Changed(object sender, RoutedEventArgs e)
+    {
+        PasswordBox1.PasswordRevealMode = ShowPasswordCheckBox.IsChecked == true ? PasswordRevealMode.Visible : PasswordRevealMode.Hidden;
     }
 }
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Window
     x:Class="WinUIExample.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -48,6 +48,14 @@
             <NavigationViewItem
                 Content="Collection Controls"
                 Tag="WinUIExample.Pages.CollectionControlsPage">
+                <NavigationViewItem.Icon>
+                    <FontIcon
+                        Glyph="&#xF0E2;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem
+                Content="Menus"
+                Tag="WinUIExample.Pages.MenusPage">
                 <NavigationViewItem.Icon>
                     <FontIcon
                         Glyph="&#xF0E2;" />
@@ -116,14 +124,6 @@
                 <NavigationViewItem.Icon>
                     <FontIcon
                         Glyph="&#xEA39;" />
-                </NavigationViewItem.Icon>
-            </NavigationViewItem>
-            <NavigationViewItem
-                Content="Resources"
-                Tag="WinUIExample.Pages.ResourcesPage">
-                <NavigationViewItem.Icon>
-                    <FontIcon
-                        Glyph="&#xF5F8;" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
         </NavigationView.MenuItems>
