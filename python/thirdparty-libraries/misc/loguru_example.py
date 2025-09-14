@@ -1,12 +1,13 @@
 from loguru import logger
 
 
+# Raise an exception
 def exception():
     raise ValueError("This is an exception")
 
 
 def main():
-    logger.info("some infomation")
+    logger.info("some information")
     logger.debug("some debug information")
     logger.warning("some warning")
     logger.error("some error")
