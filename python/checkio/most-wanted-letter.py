@@ -1,4 +1,4 @@
-def checkio(text):
+def checkio(text: str):
     d = {}
     lower = [c for c in text.lower() if c.isalpha()]
     for c in lower:
