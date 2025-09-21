@@ -20,3 +20,16 @@ d3.values()
 for k, v in d3.items():
     print(f"key:{k}, value:{v}")
 # %%
+from collections import Counter
+
+counter = Counter()
+for i in "1234113":
+    counter[i] += 1
+
+counter
+
+# %%
+counter.most_common()
+# %%
+counter.total()
+# %%
