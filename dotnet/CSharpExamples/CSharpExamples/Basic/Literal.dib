@@ -1,0 +1,122 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+## Integers
+
+### Integer Types
+
+#!csharp
+
+sbyte sb = 127;
+sb
+
+#!csharp
+
+byte b = 255;
+b
+
+#!csharp
+
+short s = 32767;
+s
+
+#!csharp
+
+ushort us = 65535;
+us
+
+#!csharp
+
+int i = 2147483647;
+i
+
+#!csharp
+
+uint ui = 4294967295;
+ui
+
+#!csharp
+
+long l = 9223372036854775807L;
+l
+
+#!csharp
+
+ulong ul = 18446744073709551615UL;
+ul
+
+#!csharp
+
+nint ni = 92233720;
+ni
+
+#!csharp
+
+nuint nui = 1844674407;
+nui
+
+#!csharp
+
+var hex = 0xcafe;
+hex
+
+#!csharp
+
+var octal = Convert.ToInt32("012345", 8);
+octal
+
+#!csharp
+
+var binary = 0b101010;
+binary
+
+#!csharp
+
+var defaultInt = default(int);
+defaultInt
+
+#!csharp
+
+var defaultDouble = default(double);
+defaultDouble
+
+#!csharp
+
+var isChecked = true;
+isChecked
+
+#!markdown
+
+## Decimals
+
+#!csharp
+
+var f = 3.14f;
+f
+
+#!csharp
+
+var d = 3.14;
+d
+
+#!csharp
+
+var decimalNumber = 3.14m;
+decimalNumber
+
+#!markdown
+
+## Char
+
+#!csharp
+
+var c = 'A';
+c
+
+#!csharp
+
+var str = "Hello, World!";
+str

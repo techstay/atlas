@@ -1,7 +1,0 @@
-#!meta
-
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
-
-#!csharp
-
-Console.WriteLine("Hello world!");
