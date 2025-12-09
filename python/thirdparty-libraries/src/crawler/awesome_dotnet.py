@@ -135,7 +135,7 @@ async def main():
         else:
             exceptions.append(result)
 
-    logger.info(f"Found {len(repo_infos)} repos with information.")
+    logger.info(f"Fetched {len(repo_infos)} repos with information.")
 
     sorted_repo_infos = sorted(repo_infos, key=lambda x: x["stars"], reverse=True)
     save_to_file(sorted_repo_infos)

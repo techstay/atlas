@@ -5,6 +5,7 @@ from pathlib import Path
 from faker import Faker
 from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, Reference
+from openpyxl.workbook.workbook import _WorksheetOrChartsheetLike
 
 fake = Faker("zh_CN")
 
@@ -16,7 +17,7 @@ else:
     book = Workbook()
 
 # %%
-ws = book.active
+ws: _WorksheetOrChartsheetLike = book.active  # type: ignore
 ws.title = "学生成绩表"
 
 # 表头
@@ -50,17 +51,17 @@ for row in range(2, 2 + N):
     ws[f"g{row}"] = get_random_score()
 
 # 总计、平均数、方差、标准差
-ws[f"a{N+3}"] = "总计"
-ws[f"a{N+4}"] = "平均数"
-ws[f"a{N+5}"] = "方差"
-ws[f"a{N+6}"] = "标准差"
+ws[f"a{N + 3}"] = "总计"
+ws[f"a{N + 4}"] = "平均数"
+ws[f"a{N + 5}"] = "方差"
+ws[f"a{N + 6}"] = "标准差"
 
 column = ["b", "c", "d", "e", "f", "g"]
 for col in column:
-    ws[f"{col}{N+3}"] = f"=sum({col}2:{col}{N+1})"
-    ws[f"{col}{N+4}"] = f"=average({col}2:{col}{N+1})"
-    ws[f"{col}{N+5}"] = f"=varp({col}2:{col}{N+1})"
-    ws[f"{col}{N+6}"] = f"=stdevp({col}2:{col}{N+1})"
+    ws[f"{col}{N + 3}"] = f"=sum({col}2:{col}{N + 1})"
+    ws[f"{col}{N + 4}"] = f"=average({col}2:{col}{N + 1})"
+    ws[f"{col}{N + 5}"] = f"=varp({col}2:{col}{N + 1})"
+    ws[f"{col}{N + 6}"] = f"=stdevp({col}2:{col}{N + 1})"
 
 # 前10位学生的成绩图表
 

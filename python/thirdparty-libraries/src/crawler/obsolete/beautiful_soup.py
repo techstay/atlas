@@ -31,7 +31,7 @@ for div in divs:
         class_="contentHerf",
     )
     for link in links:
-        contents = link.span.contents
+        contents = link.span.contents  # type: ignore
         contents = [
             i
             for i in contents
