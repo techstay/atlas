@@ -878,3 +878,4 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,jetbrains+all,java,gradle,rust,python,visualstudio
 
 *.exe
+.claude/
