@@ -12,7 +12,7 @@ int main()
     }
     std::println("");
 
-    // intentional infinite loops
+    // Intentional infinite loop
     i = 0;
     while (true)
     {
@@ -22,9 +22,9 @@ int main()
         }
         i++;
     }
-    std::println("infinite loop ends.");
+    std::println("Infinite loop ends.");
 
-    // do while
+    // Do-while loop
     do
     {
         if (i % 10 == 0)
@@ -34,5 +34,5 @@ int main()
         i++;
     } while (true);
 
-    std::println("infinite loop ends.");
+    std::println("Infinite loop ends.");
 }

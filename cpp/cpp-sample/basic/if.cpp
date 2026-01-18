@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, const char **argv)
 {
-    // if statements
+    // If statement
     auto marks = 80;
     if (marks >= 60)
     {
@@ -12,7 +12,7 @@ int main(int argc, const char **argv)
     }
 
     marks = 40;
-    // if else statements
+    // If-else statement
     if (marks < 60)
     {
         std::println("failed");
@@ -22,7 +22,7 @@ int main(int argc, const char **argv)
         std::println("passed");
     }
 
-    // if else if statements
+    // If-else-if statement
     marks = 100;
     if (marks < 60)
     {

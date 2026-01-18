@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -12,4 +12,6 @@ int main()
     result      = 5 % 3;
     result      = -3;
     result      = +4;
+
+    println("{}", result);
 }

@@ -8,7 +8,7 @@ int main()
     }
     std::println("");
 
-    // infinite loops
+    // Infinite loop
     auto i = 0;
     for (;;)
     {
@@ -18,5 +18,5 @@ int main()
         }
         i++;
     }
-    std::println("infinite loop ends.");
+    std::println("Infinite loop ends.");
 }

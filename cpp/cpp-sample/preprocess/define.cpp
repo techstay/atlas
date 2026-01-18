@@ -4,6 +4,7 @@
 #define MY_NAME "techstay"
 
 using namespace std;
+
 int main()
 {
     // MY_NAME will be replaced with "techstay" by preprocessor

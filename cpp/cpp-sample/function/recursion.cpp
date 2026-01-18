@@ -12,7 +12,7 @@ int fibonacci1(int n)
     return fibonacci1(n - 2) + fibonacci1(n - 1);
 }
 
-// fibonacci with memorization version
+// Fibonacci with memoization (optimized version)
 long fibonacci2(int n)
 {
     static auto result = vector<long>{0, 1};

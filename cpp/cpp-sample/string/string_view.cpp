@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    // a string_view is read-only strings
-    // which is more efficient than a string
+    // string_view provides read-only access without owning data
+    // More efficient than std::string for read-only operations
     string_view str{"abcd"};
 
     std::println("{}", str);

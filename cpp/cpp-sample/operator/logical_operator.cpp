@@ -4,14 +4,14 @@ using namespace std;
 
 int main()
 {
-    // 逻辑运算符
+    // Logical operators
     bool result;
 
     result = true && false;
     result = true || false;
     result = !true;
 
-    // short circuit
+    // Short circuit evaluation
     int i = 0;
 
     result = false && (i++);

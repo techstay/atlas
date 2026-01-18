@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// unscoped enums
+// Unscoped enum
 enum Color
 {
     RED,
@@ -13,7 +13,7 @@ enum Color
     GREEN
 };
 
-// scoped enums
+// Scoped enum
 enum class Fruit
 {
     APPLE,
@@ -53,8 +53,8 @@ int main()
     println("{}", apple);
     println("{}", orange);
 
-    // converting enum to underlying
-    // to_underlying, available in C++23
+    // Convert enum to underlying type
+    // to_underlying is available in C++23
     println("{}", static_cast<int>(orange));
     println("{}", to_underlying(orange));
 }

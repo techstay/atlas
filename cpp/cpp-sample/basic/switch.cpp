@@ -14,15 +14,15 @@ int main()
     case 8:
         std::println("good");
         break;
-        // multiple situations can be combined together
+        // Multiple cases can be combined
     case 9:
-        // the fallthrough attribute is used to indicate that the following
+        // The [[fallthrough]] attribute indicates that the following
         // fallthrough is intentional
         [[fallthrough]];
     case 10:
         std::println("excellent");
         break;
-        // default clauses will be executed if others fallthrough
+        // Default clause executes if no other cases match
     default:
         std::println("failed");
     }

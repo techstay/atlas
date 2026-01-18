@@ -7,20 +7,20 @@ int main()
     int d1 = 5;
     int d2 = 6;
 
-    // 定义两个指针
+    // Declare two pointers
     int *p1, *p2;
 
-    // 为指针赋值
+    // Assign addresses to pointers
     p1 = &d1;
     p2 = &d2;
 
-    // 指针指向相应对象
+    // Access objects through pointers
     std::println("d1={}, *p1={}", d1, *p1);
 
-    // 修改指针指向的对象会直接改变它的值
+    // Modify object via pointer
     *p1 = 100;
     std::println("d1={}, *p1={}", d1, *p1);
 
-    // 清空指针
+    // Reset pointers to null
     p1 = p2 = nullptr;
 }

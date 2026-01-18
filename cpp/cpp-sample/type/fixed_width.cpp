@@ -1,11 +1,11 @@
 #include <cstdint>
-#include <iostream>
 
 using namespace std;
 
 int main()
 {
-    // fix-width integers, available since c++ 11
+    // Fixed-width integer types from <cstdint> (C++11)
+    // Guaranteed exact bit width on all platforms
     int8_t i8     = 100;
     int16_t i16   = 100;
     int32_t i32   = 10'000;

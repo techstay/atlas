@@ -1,5 +1,5 @@
-// precompiled std.core modules, available in c++23
-// TODO: waiting for this feature being implemented in the future!
+// Precompiled std modules, available in C++23
+// TODO: Wait for this feature to be implemented in the future!
 // import std;
 #include <print>
 

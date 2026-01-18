@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// abstract class
+// Abstract class
 class Animal
 {
   private:
@@ -14,7 +14,7 @@ class Animal
     {
     }
 
-    // this is a pure virtual method
+    // Pure virtual function - makes this class abstract
     virtual void speak() = 0;
 };
 
@@ -37,6 +37,6 @@ int main()
     auto dog = Dog{"dog"};
     dog.speak();
 
-    // abstract classes cannot be instantiated
+    // Abstract classes cannot be instantiated
     // auto animal = Animal{"animal"};
 }

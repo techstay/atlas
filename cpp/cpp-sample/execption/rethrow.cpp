@@ -14,7 +14,7 @@ int main()
     catch (...)
     {
         std::println("exception catch: ");
-        // no arguments throw will rethrow the exception
+        // Rethrow the current exception
         throw;
     }
 }

@@ -5,17 +5,17 @@ using namespace std;
 
 int main()
 {
-    // empty vector
+    // Empty vector
     vector<int> v1;
-    // vector with 5 elements
+    // Vector with 5 elements
     vector<int> v2(5);
-    // vector initialization
+    // Vector initialization
     vector v3{1, 2, 3, 4, 5};
 
-    // vector length
-    println("the length of v3: {}", v3.size());
+    // Vector size
+    println("The size of v3: {}", v3.size());
 
-    // resizing
+    // Resize the vector
     v1.resize(10);
-    println("the length of v1: {}", v1.size());
+    println("The size of v1: {}", v1.size());
 }

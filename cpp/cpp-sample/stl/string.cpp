@@ -20,5 +20,6 @@ int main()
         if (ispunct(c))
             punct_count++;
     }
-    std::println("alpha_count:{}, digit_count:{}, space_count:{}, punct_count:{}", alpha_count, digit_count, space_count, punct_count);
+    std::println("alpha_count:{}, digit_count:{}, space_count:{}, punct_count:{}", alpha_count, digit_count,
+                 space_count, punct_count);
 }

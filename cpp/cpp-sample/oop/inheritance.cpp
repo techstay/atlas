@@ -34,7 +34,7 @@ class Employee : public Person
     double wage{};
 
   public:
-    // calling base constructors
+    // Call the base class constructor
     Employee(const string_view &name = "", int age = 0, double wage = 0) : Person(name, age), wage{wage}
     {
     }
@@ -44,8 +44,8 @@ class Employee : public Person
         std::println("Hello, boss!");
     }
 
-    // adding override specifier lets compilers report an error when no base virtual method was found
-    // the final specifier forbidden other from overriding this method
+    // The override specifier ensures a base virtual function exists
+    // The final specifier prevents derived classes from overriding this function
     void introduce_self() override final
     {
         std::println("I'm an employee.");
@@ -56,10 +56,10 @@ int main()
 {
     auto p = Employee{"techstay", 18, 3'000};
     p.say_hello();
-    // calling the base function
+    // Call the base class function
     p.Person::say_hello();
 
-    // polymorphism
+    // Polymorphism
     vector<Person *> list{};
     list.push_back(new Person());
     list.push_back(&p);

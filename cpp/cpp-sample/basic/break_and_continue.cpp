@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // break
+    // Break statement
     for (auto i{0}; i <= 10; i++)
     {
         if (i == 5)
@@ -15,12 +15,12 @@ int main()
     }
     println();
 
-    // continue
+    // Continue statement
     for (auto i{0}; i <= 10; i++)
     {
         if (i == 5)
         {
-            // skip the value 5
+            // Skip the value 5
             continue;
         }
         print("{} ", i);

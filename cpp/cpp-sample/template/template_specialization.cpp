@@ -16,7 +16,7 @@ class Test
     }
 };
 
-// partial template double specialization
+// Partial template specialization for double
 template <>
 class Test<double>
 {

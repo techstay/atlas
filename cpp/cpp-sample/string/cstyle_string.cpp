@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    // c style strings
+    // C-style string with null terminator
     char str1[] = "abcd";
-    // the actual string is abcd\0, so the length is 5 rather than 4
+    // Actual size is 5 bytes (4 chars + '\0')
     std::println("The length of str1: {}", sizeof(str1));
 }

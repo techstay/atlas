@@ -1,13 +1,13 @@
 #include <functional>
 #include <print>
 
-// constexpr functions evaluate at compile-time and runtime
+// constexpr functions can be evaluated at compile-time or runtime
 constexpr int add(int a, int b)
 {
     return a + b;
 }
 
-// consteval functions evaluate at compile-time
+// consteval functions must be evaluated at compile-time only
 consteval int minus(int a, int b)
 {
     return a - b;
@@ -15,16 +15,16 @@ consteval int minus(int a, int b)
 
 int main()
 {
-    // both can be executed in compile-time
+    // Both can be executed at compile-time
     std::println("{}", add(3, 5));
     std::println("{}", minus(5, 3));
 
-    // execution in runtime
+    // Runtime execution
     int a = 3;
     int b = 5;
     std::println("{}", add(a, b));
 
-    // execution in compile-time
+    // Compile-time execution
     constexpr int x = 5;
     constexpr int y = 3;
     std::println("{}", minus(x, y));

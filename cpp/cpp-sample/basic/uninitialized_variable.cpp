@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    // declaring and not initializing the value
-    // which is undetermined
+    // Declare without initialization
+    // The value is undetermined (undefined behavior)
     int x;
     std::println("{}", x);
 
-    // zero initialization
+    // Zero initialization
     int y{};
     std::println("{}", y);
 }

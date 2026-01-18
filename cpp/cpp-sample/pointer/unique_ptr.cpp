@@ -38,11 +38,11 @@ int main()
     auto ptr2 = foo(std::move(ptr));
     print(*ptr2);
 
-    // returning the raw pointer and set ptr null
+    // Release ownership and return raw pointer, ptr becomes null
     auto raw_ptr = ptr.release();
 
-    // releasing ptr
+    // Reset pointer (no-op if already null)
     ptr.reset();
-    // reseting new ptr
+    // Reset with new resource (takes ownership)
     ptr.reset(new Resource("bbc"));
 }

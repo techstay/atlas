@@ -11,7 +11,7 @@ bool tell_me_truth()
     return true;
 }
 
-// OH MY GOD, WHAT THE HELL IS THIS !!!
+// This is a terrible practice - never do this in production code!
 int mian()
 {
     println("{}", tell_me_truth());

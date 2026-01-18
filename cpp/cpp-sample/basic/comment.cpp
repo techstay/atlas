@@ -1,11 +1,11 @@
 int main()
 {
-    // single-line comments
+    // Single-line comments
 
     /*
-    multiline comments
-    multiline comments
-    multiline comments
-    */
+     * Multi-line comments
+     * Multi-line comments
+     * Multi-line comments
+     */
     return 0;
 }

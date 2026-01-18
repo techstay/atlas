@@ -1,15 +1,15 @@
 int main()
 {
-    // copy initialization
+    // Copy initialization
     int a = 5;
 
-    // direct initialization
+    // Direct initialization
     int b(10);
 
-    // list initialization, the preferred way
+    // List initialization, the preferred way
     int c{2};
 
-    // zero initialization
-    // maybe_unused attributes are used for suppress warnings for unused variables
+    // Zero initialization
+    // [[maybe_unused]] attribute is used to suppress warnings for unused variables
     [[maybe_unused]] int d{};
 }

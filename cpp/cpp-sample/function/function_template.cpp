@@ -14,7 +14,7 @@ auto max(T a, U b)
     return (a >= b) ? a : b;
 }
 
-// abbreviated function templates, available in c++20
+// Abbreviated function templates are available in C++20
 auto min(auto a, auto b)
 {
     return (a < b) ? a : b;

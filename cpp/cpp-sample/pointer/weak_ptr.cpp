@@ -29,13 +29,14 @@ int main()
 {
     weak_ptr<Resource> ptr = make_shared<Resource>("abc");
     auto count             = ptr.use_count();
-    std::println("use count: {}", count);
+    std::println("Reference count: {}", count);
 
     if (ptr.expired())
     {
-        std::println("the pointer is expired");
+        std::println("Weak pointer is expired (managed object deleted)");
     }
 
+    // Lock weak_ptr to obtain shared_ptr for access
     auto actual_ptr = ptr.lock();
     if (actual_ptr)
         auto res = actual_ptr.get();

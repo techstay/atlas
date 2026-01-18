@@ -12,7 +12,7 @@ int main()
         return n++;
     });
 
-    // reduce
+    // Reduce
     auto sum = reduce(numbers.begin(), numbers.end(), 0, plus<>{});
     println("sum is {}", sum);
 

@@ -9,30 +9,30 @@ class MyValue
     T value;
 
   public:
-    // explicit makes constructors and operators ineligible for implicit type conversion
+    // The explicit keyword prevents implicit type conversion
     explicit MyValue(const T &t)
     {
         value = t;
         std::println("constructor {{}}", t);
     }
 
-    // delete makes the function unavailable
+    // The = delete specifier makes the function unavailable
     MyValue(char c) = delete;
 
-    // copy constructor
+    // Copy constructor
     MyValue(const MyValue &obj)
     {
         value = obj.value;
         std::println("copy constructor {{}}", value);
     }
 
-    // assignment operator
+    // Copy assignment operator
     MyValue &operator=(const MyValue &t)
     {
-        // self assignment check
+        // Self-assignment check
         if (this == &t)
             return *this;
-        std::println("assignment operator {}", value);
+        std::println("copy assignment operator {}", value);
         value = t.value;
         return *this;
     }
@@ -57,14 +57,14 @@ auto foo(auto f)
 int main()
 {
     auto obj = MyValue(5);
-    // calling foo will make MyValue being copied once
-    // returning of fool will make MyValue being copied twice
+    // Calling foo will copy MyValue once
+    // Returning from foo will copy MyValue again
     auto obj2 = foo(obj);
 
-    // assignment operator
+    // Copy assignment operator
     obj = MyValue(20);
 
-    // copy elision, in this situation the direct constructor is called
-    // the copy constructor is even not needed! (since c++17)
+    // Copy elision - the direct constructor is called in this case
+    // The copy constructor is not even needed! (since C++17)
     auto obj3{MyValue(3.14)};
 }

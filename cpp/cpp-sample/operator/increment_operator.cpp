@@ -8,7 +8,7 @@ int main()
     auto i{0};
     // i++ first returns i and then increments
     std::println("{}", i++);
-    // ++i first increments and return the value that has incremented
+    // ++i first increments and returns the incremented value
     std::println("{}", ++i);
 
     std::println("{}", --i);

@@ -8,7 +8,7 @@ int main(int argc, const char **argv)
     string s{};
     cout << "Input a string:" << endl;
 
-    // the manipulator ws ignores whitespaces at the beginning of strings
+    // ws manipulator skips leading whitespace
     getline(cin >> ws, s);
 
     cout << "You typed: " << s << endl;

@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // 关系运算符
+    // Relational operators
     bool result;
 
     result = 1 <= 2;

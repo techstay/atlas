@@ -17,10 +17,10 @@ class MyValue
     {
     }
 
-    // overloading rational operators
+    // Overloading relational operators
     friend bool operator==(const MyValue<T> &a, const MyValue<T> &b)
     {
-        return a.t == b.t;
+        return a.value == b.value;
     }
 
     friend bool operator!=(const MyValue<T> &a, const MyValue<T> &b)
@@ -48,7 +48,7 @@ class MyValue
         return !(a < b);
     }
 
-    // overloading arithmetic operators
+    // Overloading arithmetic operators
     friend MyValue<T> operator+(const MyValue<T> &a, const MyValue<T> &b)
     {
         return MyValue(a.value + b.value);
@@ -69,22 +69,23 @@ class MyValue
         return MyValue(a.value / b.value);
     }
 
-    // overloading increment and decrement operators
+    // Overloading increment and decrement operators
 
-    // prefix increment operator with no parameters
+    // Prefix increment operator (no parameters)
     MyValue<T> &operator++()
     {
         this->value++;
         return *this;
     }
 
+    // Prefix decrement operator (no parameters)
     MyValue<T> &operator--()
     {
         this->value--;
         return *this;
     }
 
-    // postfix increment operator requires a parameter but not uses it
+    // Postfix increment operator (requires a dummy parameter)
     MyValue<T> operator++(T)
     {
         MyValue<T> temp{this->value};
@@ -92,21 +93,21 @@ class MyValue
         return temp;
     }
 
-    // overloading stream operators
+    // Overloading output stream operator
     friend void print(const MyValue<T> &t)
     {
         std::println("MyValue({})", t.value);
     }
 
-    // overloading parenthesis operator
-    // we implement accumulator function here
+    // Overloading function call operator
+    // Implementing an accumulator function
     MyValue &operator()(T t)
     {
         this->value += t;
         return *this;
     }
 
-    // type cast operators
+    // Type conversion operators
     operator double()
     {
         return static_cast<double>(this->value);
@@ -117,7 +118,7 @@ class MyValue
         return static_cast<int>(this->value);
     }
 
-    // overloading unary operators
+    // Overloading unary operators
     MyValue<T> operator!()
     {
         return MyValue(-this->value);

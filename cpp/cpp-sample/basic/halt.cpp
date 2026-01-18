@@ -10,10 +10,11 @@ void before_exit()
 int main()
 {
     println("do something...");
-    // specifying cleanup functions
+
+    // Register cleanup function
     atexit(before_exit);
 
     exit(0);
 
-    println("this will be executed since the program is terminated");
+    println("This will not be executed since the program has terminated");
 }

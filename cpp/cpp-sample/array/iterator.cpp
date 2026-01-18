@@ -7,7 +7,7 @@ int main()
 {
     array arr1{1, 2, 3, 4, 5};
 
-    // declaring begin and end iterators
+    // Declare begin and end iterators
     auto begin{arr1.begin()};
     auto end{arr1.end()};
 

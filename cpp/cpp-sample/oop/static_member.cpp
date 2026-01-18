@@ -5,7 +5,7 @@ using namespace std;
 class Foo
 {
   private:
-    // directly instantiating static inline members since c++17
+    // Directly initializing static inline members (available since C++17)
     static inline int count{0};
 
   public:
@@ -19,7 +19,7 @@ class Foo
         count--;
     }
 
-    // static methods can be called with Foo::getCount() or obj.getCount()
+    // Static methods can be called with Foo::getCount() or obj.getCount()
     // but we prefer the former
     static int getCount()
     {

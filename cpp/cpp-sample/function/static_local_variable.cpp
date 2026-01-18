@@ -4,8 +4,8 @@ using namespace std;
 
 void increment_and_print()
 {
-    // static variables are initialized once when declared
-    // the duration of static local variables begins and ends with the program
+    // Static local variables are initialized only once when declared
+    // Their lifetime lasts for the entire program duration
     static int count{0};
     std::println("{}", ++count);
 }

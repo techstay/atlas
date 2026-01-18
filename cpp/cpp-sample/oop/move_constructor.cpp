@@ -14,7 +14,7 @@ class Test
         std::println("constructor: {}", static_cast<const void*>(ptr));
     }
 
-    // copy constructor
+    // Copy constructor
     Test(const Test &t) : ptr(new T{*t.ptr})
     {
         std::println("copy constructor: {}", static_cast<const void*>(ptr));
@@ -29,7 +29,7 @@ class Test
         return *this;
     }
 
-    // move constructor
+    // Move constructor
     Test(Test &&t) : ptr(t.ptr)
     {
         t.ptr = nullptr;
@@ -67,7 +67,7 @@ T foo(T t)
 
 int main()
 {
-    // debug this line will demonstrate how copy and move semantics work
+    // Debug this line to observe copy and move semantics
     auto t1{Test{1}};
     t1 = foo(t1);
 }

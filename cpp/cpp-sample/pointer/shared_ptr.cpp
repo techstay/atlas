@@ -30,24 +30,25 @@ int main()
 
     if (ptr)
     {
-        std::println("pointer is valid, other operators can perform.");
+        std::println("Pointer is valid");
     }
     else
     {
-        std::println("pointer may have been released");
+        std::println("Pointer is null or expired");
     }
 
-    // obtaining raw pointer
+    // Get raw pointer without affecting ownership
     Resource *raw_ptr = ptr.get();
 
-    // checking if pointer is unique
+    // Check if this is the sole owner
     bool is_unique = ptr.unique();
     std::println("ptr is unique: {}", is_unique ? "true" : "false");
 
+    // Get reference count
     auto count = ptr.use_count();
-    std::println("how many pointers are used? {}", count);
+    std::println("Reference count: {}", count);
 
-    // custom deleter
+    // Custom deleter
     auto deleter = [](Resource *p) {
         delete p;
     };

@@ -28,13 +28,13 @@ int bar()
 
 int main()
 {
-    // namespaces foo
+    // Use namespace foo
     std::println("{}", foo::bar());
-    // namespace go
+    // Use namespace goo
     std::println("{}", goo::bar());
-    // nested namespace hoo
+    // Use nested namespace hoo
     std::println("{}", foo::hoo::bar());
-    // namespace aliases
+    // Namespace alias
     namespace joo = foo::hoo;
     std::println("{}", joo::bar());
 }

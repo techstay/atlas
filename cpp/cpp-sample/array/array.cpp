@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// array knows its length
+// std::array knows its size
 template <typename T, size_t size>
 void print_array(const array<T, size> &a)
 {
@@ -18,7 +18,7 @@ int main()
 {
     array<int, 5> arr1{1, 2, 3};
 
-    // you can omit generic parameters in c++17
+    // Generic parameters can be omitted in C++17
     array arr2{1, 2, 3};
 
     print_array(arr1);

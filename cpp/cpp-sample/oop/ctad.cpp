@@ -12,7 +12,7 @@ class Pair
     U second{};
 };
 
-// class template arguments deduction, available in c++17
+// Class template argument deduction (CTAD) guide (available since C++17)
 template <typename T, typename U>
 Pair(T, U) -> Pair<T, U>;
 

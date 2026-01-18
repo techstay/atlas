@@ -37,11 +37,11 @@ int main()
     Derived d1{"100"};
     Derived d2{"200"};
 
-    // when instantiated, the base and derived parts are initialized with d2
+    // When instantiated, both base and derived parts are initialized
     Base &base{d1};
 
-    // when assigned, only the base parts is assigned
-    // noting the frankenobject appears!
+    // When assigned, only the base part is assigned
+    // Note: This creates a franken-object!
     base = d2;
     base.print();
 }

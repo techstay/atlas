@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// the default parameter should be placed at the end
+// Default parameters should be placed at the end of the parameter list
 void printTwo(int a, int b = 0)
 {
     std::println("a={}, b={}", a, b);

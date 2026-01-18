@@ -3,28 +3,28 @@ int main()
     int i        = 5;
     const int &r = i;
     i            = 10;
-    // r            = 10; // r是常量，不可改变
+    // r            = 10; // r is const and cannot be modified
 
     int j = 100;
-    // const指针
+    // Const pointer (top-level const)
     int *const cp = &i;
-    // 可以通过指针修改对象的值
+    // Modify the value through the pointer
     *cp = 10;
-    // 无法修改指针指向的对象
+    // Cannot modify the pointer itself
     // cp = &j;
 
     const int *p = &i;
-    // 可以修改指针指向的对象
+    // Can modify the pointer to point to a different object
     p = &j;
-    // 无法通过指针修改值
+    // Cannot modify the value through the pointer
     // *p = 200;
 
-    // 既是顶层const又是底层const
+    // Both top-level and low-level const
     const int *const ccp = &i;
 
-    // 常量表达式
+    // Constant expressions
     constexpr int MAX_COUNT = 100;
     constexpr int MIN_COUNT = -MAX_COUNT;
-    // i不是常量，所以下面的代码不能编译
+    // i is not const, so the following code cannot compile
     // constexpr int VARIABLE_COUNT = i;
 }

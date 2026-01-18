@@ -5,19 +5,19 @@
 
 using namespace std;
 
-// lambda parameters
+// Lambda with std::function parameter
 void foo(const function<void()> &callback)
 {
     callback();
 }
 
-// auto lambda type, available in c++20
+// Lambda with auto parameter is available in C++20
 void bar(const auto &callback)
 {
     callback();
 }
 
-// print vector helper
+// Print vector helper function
 template <typename T>
 void print_vector(const vector<T> &v)
 {
@@ -31,14 +31,14 @@ void print_vector(const vector<T> &v)
 
 int main()
 {
-    // lambdas
+    // Lambda expression
     auto sum = [](int a, int b) -> int {
         return a + b;
     };
 
     std::println("sum: {}", sum(2, 3));
 
-    // lambda arguments
+    // Lambda as function argument
     foo([]() {
         std::println("foo");
     });
@@ -47,7 +47,7 @@ int main()
         std::println("bar");
     });
 
-    // sorting
+    // Sort with lambda
     auto list{
         vector{5, 4, 6, 2, 3, 1, 8}
     };

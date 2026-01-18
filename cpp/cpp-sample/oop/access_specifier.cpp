@@ -26,14 +26,14 @@ class Class2 : Class1
 
 int main()
 {
-    // private properties are not visible outside the class
+    // Private members are not accessible outside the class
     auto obj{Class1{}};
     // obj.a = 3;
 
-    // protected properties are only visible in the derived classes
+    // Protected members are accessible only in derived classes
     auto obj2{Class2{}};
     obj2.getC();
 
-    // public properties are visible outside the class
+    // Public members are accessible outside the class
     obj.d = 5;
 }

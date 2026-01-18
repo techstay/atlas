@@ -1,17 +1,17 @@
 #include <print>
 
-// the macro replaces texts roughly,
+// Macros perform simple text replacement
 // and may cause unexpected results
 #define ADD(a, b) a + b
 
-// safe way
+// Safe version with parentheses
 #define SAFE_ADD(a, b) (a + b)
 
 int main()
 {
     using namespace std;
-    // expected to be 16, but was 13 instead
+    // Expected 16, but got 13 instead
     std::println("{}", ADD(3, 5) * 2);
-    // adding parentheses makes it work properly
+    // Adding parentheses makes it work correctly
     std::println("{}", SAFE_ADD(3, 5) * 2);
 }

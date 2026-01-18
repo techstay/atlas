@@ -1,7 +1,7 @@
 #include <numbers>
 #include <print>
 
-// available in c++20
+// std::numbers is available in C++20
 int main()
 {
     using namespace std::numbers;
