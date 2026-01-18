@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,7 +7,7 @@ void increment_and_print()
     // static variables are initialized once when declared
     // the duration of static local variables begins and ends with the program
     static int count{0};
-    cout << ++count << endl;
+    std::println("{}", ++count);
 }
 
 int main()

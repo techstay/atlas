@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -8,33 +8,33 @@ int main(int argc, const char **argv)
     auto marks = 80;
     if (marks >= 60)
     {
-        cout << "passed" << endl;
+        std::println("passed");
     }
 
     marks = 40;
     // if else statements
     if (marks < 60)
     {
-        cout << "failed" << endl;
+        std::println("failed");
     }
     else
     {
-        cout << "passed" << endl;
+        std::println("passed");
     }
 
     // if else if statements
     marks = 100;
     if (marks < 60)
     {
-        cout << "failed" << endl;
+        std::println("failed");
     }
     else if (marks >= 60 && marks < 100)
     {
-        cout << "good" << endl;
+        std::println("good");
     }
     else
     {
-        cout << "very good!" << endl;
+        std::println("very good!");
     }
     return 0;
 }

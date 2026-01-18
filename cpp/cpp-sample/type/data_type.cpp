@@ -1,6 +1,6 @@
 #include <climits>
 #include <cstdint>
-#include <iostream>
+#include <print>
 #include <string>
 
 using namespace std;
@@ -37,7 +37,7 @@ int main()
                          "and next line";
 
     // 数据类型的大小
-    cout << "INT_MAX: " << INT_MAX << endl;
-    cout << "SHORT_MIN: " << SHRT_MIN << endl;
-    cout << "ULONG_MAX: " << ULONG_MAX << endl;
+    std::println("INT_MAX: {}", INT_MAX);
+    std::println("SHORT_MIN: {}", SHRT_MIN);
+    std::println("ULONG_MAX: {}", ULONG_MAX);
 }

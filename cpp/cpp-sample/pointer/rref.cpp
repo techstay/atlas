@@ -1,16 +1,16 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 // overloading functions for lref and rref
 void print_ref(const int &lref)
 {
-    cout << "lref: " << lref << endl;
+    std::println("lref: {}", lref);
 }
 
 void print_ref(int &&rref)
 {
-    cout << "rref: " << rref << endl;
+    std::println("rref: {}", rref);
 }
 
 int main()

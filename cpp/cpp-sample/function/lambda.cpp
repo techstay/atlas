@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <functional>
-#include <iostream>
-#include <ostream>
+#include <print>
+#include <vector>
 
 using namespace std;
 
@@ -17,17 +17,16 @@ void bar(const auto &callback)
     callback();
 }
 
-// overloading stream << operator
+// print vector helper
 template <typename T>
-ostream &operator<<(ostream &out, const vector<T> &v)
+void print_vector(const vector<T> &v)
 {
-    out << "[";
+    std::print("[");
     for (const auto &e : v)
     {
-        out << e << " ";
+        std::print("{} ", e);
     }
-    out << "]";
-    return out;
+    std::println("]");
 }
 
 int main()
@@ -37,15 +36,15 @@ int main()
         return a + b;
     };
 
-    cout << "sum: " << sum(2, 3) << endl;
+    std::println("sum: {}", sum(2, 3));
 
     // lambda arguments
     foo([]() {
-        cout << "foo" << endl;
+        std::println("foo");
     });
 
     bar([]() {
-        cout << "bar" << endl;
+        std::println("bar");
     });
 
     // sorting
@@ -56,9 +55,9 @@ int main()
     sort(list.begin(), list.end(), [](auto a, auto b) {
         return a < b;
     });
-    cout << list << endl;
+    print_vector(list);
     sort(list.begin(), list.end(), [](auto a, auto b) {
         return a > b;
     });
-    cout << list << endl;
+    print_vector(list);
 }

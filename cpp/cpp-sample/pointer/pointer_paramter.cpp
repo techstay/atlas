@@ -1,22 +1,22 @@
 #include <cstddef>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 // three overloading functions
 void print_ptr(int *ptr)
 {
-    cout << "ptr: " << ptr << "\tvalue: " << *ptr << endl;
+    std::println("ptr: {}\tvalue: {}", static_cast<const void*>(ptr), *ptr);
 }
 
 void print_ptr(int i)
 {
-    cout << "integer: " << i << endl;
+    std::println("integer: {}", i);
 }
 
 void print_ptr(nullptr_t ptr)
 {
-    cout << "this is nullptr" << endl;
+    std::println("this is nullptr");
 }
 
 int main()

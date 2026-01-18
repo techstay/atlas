@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,10 +7,10 @@ int main()
     auto i = 0;
     while (i <= 10)
     {
-        cout << i << " ";
+        std::print("{} ", i);
         i++;
     }
-    cout << endl;
+    std::println("");
 
     // intentional infinite loops
     i = 0;
@@ -22,7 +22,7 @@ int main()
         }
         i++;
     }
-    cout << "infinite loop ends." << endl;
+    std::println("infinite loop ends.");
 
     // do while
     do
@@ -34,5 +34,5 @@ int main()
         i++;
     } while (true);
 
-    cout << "infinite loop ends." << endl;
+    std::println("infinite loop ends.");
 }

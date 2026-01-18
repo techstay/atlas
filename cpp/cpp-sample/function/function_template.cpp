@@ -1,11 +1,11 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 template <typename T>
 void print(T a)
 {
-    cout << "a=" << a << endl;
+    std::println("a={}", a);
 }
 
 template <typename T, typename U>
@@ -27,6 +27,6 @@ int main()
     print("abc");
     print("def"sv);
 
-    cout << max(6, 8) << endl;
-    cout << min(6, 8) << endl;
+    std::println("{}", max(6, 8));
+    std::println("{}", min(6, 8));
 }

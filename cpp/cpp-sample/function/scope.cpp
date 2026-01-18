@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,12 +7,12 @@ int i{10'000};
 
 int main()
 {
-    cout << "global variable:" << i << endl;
+    std::println("global variable:{}", i);
 
     // shadowing global variables
     int i{1};
-    cout << "local variable:" << i << endl;
+    std::println("local variable:{}", i);
 
     // global namespace
-    cout << "using global namespace:" << ::i << endl;
+    std::println("using global namespace:{}", ::i);
 }

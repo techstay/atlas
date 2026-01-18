@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -8,11 +8,11 @@ int main()
     switch (marks / 10)
     {
     case 6:
-        cout << "passed" << endl;
+        std::println("passed");
         break;
     case 7:
     case 8:
-        cout << "good" << endl;
+        std::println("good");
         break;
         // multiple situations can be combined together
     case 9:
@@ -20,10 +20,10 @@ int main()
         // fallthrough is intentional
         [[fallthrough]];
     case 10:
-        cout << "excellent" << endl;
+        std::println("excellent");
         break;
         // default clauses will be executed if others fallthrough
     default:
-        cout << "failed" << endl;
+        std::println("failed");
     }
 }

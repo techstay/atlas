@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,7 +7,7 @@ class Base
   public:
     void print()
     {
-        cout << "base class" << endl;
+        std::println("base class");
     }
 
     // make sure Base class has vtable which is required for dynamic_cast
@@ -19,7 +19,7 @@ class Derived : public Base
   public:
     void print()
     {
-        cout << "derived class" << endl;
+        std::println("derived class");
     }
 
     void just_to_make_sure_the_code_compiles() override

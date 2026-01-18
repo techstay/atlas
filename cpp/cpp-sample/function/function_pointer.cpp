@@ -1,5 +1,5 @@
 #include <functional>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -24,8 +24,8 @@ int main()
     // type inference
     auto ptr4{&foo};
 
-    cout << "foo1: " << *ptr1(2, 3) << endl;
-    cout << "foo2: " << *ptr2(2, 3) << endl;
-    cout << "foo3: " << *ptr3(2, 3) << endl;
-    cout << "foo4: " << *ptr4(2, 3) << endl;
+    std::println("foo1: {}", *ptr1(2, 3));
+    std::println("foo2: {}", *ptr2(2, 3));
+    std::println("foo3: {}", *ptr3(2, 3));
+    std::println("foo4: {}", *ptr4(2, 3));
 }

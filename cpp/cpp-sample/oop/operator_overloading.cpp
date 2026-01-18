@@ -1,5 +1,4 @@
-#include <ios>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -94,10 +93,9 @@ class MyValue
     }
 
     // overloading stream operators
-    friend ostream &operator<<(ostream &out, const MyValue<T> &t)
+    friend void print(const MyValue<T> &t)
     {
-        out << "MyValue(" << t.value << ")";
-        return out;
+        std::println("MyValue({})", t.value);
     }
 
     // overloading parenthesis operator
@@ -130,13 +128,12 @@ int main()
 {
     auto a{MyValue{1}};
     auto b{MyValue{5}};
-    cout << boolalpha;
-    cout << a + b << endl;
-    cout << "a>b? " << (a > b) << endl;
-    cout << "a<b? " << (a < b) << endl;
-    cout << "prefix increment: " << ++a << endl;
-    cout << "postfix increment: " << b++ << endl;
-    cout << "now b is " << b << endl;
-    cout << "test parenthesis operator: " << a(10) << endl;
-    cout << "type cast: " << static_cast<double>(a) << " " << static_cast<int>(b) << endl;
+    print(a + b);
+    std::println("a>b? {}", (a > b) ? "true" : "false");
+    std::println("a<b? {}", (a < b) ? "true" : "false");
+    print(++a);
+    print(b++);
+    print(b);
+    print(a(10));
+    std::println("type cast: {} {}", static_cast<double>(a), static_cast<int>(b));
 }

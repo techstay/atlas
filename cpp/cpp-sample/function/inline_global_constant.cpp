@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -10,5 +10,5 @@ inline constexpr double PI = 3.14159;
 
 int main()
 {
-    cout << constant::PI << endl;
+    std::println("{}", constant::PI);
 }

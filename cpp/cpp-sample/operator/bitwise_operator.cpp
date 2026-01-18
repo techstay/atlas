@@ -1,5 +1,5 @@
 #include <bitset>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -9,15 +9,15 @@ int main()
     auto b2 = bitset<4>{0b1010};
 
     // 按位取反
-    cout << "not:\t" << ~b1 << endl;
+    std::println("not:\t{}", (~b1).to_string());
     // 按位与
-    cout << "and:\t" << (b1 & b2) << endl;
+    std::println("and:\t{}", (b1 & b2).to_string());
     // 按位或
-    cout << "or:\t" << (b1 | b2) << endl;
+    std::println("or:\t{}", (b1 | b2).to_string());
     // 按位异或
-    cout << "xor:\t" << (b1 ^ b2) << endl;
+    std::println("xor:\t{}", (b1 ^ b2).to_string());
     // 左移
-    cout << "lshfit:\t" << (b1 << 2) << endl;
+    std::println("lshfit:\t{}", (b1 << 2).to_string());
     // 右移
-    cout << "rshift:\t" << (b1 >> 2) << endl;
+    std::println("rshift:\t{}", (b1 >> 2).to_string());
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <string_view>
 
 using namespace std;
@@ -28,7 +28,7 @@ class Derived : public Base
 
     void print()
     {
-        cout << "name: " << name << " value: " << value << endl;
+        std::println("name: {} value: {}", name, value);
     }
 };
 

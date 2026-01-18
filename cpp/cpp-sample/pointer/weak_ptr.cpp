@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <memory>
 
 using namespace std;
@@ -11,18 +11,17 @@ class Resource
   public:
     Resource(const string_view &str) : str{str}
     {
-        cout << "Resource obtained: " << str << endl;
+        std::println("Resource obtained: {}", str);
     }
 
     ~Resource()
     {
-        cout << "Resource destroyed: " << str << endl;
+        std::println("Resource destroyed: {}", str);
     }
 
-    friend ostream &operator<<(ostream &out, const Resource &r)
+    friend void print(const Resource &r)
     {
-        out << "Resource(" << r.str << ")";
-        return out;
+        std::println("Resource({})", r.str);
     }
 };
 
@@ -30,11 +29,11 @@ int main()
 {
     weak_ptr<Resource> ptr = make_shared<Resource>("abc");
     auto count             = ptr.use_count();
-    cout << "use count: " << count << endl;
+    std::println("use count: {}", count);
 
     if (ptr.expired())
     {
-        cout << "the pointer is expired" << endl;
+        std::println("the pointer is expired");
     }
 
     auto actual_ptr = ptr.lock();

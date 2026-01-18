@@ -1,5 +1,5 @@
 #include <chrono>
-#include <iostream>
+#include <print>
 #include <thread>
 
 using namespace std;
@@ -29,7 +29,7 @@ void measure_time(auto callback)
     static Timer t{};
     t.reset();
     callback();
-    cout << "time used: " << t.elapsed() << endl;
+    std::println("time used: {}", t.elapsed());
 }
 
 int main()

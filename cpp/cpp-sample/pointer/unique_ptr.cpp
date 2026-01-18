@@ -1,6 +1,5 @@
-#include <iostream>
+#include <print>
 #include <memory>
-#include <ostream>
 #include <string_view>
 
 using namespace std;
@@ -13,18 +12,17 @@ class Resource
   public:
     Resource(const string_view &str) : str{str}
     {
-        cout << "Resource obtained: " << str << endl;
+        std::println("Resource obtained: {}", str);
     }
 
     ~Resource()
     {
-        cout << "Resource destroyed: " << str << endl;
+        std::println("Resource destroyed: {}", str);
     }
 
-    friend ostream &operator<<(ostream &out, const Resource &r)
+    friend void print(const Resource &r)
     {
-        out << "Resource(" << r.str << ")";
-        return out;
+        std::println("Resource({})", r.str);
     }
 };
 
@@ -38,7 +36,7 @@ int main()
 {
     auto ptr  = make_unique<Resource>("abc");
     auto ptr2 = foo(std::move(ptr));
-    cout << *ptr2 << endl;
+    print(*ptr2);
 
     // returning the raw pointer and set ptr null
     auto raw_ptr = ptr.release();

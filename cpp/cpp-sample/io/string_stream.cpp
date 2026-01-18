@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <sstream>
 
 using namespace std;
@@ -12,12 +12,12 @@ int main()
     istringstream input(some_lines);
     for (string word; input >> word;)
     {
-        cout << word << " " << flush;
+        std::print("{} ", word);
     }
-    cout << endl;
+    std::println("");
 
     ostringstream output;
-    output << "1 + 1 = " << 2 << endl;
-    output << "2 + 2 = " << 4 << endl;
-    cout << output.str() << endl;
+    output << std::format("1 + 1 = {}\n", 2);
+    output << std::format("2 + 2 = {}\n", 4);
+    std::println("{}", output.str());
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <string_view>
 
 using namespace std;
@@ -28,7 +28,7 @@ class Dog : public Animal
 
     void speak() override
     {
-        cout << "wow wow" << endl;
+        std::println("wow wow");
     }
 };
 

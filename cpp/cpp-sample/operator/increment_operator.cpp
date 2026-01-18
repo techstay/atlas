@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,10 +7,10 @@ int main()
     // incrementing
     auto i{0};
     // i++ first returns i and then increments
-    cout << i++ << endl;
+    std::println("{}", i++);
     // ++i first increments and return the value that has incremented
-    cout << ++i << endl;
+    std::println("{}", ++i);
 
-    cout << --i << endl;
-    cout << i-- << endl;
+    std::println("{}", --i);
+    std::println("{}", i--);
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 // the macro replaces texts roughly,
 // and may cause unexpected results
@@ -11,7 +11,7 @@ int main()
 {
     using namespace std;
     // expected to be 16, but was 13 instead
-    cout << ADD(3, 5) * 2 << endl;
+    std::println("{}", ADD(3, 5) * 2);
     // adding parentheses makes it work properly
-    cout << SAFE_ADD(3, 5) * 2 << endl;
+    std::println("{}", SAFE_ADD(3, 5) * 2);
 }

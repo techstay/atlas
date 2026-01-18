@@ -1,5 +1,4 @@
-#include <iostream>
-#include <ostream>
+#include <print>
 
 using namespace std;
 
@@ -14,7 +13,7 @@ class MyValue
     explicit MyValue(const T &t)
     {
         value = t;
-        cout << "constructor {" << t << "}" << endl;
+        std::println("constructor {{}}", t);
     }
 
     // delete makes the function unavailable
@@ -24,7 +23,7 @@ class MyValue
     MyValue(const MyValue &obj)
     {
         value = obj.value;
-        cout << "copy constructor {" << obj << "}" << endl;
+        std::println("copy constructor {{}}", value);
     }
 
     // assignment operator
@@ -33,20 +32,19 @@ class MyValue
         // self assignment check
         if (this == &t)
             return *this;
-        cout << "assignment operator " << t << endl;
+        std::println("assignment operator {}", value);
         value = t.value;
         return *this;
     }
 
-    friend ostream &operator<<(ostream &out, const MyValue &obj)
+    friend void print(const MyValue &obj)
     {
-        out << "MyValue(" << obj.value << ")";
-        return out;
+        std::println("MyValue({})", obj.value);
     }
 
     ~MyValue()
     {
-        cout << "destructor {" << value << "}" << endl;
+        std::println("destructor {{}}", value);
     }
 };
 

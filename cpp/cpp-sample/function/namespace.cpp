@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -29,12 +29,12 @@ int bar()
 int main()
 {
     // namespaces foo
-    cout << foo::bar() << endl;
+    std::println("{}", foo::bar());
     // namespace go
-    cout << goo::bar() << endl;
+    std::println("{}", goo::bar());
     // nested namespace hoo
-    cout << foo::hoo::bar() << endl;
+    std::println("{}", foo::hoo::bar());
     // namespace aliases
     namespace joo = foo::hoo;
-    cout << joo::bar() << endl;
+    std::println("{}", joo::bar());
 }

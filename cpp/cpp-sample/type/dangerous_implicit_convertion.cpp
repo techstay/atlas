@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -11,10 +11,10 @@ int main()
     // so the expression is false
     if (a < b)
     {
-        cout << "-1 < 1 is true" << endl;
+        std::println("-1 < 1 is true");
     }
     else
     {
-        cout << "something goes wrong" << endl;
+        std::println("something goes wrong");
     }
 }

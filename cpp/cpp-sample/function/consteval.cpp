@@ -1,5 +1,5 @@
 #include <functional>
-#include <iostream>
+#include <print>
 
 // constexpr functions evaluate at compile-time and runtime
 constexpr int add(int a, int b)
@@ -15,20 +15,17 @@ consteval int minus(int a, int b)
 
 int main()
 {
-    using std::cout;
-    using std::endl;
-
     // both can be executed in compile-time
-    cout << add(3, 5) << endl;
-    cout << minus(5, 3) << endl;
+    std::println("{}", add(3, 5));
+    std::println("{}", minus(5, 3));
 
     // execution in runtime
     int a = 3;
     int b = 5;
-    cout << add(a, b) << endl;
+    std::println("{}", add(a, b));
 
     // execution in compile-time
     constexpr int x = 5;
     constexpr int y = 3;
-    cout << minus(x, y) << endl;
+    std::println("{}", minus(x, y));
 }

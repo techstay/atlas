@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,43 +7,43 @@ int main()
     auto i{10};
     auto foo{[]() {
         // lambdas cannot access the local variables unless it was captured
-        // cout << "i=" << i << endl;
+        // std::println("i={}", i);
     }};
 
     // lambda captures by const value
     auto bar{[i]() {
-        cout << "i=" << i << endl;
+        std::println("i={}", i);
     }};
 
     bar();
 
     // mutable captures
     auto goo{[i]() mutable {
-        cout << "i=" << --i << endl;
+        std::println("i={}", --i);
     }};
     goo();
     goo();
-    cout << "now outer i is " << i << endl;
+    std::println("now outer i is {}", i);
 
     // captures by reference
     auto moo{[&i]() {
         i = 100;
-        cout << "i=" << i << endl;
+        std::println("i={}", i);
     }};
 
     moo();
-    cout << "now outer i is " << i << endl;
+    std::println("now outer i is {}", i);
 
     // auto capture all used variables by value
     auto hoo([=]() {
-        cout << "capture by value: " << i << endl;
+        std::println("capture by value: {}", i);
     });
     hoo();
 
     // auto capture all used variable by reference
     auto joo([&]() {
         i = 600;
-        cout << "capture by reference: " << i << endl;
+        std::println("capture by reference: {}", i);
     });
     joo();
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -7,9 +7,9 @@ int main()
     // declaring and not initializing the value
     // which is undetermined
     int x;
-    cout << x << endl;
+    std::println("{}", x);
 
     // zero initialization
     int y{};
-    cout << y << endl;
+    std::println("{}", y);
 }

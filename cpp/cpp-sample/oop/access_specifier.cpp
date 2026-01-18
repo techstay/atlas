@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -20,7 +20,7 @@ class Class2 : Class1
   public:
     void getC()
     {
-        cout << "I can access the field c: " << c << endl;
+        std::println("I can access the field c: {}", c);
     }
 };
 

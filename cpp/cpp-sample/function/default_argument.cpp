@@ -1,12 +1,11 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
 // the default parameter should be placed at the end
 void printTwo(int a, int b = 0)
 {
-    cout << "a=" << a << ", "
-         << "b=" << b << endl;
+    std::println("a={}, b={}", a, b);
 }
 
 int main()

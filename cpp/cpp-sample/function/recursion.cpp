@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <vector>
 
 using namespace std;
@@ -26,6 +26,6 @@ long fibonacci2(int n)
 
 int main()
 {
-    cout << "fib(5): " << fibonacci1(5) << endl;
-    cout << "fib(50): " << fibonacci2(50) << endl;
+    std::println("fib(5): {}", fibonacci1(5));
+    std::println("fib(50): {}", fibonacci2(50));
 }

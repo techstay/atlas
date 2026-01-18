@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -15,12 +15,12 @@ int main()
     int i = 0;
 
     result = false && (i++);
-    cout << "Check if i is still 0: " << i << endl;
+    std::println("Check if i is still 0: {}", i);
 
     result = true || (i++);
-    cout << "Check if i is still 0: " << i << endl;
+    std::println("Check if i is still 0: {}", i);
 
     // no short circuit
     result = true && (i++);
-    cout << "Check if i is still 0: " << i << endl;
+    std::println("Check if i is still 0: {}", i);
 }

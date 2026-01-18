@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <exception>
-#include <iostream>
+#include <print>
 #include <system_error>
 
 using namespace std;
@@ -13,7 +13,7 @@ int main()
     }
     catch (...)
     {
-        cout << "exception catch: " << endl;
+        std::println("exception catch: ");
         // no arguments throw will rethrow the exception
         throw;
     }

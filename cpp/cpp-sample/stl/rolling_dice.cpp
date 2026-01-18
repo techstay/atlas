@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <random>
 #include <unordered_map>
 
@@ -19,6 +19,6 @@ int main()
 
     for (int i = 1; i <= 6; i++)
     {
-        cout << i << ":" << m[i] << endl;
+        std::println("{}:{}", i, m[i]);
     }
 }

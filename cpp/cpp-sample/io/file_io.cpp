@@ -1,5 +1,5 @@
 #include <fstream>
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -11,11 +11,11 @@ int main()
     ifstream host_file(static_cast<string>(HOST_LINUX), fstream::in);
     for (char c; host_file.get(c);)
     {
-        cout << c;
+        std::print("{}", c);
     }
     host_file.close();
 
     ofstream out("hello.txt", fstream::out);
-    out << "Hello techstay!" << endl;
+    out << std::format("Hello techstay!\n");
     out.close();
 }

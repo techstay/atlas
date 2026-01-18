@@ -1,5 +1,5 @@
 #include <exception>
-#include <iostream>
+#include <print>
 #include <system_error>
 
 using namespace std;
@@ -12,11 +12,11 @@ int main()
     }
     catch (int e)
     {
-        cout << "catch exception: " << e << endl;
+        std::println("catch exception: {}", e);
     }
     catch (...)
     {
-        cout << "catch all" << endl;
+        std::println("catch all");
     }
 
     try
@@ -25,10 +25,10 @@ int main()
     }
     catch (int e)
     {
-        cout << "catch exception: " << e << endl;
+        std::println("catch exception: {}", e);
     }
     catch (...)
     {
-        cout << "catch all" << endl;
+        std::println("catch all");
     }
 }

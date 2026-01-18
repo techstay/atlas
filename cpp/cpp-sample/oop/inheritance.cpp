@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 #include <string_view>
 #include <vector>
 
@@ -19,12 +19,12 @@ class Person
 
     void say_hello()
     {
-        cout << "Hello" << endl;
+        std::println("Hello");
     }
 
     virtual void introduce_self()
     {
-        cout << "I'm a person." << endl;
+        std::println("I'm a person.");
     }
 };
 
@@ -41,14 +41,14 @@ class Employee : public Person
 
     void say_hello()
     {
-        cout << "Hello, boss!" << endl;
+        std::println("Hello, boss!");
     }
 
     // adding override specifier lets compilers report an error when no base virtual method was found
     // the final specifier forbidden other from overriding this method
     void introduce_self() override final
     {
-        cout << "I'm an employee." << endl;
+        std::println("I'm an employee.");
     }
 };
 

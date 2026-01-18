@@ -1,4 +1,5 @@
-#include <iostream>
+#include <print>
+#include <typeinfo>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ class Test
   public:
     void print() const
     {
-        cout << typeid(T).name() << endl;
+        std::println("{}", typeid(T).name());
     }
 };
 
@@ -25,7 +26,7 @@ class Test<double>
   public:
     void print() const
     {
-        cout << "I'm double, I'm different with others!" << endl;
+        std::println("I'm double, I'm different with others!");
     }
 };
 

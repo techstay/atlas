@@ -1,17 +1,17 @@
 #include <cstdint>
-#include <iostream>
+#include <print>
 
 int main()
 {
     // fast and least integers
 
-    std::cout << "least 8:  " << sizeof(std::int_least8_t) * 8 << " bits\n";
-    std::cout << "least 16: " << sizeof(std::int_least16_t) * 8 << " bits\n";
-    std::cout << "least 32: " << sizeof(std::int_least32_t) * 8 << " bits\n";
-    std::cout << '\n';
-    std::cout << "fast 8:  " << sizeof(std::int_fast8_t) * 8 << " bits\n";
-    std::cout << "fast 16: " << sizeof(std::int_fast16_t) * 8 << " bits\n";
-    std::cout << "fast 32: " << sizeof(std::int_fast32_t) * 8 << " bits\n";
+    std::println("least 8:  {} bits", sizeof(std::int_least8_t) * 8);
+    std::println("least 16: {} bits", sizeof(std::int_least16_t) * 8);
+    std::println("least 32: {} bits", sizeof(std::int_least32_t) * 8);
+    std::println("");
+    std::println("fast 8:  {} bits", sizeof(std::int_fast8_t) * 8);
+    std::println("fast 16: {} bits", sizeof(std::int_fast16_t) * 8);
+    std::println("fast 32: {} bits", sizeof(std::int_fast32_t) * 8);
 
     return 0;
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -33,5 +33,5 @@ int main()
     {
         new Foo();
     }
-    cout << "foo count: " << Foo::getCount() << endl;
+    std::println("foo count: {}", Foo::getCount());
 }

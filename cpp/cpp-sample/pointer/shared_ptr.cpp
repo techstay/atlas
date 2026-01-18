@@ -1,5 +1,4 @@
-#include <ios>
-#include <iostream>
+#include <print>
 #include <memory>
 
 using namespace std;
@@ -9,12 +8,12 @@ class Resource
   public:
     Resource()
     {
-        cout << "Resource obtained" << endl;
+        std::println("Resource obtained");
     }
 
     ~Resource()
     {
-        cout << "Resource destroyed" << endl;
+        std::println("Resource destroyed");
     }
 };
 
@@ -31,11 +30,11 @@ int main()
 
     if (ptr)
     {
-        cout << "pointer is valid, other operators can perform." << endl;
+        std::println("pointer is valid, other operators can perform.");
     }
     else
     {
-        cout << "pointer may have been released" << endl;
+        std::println("pointer may have been released");
     }
 
     // obtaining raw pointer
@@ -43,10 +42,10 @@ int main()
 
     // checking if pointer is unique
     bool is_unique = ptr.unique();
-    cout << boolalpha << "ptr is unique: " << is_unique << endl;
+    std::println("ptr is unique: {}", is_unique ? "true" : "false");
 
     auto count = ptr.use_count();
-    cout << "how many pointers are used? " << count << endl;
+    std::println("how many pointers are used? {}", count);
 
     // custom deleter
     auto deleter = [](Resource *p) {

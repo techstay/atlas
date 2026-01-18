@@ -1,4 +1,5 @@
-#include <iostream>
+#include <print>
+#include <string_view>
 
 using namespace std;
 
@@ -8,5 +9,5 @@ int main()
     // which is more efficient than a string
     string_view str{"abcd"};
 
-    cout << str << endl;
+    std::println("{}", str);
 }

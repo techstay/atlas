@@ -1,4 +1,4 @@
-#include <iostream>
+#include <print>
 
 using namespace std;
 
@@ -9,11 +9,11 @@ int main(int argc, const char **argv)
 
     // implicit cast
     d = i;
-    cout << d << endl;
+    std::println("{}", d);
 
     // explicit cast
     d = static_cast<double>(i);
-    cout << d << endl;
+    std::println("{}", d);
 
     return 0;
 }
