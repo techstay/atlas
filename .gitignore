@@ -879,3 +879,4 @@ FodyWeavers.xsd
 
 *.exe
 .claude/
+.metals/
