@@ -5,7 +5,31 @@
 
 ## Intro
 
-My study notes, includes codes and notes. Notes are placed in `notes` folder as a dendron project. You can open it with the dendron extension.
+My study notes, includes my codes and experience.
+
+- **[algorithms](./algorithms/README.md)** - Algorithms learning notes
+- **[bash](./bash/README.md)** - Bash scripting learning
+- **[cpp](./cpp/README.md)** - C++ learning notes
+- **[crystal](./crystal/README.md)** - Crystal language learning
+- **[dart](./dart/README.md)** - Dart language learning
+- **[dotnet](./dotnet/README.md)** - .NET learning
+- **[elvish](./elvish/README.md)** - Elvish Shell learning
+- **[golang](./golang/README.md)** - Go language learning
+- **[groovy](./groovy/README.md)** - Groovy language learning
+- **[java](./java/README.md)** - Java learning notes
+- **[julia](./julia/README.md)** - Julia language learning
+- **[kotlin](./kotlin/README.md)** - Kotlin language learning
+- **[lua](./lua/README.md)** - Lua language learning
+- **[mathematica](./mathematica/README.md)** - Mathematica learning
+- **[nodejs](./nodejs/README.md)** - Node.js/JavaScript learning
+- **[nushell](./nushell/README.md)** - Nushell learning
+- **[php](./php/README.md)** - PHP learning notes
+- **[powershell](./powershell/README.md)** - PowerShell learning
+- **[python](./python/README.md)** - Python learning notes
+- **[racket](./racket/README.md)** - Racket language learning
+- **[ruby](./ruby/README.md)** - Ruby language learning
+- **[rust](./rust/README.md)** - Rust language learning
+- **[scala](./scala/README.md)** - Scala language learning
 
 ## Contributors ✨
 
