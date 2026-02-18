@@ -1,20 +1,20 @@
-# racket
+# Racket
 
-## 学习资料
+## Learning Resources
 
-- [官方文档](https://docs.racket-lang.org)
+- [Official Documentation](https://docs.racket-lang.org)
 
-## 开发环境
+## Development Environment
 
-### 安装 racket
+### Installing Racket
 
 ```sh
 scoop install racket
 ```
 
-### 配置
+### Configuration
 
-先安装语言服务器，再安装[magic racket](https://marketplace.visualstudio.com/items?itemName=evzen-wybitul.magic-racket)扩展。
+First install the language server, then install the [Magic Racket](https://marketplace.visualstudio.com/items?itemName=evzen-wybitul.magic-racket) extension.
 
 ```sh
 raco pkg install racket-langserver

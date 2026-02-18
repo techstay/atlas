@@ -1,46 +1,46 @@
 # nushell
 
-一个数据驱动的跨平台现代 shell。
+A data-driven, cross-platform modern shell.
 
-## 开始使用
+## Getting Started
 
-### 安装
+### Installation
 
-windows 安装
+Windows installation:
 
 ```sh
 winget install nushell
 ```
 
-### 环境
+### Environment
 
-目前我使用 vscode 作为开发环境，但是 vscode 的 nushell 扩展生态还不是很完善，只有基本的高亮和补全等功能，调试、代码格式化等功能并没有跟上，只能寄希望于将来 nushell 生态继续完善了。
+Currently I use VSCode as my development environment, but VSCode's Nushell extension ecosystem is not very mature yet. It only has basic features like syntax highlighting and completion. Debugging, code formatting, and other features haven't caught up. We can only hope that the Nushell ecosystem will continue to improve in the future.
 
-运行代码采用最原始的办法，终端切换进入对应目录，手动运行 shell 文件来执行。
+Running code uses the most straightforward approach - switch to the corresponding directory in the terminal and manually run the shell file to execute it.
 
-- [nushell vscode 扩展](https://github.com/nushell/vscode-nushell-lang)
+- [nushell vscode extension](https://github.com/nushell/vscode-nushell-lang)
 
-TODO: 目前所有代码均未格式化，只能等将来扩展补上这些功能了。
+TODO: Currently all code is unformatted. We'll have to wait for the extension to add these features in the future.
 
-### 帮助
+### Help
 
-查看命令的帮助。
+View help for a command.
 
 ```nushell
 help str
 ```
 
-## 配置
+## Configuration
 
-### 默认配置文件
+### Default Configuration Files
 
-默认配置文件由`$nu.config-path`和`$nu.env-path`指定。
+The default configuration files are specified by `$nu.config-path` and `$nu.env-path`.
 
 ```sh
 code $nu.config-path
 ```
 
-修改默认编辑器`buffer_editor`
+Modify the default editor `buffer_editor`
 
 ```nushell
 let-env config = {
@@ -51,20 +51,20 @@ let-env config = {
 }
 ```
 
-以后就可以用`config env`或`config nu`来编辑配置文件了。
+After this, you can use `config env` or `config nu` to edit the configuration files.
 
-### 美化
+### Beautification
 
 #### starship
 
-输入`config env`，添加以下两行。
+Run `config env` and add the following two lines.
 
 ```nushell
 mkdir ~/.cache/starship
 starship init nu | save ~/.cache/starship/init.nu
 ```
 
-输入`config nu`，在末尾添加以下一行。
+Run `config nu` and add the following line at the end.
 
 ```nushell
 source ~/.cache/starship/init.nu
@@ -72,51 +72,51 @@ source ~/.cache/starship/init.nu
 
 #### oh-my-posh
 
-通过 scoop 安装，会同时安装 oh-my-posh 程序和主题配置文件(路径由环境变量`POSH_THEMES_PATH`指定)。
+Install via scoop, which will install both the oh-my-posh program and the theme configuration file (path specified by the environment variable `POSH_THEMES_PATH`).
 
 ```sh
 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
 ```
 
-字体安装(需要管理员权限)，也可以自己手动安装 nerdfonts。
+Font installation (requires administrator privileges), or you can manually install nerdfonts.
 
 ```sh
 oh-my-posh font install
 ```
 
-生成默认配置
+Generate the default configuration
 
 ```sh
 oh-my-posh init nu
 ```
 
-输入`config nu`，在末尾添加以下一行。
+Run `config nu` and add the following line at the end.
 
 ```sh
 source ~/.oh-my-posh.nu
 ```
 
-主题可以在[这里](https://ohmyposh.dev/docs/themes)查看，要更换主题，重新生成一下配置文件。
+Themes can be viewed in the [oh-my-posh themes documentation](https://ohmyposh.dev/docs/themes). To change themes, simply regenerate the configuration file.
 
 ```nushell
 oh-my-posh init nu --config $"($env.POSH_THEMES_PATH)/M365Princess.omp.json"
 ```
 
-### 自动跳转
+### Autojump
 
-安装
+Installation
 
 ```cmd
 scoop install zoxide
 ```
 
-生成配置文件
+Generate the configuration file
 
 ```nushell
 zoxide init nushell | save ~/.zoxide.nu
 ```
 
-输入`config nu`，在末尾添加一行。
+Run `config nu` and add a line at the end.
 
 ```nushell
 source ~/.zoxide.nu
