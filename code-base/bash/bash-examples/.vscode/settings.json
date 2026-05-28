@@ -1,0 +1,11 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.sh$",
+        "cmd": "shfmt -w -i 2 ${file}"
+      }
+    ]
+  }
+}

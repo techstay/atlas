@@ -2,6 +2,7 @@
 
 choice='y'
 
+# Choose between two branches with if and else.
 if [[ $choice = 'y' ]]; then
   echo "You choose yes"
 else
@@ -10,6 +11,7 @@ fi
 
 choice='q'
 
+# Chain multiple conditions with elif.
 if [[ $choice = o ]]; then
   echo "ok"
 elif [[ $choice = a ]]; then

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo '666' | rev
+echo 'abc' | rev
