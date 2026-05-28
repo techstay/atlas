@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Bank version="1">
+    <Section name="mission_22">
+        <Key name="wakawaka">
+            <Value flag="1"/>
+        </Key>
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_10">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="3"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_18">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="3"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_19">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="4"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_24">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="controlgroups">
+        <Key name="barracks">
+            <Value int="4"/>
+        </Key>
+        <Key name="armory">
+            <Value int="6"/>
+        </Key>
+        <Key name="engineering">
+            <Value int="6"/>
+        </Key>
+        <Key name="starport">
+            <Value int="4"/>
+        </Key>
+        <Key name="command">
+            <Value int="5"/>
+        </Key>
+        <Key name="factory">
+            <Value int="4"/>
+        </Key>
+    </Section>
+    <Section name="tech">
+        <Key name="firebat_plating">
+            <Value flag="1"/>
+        </Key>
+        <Key name="raven_corvidreactor">
+            <Value flag="1"/>
+        </Key>
+        <Key name="marauder_foam">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_driverevacuation">
+            <Value flag="1"/>
+        </Key>
+        <Key name="banshee_cross">
+            <Value flag="1"/>
+        </Key>
+        <Key name="scv_dualfusion">
+            <Value flag="1"/>
+        </Key>
+        <Key name="siegetank_shapedblast">
+            <Value flag="1"/>
+        </Key>
+        <Key name="base_gasfreebuildings">
+            <Value flag="1"/>
+        </Key>
+        <Key name="reaper_bombs">
+            <Value flag="1"/>
+        </Key>
+        <Key name="viking_phobos">
+            <Value flag="1"/>
+        </Key>
+        <Key name="infantry_creepweapons">
+            <Value flag="1"/>
+        </Key>
+        <Key name="missileturret_laserguidance">
+            <Value flag="1"/>
+        </Key>
+        <Key name="hercules_2">
+            <Value flag="1"/>
+        </Key>
+        <Key name="siegetank_maelstrom">
+            <Value flag="1"/>
+        </Key>
+        <Key name="infantry_energyweapon">
+            <Value flag="1"/>
+        </Key>
+        <Key name="hercules_1">
+            <Value flag="1"/>
+        </Key>
+        <Key name="battlecruiser_defensivematrix">
+            <Value flag="1"/>
+        </Key>
+        <Key name="scv_advancedconstruction">
+            <Value flag="1"/>
+        </Key>
+        <Key name="wraith_tomahawk">
+            <Value flag="1"/>
+        </Key>
+        <Key name="goliath_ares">
+            <Value flag="1"/>
+        </Key>
+        <Key name="firebat_gauntles">
+            <Value flag="1"/>
+        </Key>
+        <Key name="medivac_rapid">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_fireandforget">
+            <Value flag="1"/>
+        </Key>
+        <Key name="thor_immortality">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_drugs">
+            <Value flag="1"/>
+        </Key>
+        <Key name="spectre_permanentcloak">
+            <Value flag="1"/>
+        </Key>
+        <Key name="wraith_displacement">
+            <Value flag="1"/>
+        </Key>
+        <Key name="banshee_shockwave">
+            <Value flag="1"/>
+        </Key>
+        <Key name="medivac_advancedhealing">
+            <Value flag="1"/>
+        </Key>
+        <Key name="infantry_taxfree">
+            <Value flag="1"/>
+        </Key>
+        <Key name="base_supplydepot">
+            <Value flag="1"/>
+        </Key>
+        <Key name="reaper_rounds">
+            <Value flag="1"/>
+        </Key>
+        <Key name="general_orbitalcommand">
+            <Value flag="1"/>
+        </Key>
+        <Key name="spectre_lash">
+            <Value flag="1"/>
+        </Key>
+        <Key name="vehicles_additionalplating">
+            <Value flag="1"/>
+        </Key>
+        <Key name="marauder_shells">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_smartservos">
+            <Value flag="1"/>
+        </Key>
+        <Key name="medic_medpacks">
+            <Value flag="1"/>
+        </Key>
+        <Key name="predator_paws">
+            <Value flag="1"/>
+        </Key>
+        <Key name="marine_combatshield">
+            <Value flag="1"/>
+        </Key>
+        <Key name="marine_stimpack">
+            <Value flag="1"/>
+        </Key>
+        <Key name="goliath_multilock">
+            <Value flag="1"/>
+        </Key>
+        <Key name="base_armor">
+            <Value flag="1"/>
+        </Key>
+        <Key name="predator_propaganda">
+            <Value flag="1"/>
+        </Key>
+        <Key name="thor_barrage">
+            <Value flag="1"/>
+        </Key>
+        <Key name="diamondback_trilithium">
+            <Value flag="1"/>
+        </Key>
+        <Key name="vulture_cerberusmine">
+            <Value flag="1"/>
+        </Key>
+        <Key name="hellion_twinlinked">
+            <Value flag="1"/>
+        </Key>
+        <Key name="bunker_projectile">
+            <Value flag="1"/>
+        </Key>
+        <Key name="sciencevessel_scvs">
+            <Value flag="1"/>
+        </Key>
+        <Key name="diamondback_shapedhull">
+            <Value flag="1"/>
+        </Key>
+        <Key name="bunker_neosteel">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_utilitybot">
+            <Value flag="1"/>
+        </Key>
+        <Key name="medic_training">
+            <Value flag="1"/>
+        </Key>
+        <Key name="general_firesuppression">
+            <Value flag="1"/>
+        </Key>
+        <Key name="vehicles_facilityworkers">
+            <Value flag="1"/>
+        </Key>
+        <Key name="vulture_constructor">
+            <Value flag="1"/>
+        </Key>
+        <Key name="battlecruiser_missilepod">
+            <Value flag="1"/>
+        </Key>
+        <Key name="missileturret_hellstorm">
+            <Value flag="1"/>
+        </Key>
+        <Key name="sciencevessel_plasmaweaponary">
+            <Value flag="1"/>
+        </Key>
+        <Key name="missileturret_titanium">
+            <Value flag="1"/>
+        </Key>
+        <Key name="dominion_nuclearmayhem">
+            <Value flag="1"/>
+        </Key>
+        <Key name="hellion_thermite">
+            <Value flag="1"/>
+        </Key>
+        <Key name="base_sensortower">
+            <Value flag="1"/>
+        </Key>
+        <Key name="viking_ripwave">
+            <Value flag="1"/>
+        </Key>
+    </Section>
+    <Section name="playerstats">
+        <Key name="zerg">
+            <Value int="965"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="964"/>
+        </Key>
+        <Key name="cash">
+            <Value int="1001"/>
+        </Key>
+    </Section>
+    <Section name="zerg">
+        <Key name="lvl_zerg">
+            <Value int="6"/>
+        </Key>
+    </Section>
+    <Section name="mission_5">
+        <Key name="zerg">
+            <Value int="3"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="labzerg">
+        <Key name="lvl4_organicwaste">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl1_fortifiedbunker">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl4_regensteel">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl5_roboticrevenge">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_hercules">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_predator">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_softtargeting">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl1_improvedsalvage">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl5_hivemind">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl1_shriketurret">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_blackbox">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_perdition">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_planetary">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl4_celluar">
+            <Value flag="1"/>
+        </Key>
+    </Section>
+    <Section name="mission_26">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="protoss">
+        <Key name="lvl_protoss">
+            <Value int="6"/>
+        </Key>
+    </Section>
+    <Section name="mission_16">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="3"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_3">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="labprotoss">
+        <Key name="lvl1_speed">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_automatedrefinery">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_orbitalsupply">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_commandcenterreactor">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_microfiltering">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl3_shields">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl1_vandiumplating">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl5_emergencypods">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl5_orbital">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl1_ultracap">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl2_scv">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl4_teleport">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl4_sciencevessel">
+            <Value flag="1"/>
+        </Key>
+        <Key name="lvl5_techreactor">
+            <Value flag="1"/>
+        </Key>
+    </Section>
+    <Section name="mission_17">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="10"/>
+        </Key>
+        <Key name="ghost_selected">
+            <Value flag="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_21">
+        <Key name="zerg">
+            <Value int="3"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_15">
+        <Key name="zerg">
+            <Value int="3"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_2">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mercenaries">
+        <Key name="mercMarine">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercViking">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercAxiom">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercMedivac">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercSiegeTank">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercGoliath">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercBanshee">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercJackson">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercHellion">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercFirebat">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercGhost">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercReaper">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercMarauder">
+            <Value flag="1"/>
+        </Key>
+        <Key name="mercPegasus">
+            <Value flag="1"/>
+        </Key>
+    </Section>
+    <Section name="mission_6">
+        <Key name="zerg">
+            <Value int="3"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+    <Section name="mission_25">
+        <Key name="zerg">
+            <Value int="0"/>
+        </Key>
+        <Key name="played">
+            <Value flag="1"/>
+        </Key>
+        <Key name="protoss">
+            <Value int="0"/>
+        </Key>
+        <Key name="bonusCash">
+            <Value int="0"/>
+        </Key>
+    </Section>
+</Bank>

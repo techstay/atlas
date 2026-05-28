@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Bank version="1">
+    <Section name="mission_4">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_10">
+        <Key name="times_played">
+            <Value int="4"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="3"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_22">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_27">
+        <Key name="times_played">
+            <Value int="15"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="0"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="74"/>
+        </Key>
+    </Section>
+    <Section name="mission_11">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_18">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_19">
+        <Key name="times_played">
+            <Value int="3"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="4"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="5"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="kerrigan">
+        <Key name="tier2">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier7">
+            <Value int="2"/>
+        </Key>
+        <Key name="tier6">
+            <Value int="3"/>
+        </Key>
+        <Key name="tier1">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier4">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier3">
+            <Value int="3"/>
+        </Key>
+        <Key name="tier5">
+            <Value int="3"/>
+        </Key>
+    </Section>
+    <Section name="mission_24">
+        <Key name="times_played">
+            <Value int="7"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="0"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="controlgroups">
+        <Key name="spire">
+            <Value int="5"/>
+        </Key>
+        <Key name="hatchery">
+            <Value int="4"/>
+        </Key>
+        <Key name="evolutionchamber">
+            <Value int="5"/>
+        </Key>
+    </Section>
+    <Section name="playerstats">
+        <Key name="kerrigan">
+            <Value int="10000"/>
+        </Key>
+        <Key name="times_with_2">
+            <Value int="1"/>
+        </Key>
+        <Key name="naktul">
+            <Value int="9999"/>
+        </Key>
+        <Key name="times_with_1">
+            <Value int="1"/>
+        </Key>
+        <Key name="times_with_3">
+            <Value int="1"/>
+        </Key>
+        <Key name="dowadiru">
+            <Value int="9999"/>
+        </Key>
+    </Section>
+    <Section name="mission_5">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="evolution">
+        <Key name="mutalisk">
+            <Value int="1"/>
+        </Key>
+        <Key name="ultralisk">
+            <Value int="2"/>
+        </Key>
+        <Key name="zergling">
+            <Value int="2"/>
+        </Key>
+        <Key name="roach">
+            <Value int="1"/>
+        </Key>
+        <Key name="swarmhost">
+            <Value int="1"/>
+        </Key>
+        <Key name="baneling">
+            <Value int="2"/>
+        </Key>
+        <Key name="hydralisk">
+            <Value int="2"/>
+        </Key>
+    </Section>
+    <Section name="mission_26">
+        <Key name="times_played">
+            <Value int="6"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="0"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_8">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_14">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_20">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_7">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_16">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_12">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mutation">
+        <Key name="mutalisk">
+            <Value int="2"/>
+        </Key>
+        <Key name="ultralisk">
+            <Value int="2"/>
+        </Key>
+        <Key name="roach">
+            <Value int="2"/>
+        </Key>
+        <Key name="zergling">
+            <Value int="4"/>
+        </Key>
+        <Key name="swarmhost">
+            <Value int="3"/>
+        </Key>
+        <Key name="baneling">
+            <Value int="1"/>
+        </Key>
+        <Key name="hydralisk">
+            <Value int="3"/>
+        </Key>
+    </Section>
+    <Section name="mission_3">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_1">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_17">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_23">
+        <Key name="rushedexperiment">
+            <Value flag="0"/>
+        </Key>
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="naktul">
+        <Key name="tier2">
+            <Value int="2"/>
+        </Key>
+        <Key name="tier7">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier6">
+            <Value int="2"/>
+        </Key>
+        <Key name="tier1">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier4">
+            <Value int="2"/>
+        </Key>
+        <Key name="tier3">
+            <Value int="2"/>
+        </Key>
+        <Key name="tier5">
+            <Value int="1"/>
+        </Key>
+    </Section>
+    <Section name="mission_21">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_2">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_15">
+        <Key name="times_played">
+            <Value int="3"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="5"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="4"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_25">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_9">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="5"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_6">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="mission_13">
+        <Key name="times_played">
+            <Value int="2"/>
+        </Key>
+        <Key name="mapcompleted">
+            <Value flag="1"/>
+        </Key>
+        <Key name="levels_given">
+            <Value int="0"/>
+        </Key>
+        <Key name="levels_bonus">
+            <Value int="2"/>
+        </Key>
+        <Key name="herolevel">
+            <Value int="70"/>
+        </Key>
+    </Section>
+    <Section name="dowadiru">
+        <Key name="tier2">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier7">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier6">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier1">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier4">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier3">
+            <Value int="1"/>
+        </Key>
+        <Key name="tier5">
+            <Value int="1"/>
+        </Key>
+    </Section>
+</Bank>

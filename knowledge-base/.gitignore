@@ -1,0 +1,37 @@
+# Obsidian
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/backlink.json
+.obsidian/community-plugins.json
+.obsidian/core-plugins.json
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/page-preview.json
+.obsidian/types.json
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/history.json
+.obsidian/.obsidian-checksum-config.json
+.obsidian/plugins/
+.obsidian/themes/
+.claudian/
+
+# Claude
+.claude/sessions/
+.claude/settings.json
+.claude/claudian-settings.json
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# WorkBuddy
+.workbuddy/
