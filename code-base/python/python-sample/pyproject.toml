@@ -1,0 +1,24 @@
+[project]
+authors = [
+  {name = "techstay", email = "lovery521@gmail.com"},
+]
+dependencies = [
+  "loguru>=0.7.3",
+  "marimo>=0.23.1",
+  "numpy>=2.4.4",
+  "pandas>=3.0.2",
+  "rich>=14.0.0",
+]
+description = "my python sample"
+license = {text = "MIT"}
+name = "python-sample"
+pythonpath = [
+  "src",
+]
+readme = "README.md"
+requires-python = ">=3.12"
+version = "1.0"
+[dependency-groups]
+dev = [
+  "ipykernel>=6.25.2",
+]
