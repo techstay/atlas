@@ -880,3 +880,5 @@ FodyWeavers.xsd
 *.exe
 .claude/
 .metals/
+.workbuddy/
+.scala-build/
