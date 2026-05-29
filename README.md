@@ -67,3 +67,13 @@ atlas/
 ## 关于
 
 这个仓库是我的代码和笔记仓库，记录了从早期探索到逐步系统化整理的整个过程，涵盖编程、工具使用、知识管理等多个领域。
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=techstay%2Fatlas&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=techstay/atlas&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=techstay/atlas&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=techstay/atlas&type=date&legend=top-left" />
+ </picture>
+</a>
