@@ -2,9 +2,9 @@
 title: "AI README"
 date: 2026-05-25T21:00:00+08:00
 tags:
-  - ai
+  - AI
 categories:
-  - ai
+  - AI
 ---
 
 # 🤖 Artificial Intelligence (AI) 智能体与人工智能
@@ -16,7 +16,7 @@ categories:
 ```text
 AI/
 ├── README.md        # 本索引导航文件
-├── 一些资源.md      # AI 学习与工具资源集锦
+├── LLM 基础配置.md  # 各 AI 提供商 API 配置
 ├── 工具.md          # 常用 AI 客户端及工具指南
 ├── 技能.md          # AI 实操应用技能整理
 ├── 提示词.md        # 提示词工程（Prompt Engineering）技巧
