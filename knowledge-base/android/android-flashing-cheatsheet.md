@@ -1,27 +1,30 @@
 ---
-title: "Android"
+title: 安卓刷机与调试速查手册
 date: 2026-05-15T01:18:06+08:00
 tags:
-  - tech
-  - android
+  - flashing
+  - adb
+  - magisk
+  - twrp
 categories:
-  - 技术
+  - Android
 ---
+
+## 下载资源
+
+- [TWRP Recovery](https://dl.twrp.me) — 第三方 Recovery，刷机必备，支持各机型
+- [LineageOS](https://download.lineageos.org/) — 最主流的开源类原生 ROM
+- [PixelExperience](https://download.pixelexperience.org/devices) — 模拟 Pixel 体验的类原生 ROM
+- [NikGapps](https://nikgapps.com) — 轻量 GApps 套件，可按需选择安装组件
+- [Magisk](https://github.com/topjohnwu/Magisk/releases) — 系统级 Root 工具，支持模块扩展
+- [小米刷机工具 (MiFlash)](https://xiaomirom.com/download-xiaomi-flash-tool-miflash/) — 小米官方线刷工具，需安装驱动
 
 ## 刷机
 
 ### 安装工具
 
-- adb，`scopo install adb`
-- [小米刷机工具](https://xiaomirom.com/download-xiaomi-flash-tool-miflash/)，安装驱动，如果刷机出现 `press key to shutdown` 错误，参考 [这里](https://miuiver.com/press-any-key-to-shutdown/),\*\* 线刷的时候切记在刷机工具右下角选择第一个选项，避免刷机完成后自动上锁前功尽弃。
-
-### 下载包
-
-- [twrp](https://dl.twrp.me)
-- [lineageos](https://download.lineageos.org/)
-- [pixelexperience](https://download.pixelexperience.org/devices)
-- [NikGapps](https://nikgapps.com)
-- https://github.com/MustardChef/WSABuilds
+- adb，`scoop install adb`
+- MiFlash 线刷时需安装驱动，如果出现 `press key to shutdown` 错误，参考 [这里](https://miuiver.com/press-any-key-to-shutdown/)。**线刷的时候切记在刷机工具右下角选择第一个选项，避免刷机完成后自动上锁前功尽弃。**
 
 ### 刷 recovery
 
@@ -51,7 +54,7 @@ adb sideload <file>
 
 ### 刷 magisk
 
-先 [下载 magisk](https://github.com/topjohnwu/Magisk/releases)，安装到手机上。打开 magisk，查看手机是否支持 ramdisk，如果支持，就继续。
+先下载安装 Magisk，安装到手机上。打开 magisk，查看手机是否支持 ramdisk，如果支持，就继续。
 
 找到刷机包，解压其中的 `boot.img` 文件，传输到手机中。
 
@@ -89,7 +92,7 @@ adb reboot bootloader
 fastboot flash boot .\magisk_patched-25200_AeHvN.img
 ```
 
-## 不常用命令
+## 系统调优
 
 ### 修改 ntp 服务器
 
@@ -110,12 +113,3 @@ settings delete global captive_portal_https_url
 settings put global captive_portal_http_url http://developers.google.cn/generate_204
 settings put global captive_portal_https_url https://developers.google.cn/generate_204
 ```
-
-### linux 服务器
-
-安装以下软件
-
-- [busybox](https://github.com/SmartPack/BusyBox-Installer/releases)，在 app 里安装 busybox，路径 `/system/xbin`
-- [linux deploy](https://github.com/meefik/linuxdeploy/releases)
-
-在 linux deploy 中，将路径设置为 `/system/xbin/`，系统选择 debian，用户选择 root 用户，其他按需配置。

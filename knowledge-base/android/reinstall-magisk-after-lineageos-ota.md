@@ -1,10 +1,11 @@
 ---
-title: "Lineageos更新后安装magisk的方法"
+title: LineageOS OTA更新后重新刷入Magisk
 date: 2022-01-30T12:16:02+08:00
 tags:
-  - 安卓
+  - magisk
+  - lineageos
 categories:
-  - 安卓
+  - Android
 ---
 
 今天又把旧手机拿出来更新了一下 lineageos 系统，上次安装的 magisk 理所应当的失效了，又需要重新安装一次。不过其实也不用那么麻烦，在 lineageos 的更新选项里有一条 `安装后删除更新`，不要选中这个，在 OTA 更新完之后，点击更新包右边的 `...` 图标，选择导出更新。

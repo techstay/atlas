@@ -1,10 +1,13 @@
 ---
-title: "小米8刷入LineageOS的记录"
+title: "小米8解锁并刷入LineageOS与GApps"
 date: 2021-12-13T15:22:16+08:00
 tags:
-  - 安卓
+  - flashing
+  - lineageos
+  - mi8
+  - gapps
 categories:
-  - 安卓
+  - Android
 ---
 
 因为最近要用到几个需要谷歌服务的应用，再加上小米 8 差不多已经被官方放弃了。所以我决定将手里这台米 8 刷成 LineageOS，让它重新焕发第二春。

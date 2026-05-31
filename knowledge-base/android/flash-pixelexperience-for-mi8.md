@@ -1,10 +1,12 @@
 ---
-title: "小米8更新PixelExperience的记录"
+title: "小米8刷入PixelExperience正式版"
 date: 2022-01-24T10:14:28+08:00
 tags:
-  - 安卓
+  - flashing
+  - pixelexperience
+  - mi8
 categories:
-  - 安卓
+  - Android
 ---
 
 今天看了一下发现 PixelExperience 有了新版本刷机包了，正好之前我刷的那个还是 beta 版，现在也有了正式版。也就是说，又到了折腾的时候了。

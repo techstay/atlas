@@ -9,7 +9,7 @@ categories:
 
 # LLM 基础配置
 
-各 AI 提供商的 API 配置汇总。各厂商模型更新比较频繁，这里的模型只作为示例参考。
+各 AI 提供商的 API 配置汇总。各厂商模型更新比较频繁，这里的模型只作为示例参考。API Key 建议作为环境变量设置，避免明文保存，也不用在每个智能体中重新设置一遍。
 
 - **[Gemini](https://ai.google.dev/gemini-api/docs)** — 谷歌旗下大模型系列，以多模态能力（文本、图像、音频、视频）为核心特色。API 支持 OpenAI 兼容模式，生态与 Google 深度集成。模型迭代速度快，在推理效率和多语言任务上持续领先。
   - **Base URL**: `https://generativelanguage.googleapis.com/v1beta/openai/`
