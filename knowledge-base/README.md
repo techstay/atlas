@@ -20,12 +20,13 @@ knowledge-base/
 ├── linux/           # Linux 发行版、系统配置与安全防护
 ├── network/         # 网络、远程连接、软路由与代理调试
 ├── oss/             # 开源软件、开发工具、系统工具与生产力工具
-├── effectiveness/   # 个人效能、时间管理与创意思维
+├── effectiveness/   # 个人效能与效率方法
 ├── programming/     # 编程概念、Markdown、Regex、前端与 GUI
 ├── selfhosted/      # 自部署服务、私有云与家庭服务器
 ├── software/        # 桌面软件、Obsidian、VLC 与软件配置
 ├── tech/            # 前沿技术、许可证、图床与技术书签
 ├── windows/         # Windows 系统管理、WSL、终端与故障排查
+├── 创作/            # 创意素材、音视频制作与创作流程
 ├── 日语/            # 日语学习与 JLPT N4 语法整理
 ├── 数学/            # 数学笔记与趣味初等数学
 ├── 影视/            # 影视、动漫与纪录片笔记
@@ -41,12 +42,13 @@ knowledge-base/
 | [[linux/README\|Linux]]                 | 发行版安装配置、树莓派、GPG 与防火墙规则            |
 | [[network/README\|Network]]             | OpenWrt、OpenClash、远程桌面、SSH、DDNS 与抓包代理  |
 | [[oss/README\|OSS]]                     | Git、Docker、Podman、VSCode、Shell 工具与开源项目   |
-| [[effectiveness/README\|Effectiveness]] | GTD、时间管理、创意思维与个人效能方法               |
+| [[effectiveness/README\|Effectiveness]] | 个人效能、时间管理与效率方法                        |
 | [[programming/README\|Programming]]     | Markdown、Regex、前端、Qt GUI 与 Python Poetry      |
 | [[selfhosted/README\|Self-Hosted]]      | Alist、Jellyfin、Samba 与自部署资源                 |
 | [[software/README\|Software]]           | Obsidian、VLC 与常用桌面软件配置                    |
 | [[tech/README\|Tech]]                   | 开源许可证、Favicon、图床与技术学习资源             |
 | [[windows/README\|Windows]]             | WSL、MSYS2、Scoop、系统修复、共享与美化             |
+| [[创作/README\|创作]]                   | 创意素材、音视频制作与创作流程                      |
 | [[日语/README\|日语]]                   | JLPT N4 动词、形容词、句型与学习方法                |
 | [[数学/README\|数学]]                   | 数学基础笔记、公式整理与趣味习题                    |
 | [[影视/README\|影视]]                   | ACG 资源、影视记录与《空中浩劫》科普                |
