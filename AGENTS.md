@@ -10,6 +10,14 @@
 
 项目分为两个主要目录，`code-base`和`knowledge-base`，分别代表代码库和知识库，对应的内容应该存放到合适的位置。
 
+## 图片格式规范
+
+为了节约存储空间，知识库下的所有本地图片应该存储为 AVIF 格式。
+
+```sh
+magick input.png -quality 75 output.avif
+```
+
 ## markdown文件规范
 
 编写完markdown文件后，使用`prettier`格式化。
