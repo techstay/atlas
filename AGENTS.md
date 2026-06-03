@@ -16,9 +16,14 @@
 
 ```sh
 magick input.png -quality 75 output.avif
+
 ```
 
-## markdown文件规范
+### 内容规范
+
+如果要修改我已有的笔记，那么行文风格参考原文内容，不要做太大幅度的改动，适当添加 emoji 让文章更生动活泼。
+
+### 笔记格式化规范
 
 编写完markdown文件后，使用`prettier`格式化。
 
