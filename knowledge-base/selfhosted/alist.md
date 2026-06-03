@@ -1,10 +1,12 @@
 ---
-title: "alist"
+title: Alist 网盘聚合工具
 date: 2026-05-15T01:18:06+08:00
 tags:
   - selfhosted
   - alist
   - file-manager
+  - cloud-storage
+  - webdav
 categories:
   - 自托管
 ---

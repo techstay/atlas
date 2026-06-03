@@ -1,11 +1,14 @@
 ---
-title: "配置Linux Samba服务器"
+title: Linux Samba 文件共享服务器配置
 date: 2022-02-09T16:56:55+08:00
 tags:
+  - selfhosted
   - linux
   - samba
+  - file-sharing
+  - nas
 categories:
-  - linux
+  - 自托管
 ---
 
 samba 协议是 windows 下的一个文件分享协议，使用也非常广泛。就算是使用 linux 服务器，很多人也会使用 samba 来分享文件，特别是在你有一个树莓派的情况下。所以这里就简单介绍一下，如何在 linux 下配置 samba 服务器。
