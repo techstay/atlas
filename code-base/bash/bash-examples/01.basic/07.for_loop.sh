@@ -2,10 +2,7 @@
 
 list=(1 2 3 6 10)
 
+# Iterate over an indexed array.
 for i in "${list[@]}"; do
-  echo "$i"
-done
-
-for i in {1..5}; do
   echo "$i"
 done
