@@ -50,3 +50,5 @@ categories:
 - https://github.com/sansan0/TrendRadar 聚合新闻推送工具
 - immich NAS 图片自托管服务
 - https://github.com/dremin/RetroBar 在 Windows 上以老式风格显示任务栏
+- [paperless-ngx](https://github.com/paperless-ngx/paperless-ngx) - 社区支持增强型文档管理系统
+- https://github.com/microsoft/markitdown
