@@ -1,2 +1,3 @@
 *.sh text eol=lf
 ruby/** text eol=lf
+*.md text eol=crlf
