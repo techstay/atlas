@@ -7,7 +7,6 @@ tags:
   - tools
   - heimdall
   - dashboard
-  - dockhand
 categories:
   - 自托管
 ---
@@ -51,23 +50,6 @@ services:
       - PGID=0
       - UMASK=022
     restart: unless-stopped
-```
-
-## Dockhand
-
-[Dockhand](https://github.com/jhuckaby/dockhand) 是一个 Docker 容器管理面板，提供可视化的容器管理界面。可以方便地查看容器状态、日志、资源使用情况，执行容器操作（启动、停止、重启等），简化 Docker 容器的日常管理工作。
-
-```yaml
-services:
-  dockhand:
-    image: fnsys/dockhand:latest
-    container_name: dockhand
-    restart: unless-stopped
-    ports:
-      - 23000:3000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./dockhand-data:/app/data
 ```
 
 ## Neko Master

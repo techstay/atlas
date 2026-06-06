@@ -304,3 +304,79 @@ docker compose up -d
 - 配置文件中的相对路径以 Compose 文件所在目录为基准。
 - 不要把密码直接写进公开的 Compose 文件，可以使用 `.env` 文件或外部密钥管理。
 - `docker compose down -v` 会删除匿名卷，执行前要确认不会误删重要数据。
+
+## 🛠️ 第三方管理工具
+
+除了命令行之外，还有不少优秀的 Web 管理面板，可以让日常的容器维护工作更加直观 👀。
+
+### Dockhand
+
+[Dockhand](https://github.com/jhuckaby/dockhand) 是一个轻量的 Docker 容器管理面板，提供可视化的容器管理界面。可以方便地查看容器状态、日志、资源使用情况，执行容器操作（启动、停止、重启等），简化 Docker 容器的日常管理工作。
+
+```yaml
+services:
+  dockhand:
+    image: fnsys/dockhand:latest
+    container_name: dockhand
+    restart: unless-stopped
+    ports:
+      - 23000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./dockhand-data:/app/data
+```
+
+### Portainer
+
+[Portainer](https://github.com/portainer/portainer) 是非常流行的 Docker 可视化管理面板，几乎是自托管玩家装机必备。功能非常全面：容器、镜像、网络、卷、Swarm 集群、Compose 一键部署都能在 Web 界面完成。
+
+```yaml
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+```
+
+部署完成后访问 <https://localhost:9443>，首次进入会引导创建管理员账户。
+
+### Dockge
+
+[Dockge](https://github.com/louislam/dockge) 是一款主打「以 Compose 文件为中心」的轻量管理面板。配合自带的 stacks 目录，编辑 `compose.yaml` 就能实时同步启动状态，特别适合习惯直接写 compose 配置而不是点鼠标的用户。
+
+![](https://github.com/louislam/dockge/assets/1336778/e7ff0222-af2e-405c-b533-4eab04791b40)
+
+```yaml
+services:
+  dockge:
+    image: louislam/dockge:1
+    restart: unless-stopped
+    ports:
+      # Host Port : Container Port
+      - 5001:5001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+
+      # If you want to use private registries, you need to share the auth file with Dockge:
+      # - /root/.docker/:/root/.docker
+
+      # Stacks Directory
+      # ⚠️ READ IT CAREFULLY. If you did it wrong, your data could end up writing into a WRONG PATH.
+      # ⚠️ 1. FULL path only. No relative path (MUST)
+      # ⚠️ 2. Left Stacks Path === Right Stacks Path (MUST)
+      - C:\Users\techs\Desktop\docker:/opt/stacks
+    environment:
+      # Tell Dockge where is your stacks directory
+      - DOCKGE_STACKS_DIR=/opt/stacks
+      - DOCKGE_ENABLE_CONSOLE=true
+```
