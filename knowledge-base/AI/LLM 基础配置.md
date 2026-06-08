@@ -9,7 +9,7 @@ categories:
 
 # LLM 基础配置
 
-各 AI 提供商的 API 配置汇总。各厂商模型更新比较频繁，这里的模型只作为示例参考。API Key 建议作为环境变量设置，避免明文保存，也不用在每个智能体中重新设置一遍。
+各 AI 提供商的 API 配置汇总。各厂商模型更新比较频繁，这里的模型只作为示例参考。API Key 建议作为环境变量设置，避免明文保存，也不用在每个智能体中重新设置一遍。部分厂商有多个 BaseURL，如无说明，默认前者是 OpenAI 兼容格式，后者是 Anthropic 兼容格式。
 
 - **[Gemini](https://ai.google.dev/gemini-api/docs)** — 谷歌旗下大模型系列，以多模态能力（文本、图像、音频、视频）为核心特色。API 支持 OpenAI 兼容模式，生态与 Google 深度集成。模型迭代速度快，在推理效率和多语言任务上持续领先。
   - **Base URL**: `https://generativelanguage.googleapis.com/v1beta/openai/`
@@ -37,22 +37,22 @@ categories:
   - **Model**: `deepseek-v4-flash`, `deepseek-v4-pro`
 
 - **[火山引擎](https://www.volcengine.com/product/ark)** — 字节跳动旗下云平台，提供豆包系列及第三方模型托管。功能覆盖模型推理、精调、评测、插件、知识库等，是国内 MaaS 平台生态最完善的选择之一。
-  - **Base URL**: `https://ark.cn-beijing.volces.com/api/v3`
+  - **Base URL**: `https://ark.cn-beijing.volces.com/api/v3`，`https://ark.cn-beijing.volces.com/api/compatible`
   - **API Key**: `ARK_API_KEY`
   - **Model**: `deepseek-v4-flash-260425`, `deepseek-v4-pro-260425`, `doubao-seed-2-0-mini-260428`, `doubao-seed-2-0-pro-260215`
 
 - **[阿里云](https://bailian.console.aliyun.com/)** — 阿里云大模型服务平台，通义千问（Qwen）系列模型在开源和商业两端均有深厚积累。Qwen 系列在中文理解、多语言、代码生成等领域表现突出。平台同时托管 DeepSeek、GLM 等多款第三方模型，型号覆盖全面。
-  - **Base URL**: `https://dashscope.aliyuncs.com/compatible-mode/v1`
+  - **Base URL**: `https://dashscope.aliyuncs.com/compatible-mode/v1`，`https://dashscope.aliyuncs.com/apps/anthropic`，其他接入点参考 [阿里云官方文档](https://bailian.console.aliyun.com/cn-beijing?tab=doc#/doc/?type=model&url=3004398)
   - **API Key**: `ALIYUN_API_KEY`
   - **Model**: 参考 <https://bailian.console.aliyun.com/cn-beijing?tab=model#/model-usage>
 
 - **[腾讯云](https://cloud.tencent.com/product/tokenhub)** — 腾讯云大模型服务平台，提供自研混元（Hunyuan）及多家第三方模型托管。
-  - **Base URL**: `https://tokenhub.tencentmaas.com/v1`
+  - **Base URL**: `https://tokenhub.tencentmaas.com/v1`，`https://tokenhub.tencentmaas.com`
   - **API Key**: `TENCENT_API_KEY`
   - **Model**: `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.1`, `kimi-k2.6`, `minimax-m2.7`, `hy3-preview`
 
 - **[智谱](https://open.bigmodel.cn)** — 清华系 AI 公司，国产原创 GLM 架构。GLM 系列在中文理解、数学推理和代码生成上处于国内第一梯队。平台提供从开源到商业的完整模型矩阵，在智能体（Agent）和编程任务上投入较大，已有 AutoGLM 等产品。
-  - **Base URL**: `https://open.bigmodel.cn/api/paas/v4`
+  - **Base URL**: `https://open.bigmodel.cn/api/paas/v4`,`https://open.bigmodel.cn/api/anthropic`
   - **API Key**: `BIGMODEL_API_KEY`
   - **Model**: `glm-5.1`
 
