@@ -1,0 +1,20 @@
+Checks: >
+  modernize-*,
+  cppcoreguidelines-*,
+  performance-*,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-pro-type-vararg,
+  -cppcoreguidelines-pro-type-const-cast,
+  -cppcoreguidelines-no-malloc
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file
+CheckOptions:
+  - key: cppcoreguidelines-prefer-member-initializer.UseAssignments
+    value: 1
+  - key: modernize-use-nodiscard.ReplacementString
+    value: "[[nodiscard]]"

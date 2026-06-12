@@ -1,0 +1,14 @@
+{
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "xmake.autoGenerateCompileCommands": "onBuild",
+  "xmake.compileCommandsDirectory": "${workspaceRoot}",
+  "clangd.arguments": [
+    "--all-scopes-completion",
+    "--completion-style=detailed",
+    "--header-insertion=never",
+    "--experimental-modules-support",
+    "--background-index",
+  ],
+  "xmake.compileCommandsBackend": "clangd",
+  "terminal.integrated.defaultProfile.linux": "fish"
+}

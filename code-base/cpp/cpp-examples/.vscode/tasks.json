@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "xmake: Run Current File",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/run_task.sh",
+                "${file}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-ExecutionPolicy", "Bypass",
+                    "-File", "${workspaceFolder}\\run_task.ps1",
+                    "${file}"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "xmake: Build All",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/build_all.sh"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-ExecutionPolicy", "Bypass",
+                    "-File", "${workspaceFolder}\\build_all.ps1"
+                ]
+            },
+            "group": "build"
+        }
+    ]
+}

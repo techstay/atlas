@@ -1,0 +1,36 @@
+---
+Language: Cpp
+
+BasedOnStyle: LLVM
+
+BreakBeforeBraces: Allman
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+
+PointerAlignment: Left
+
+AccessModifierOffset: -4
+
+AllowShortBlocksOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+
+SortIncludes: true
+
+NamespaceIndentation: None
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  PadOperators: true
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false

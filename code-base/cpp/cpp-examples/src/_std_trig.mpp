@@ -1,0 +1,4 @@
+// Trigger: forces xmake to compile std module exactly once inside std_modules.
+// All binary targets depend on std_modules and inherit the cached BMI.
+export module _std_trig;
+import std;

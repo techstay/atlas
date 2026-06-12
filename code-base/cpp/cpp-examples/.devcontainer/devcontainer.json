@@ -1,0 +1,21 @@
+{
+  "name": "C++",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "formulahendry.code-runner",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "foxundermoon.shell-format",
+        "vadimcn.vscode-lldb",
+        "ms-vscode.cmake-tools",
+        "streetsidesoftware.code-spell-checker",
+        "tboox.xmake-vscode"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
