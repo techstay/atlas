@@ -8,7 +8,7 @@ categories:
   - 编程
 ---
 
-在线学习<https://regexlearn.com/zh-cn/learn/regex101>
+在线学习 —— [RegexLearn 中文教程](https://regexlearn.com/zh-cn/learn/regex101)，一个交互式正则表达式学习平台，通过实战练习快速掌握正则语法。
 
 ## 基础
 

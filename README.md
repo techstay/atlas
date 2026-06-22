@@ -11,9 +11,11 @@
 
 ## 结构
 
-```
+```txt
+eza --tree --level=2
+
 atlas/
-├── code-base/                        # 多语言代码学习，覆盖 23 种编程语言/工具
+├── code-base/                        #   多语言代码学习，多种编程语言/工具
 │   ├── algorithms/                   #   算法
 │   ├── bash/                         #   Bash 脚本
 │   ├── cpp/                          #   C++
@@ -37,32 +39,36 @@ atlas/
 │   ├── ruby/                         #   Ruby
 │   ├── rust/                         #   Rust
 │   └── scala/                        #   Scala
-└── knowledge-base/                   # 个人知识库，按主题分类
-    ├── AI/                           #   AI 理论与应用
-    ├── android/                      #   Android 刷机与系统使用
+└── knowledge-base/                   #   个人知识库，按主题分类
+    ├── AI/                           #   AI
+    ├── Android/                      #   Android
+    ├── creation/                     #   创意生产与素材
+    ├── economics/                    #   经济
     ├── effectiveness/                #   个人效能与效率方法
+    ├── english/                      #   英语学习
+    ├── games/                        #   游戏攻略与工具
+    ├── internet/                     #   网络/影视
+    ├── japanese/                     #   日语学习
     ├── linux/                        #   Linux
+    ├── math/                         #   数学
     ├── network/                      #   网络
     ├── oss/                          #   开源软件与工具
-    │   ├── dev-tools/                #     开发者工具
-    │   ├── productivity/             #     生产力工具
-    │   ├── system-tools/             #     系统工具
-    │   └── other/                    #     其它
+    │   ├── dev-tools/                #   开发者工具
+    │   ├── media/                    #   媒体工具
+    │   ├── misc/                     #   其它
+    │   ├── productivity/             #   生产力工具
+    │   └── system-tools/             #   系统工具
     ├── programming/                  #   编程概念与语言
-    │   ├── python/                   #     Python
-    │   ├── frontend/                 #     前端
-    │   ├── gui/                      #     GUI
-    │   ├── markdown.md               #     Markdown
-    │   └── regex.md                  #     正则表达式
+    │   ├── cpp/                      #   C++
+    │   ├── editors/                  #   编辑器
+    │   ├── frontend/                 #   前端
+    │   ├── gui/                      #   GUI
+    │   ├── python/                   #   Python
+    │   ├── regex.md                  #   正则表达式
+    │   └── rust/                     #   Rust
     ├── selfhosted/                   #   自部署服务
-    ├── software/                     #   非开源软件
-    ├── tech/                         #   前沿技术
-    ├── windows/                      #   Windows
-    ├── 创作/                         #   创意生产与素材
-    ├── 日语/                         #   日语学习
-    ├── 数学/                         #   数学
-    ├── 影视/                         #   影视
-    └── 游戏/                         #   游戏攻略与工具
+    ├── technology/                   #   技术
+    └── windows/                      #   Windows
 ```
 
 ## 关于

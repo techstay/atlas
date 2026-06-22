@@ -883,3 +883,5 @@ FodyWeavers.xsd
 .workbuddy/
 .scala-build/
 logseq/
+.firecrawl/
+compile_commands.json
